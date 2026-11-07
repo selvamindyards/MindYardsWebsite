@@ -23,7 +23,7 @@ CONFIG = {
     "booking": "https://cal.id/selva-mindyards",  # Cal ID, Cal.com or Calendly link -> "Book a call" opens it in a popup, contact page embeds it
     "whatsapp": "916385872400",    # e.g. "919876543210" (country code + number, digits only) -> floating WhatsApp chat button
     "formKey": "e5f6f5c7-7bea-4152-8c75-1f0e14fbf392",     # Web3Forms access key (free, https://web3forms.com) -> contact and newsletter forms submit directly
-    "ga": "",          # GA4 measurement ID, e.g. "G-XXXXXXXXXX"
+    "ga": "G-JR4HS9Y6MZ",          # GA4 measurement ID, e.g. "G-XXXXXXXXXX"
     "plausible": "",   # Plausible site domain, e.g. "mindyards.in" (alternative to GA)
     "assistant": "",   # URL of the deployed assistant worker (see worker/README.md) -> "Ask MindYards" chat widget
 }
