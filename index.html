@@ -90,8 +90,9 @@
   .nav .cta:hover{color:#fff;filter:brightness(1.05)}
   .dd{position:relative}
   .dd > a::after{content:"";display:inline-block;width:6px;height:6px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin:0 0 3px 7px}
+  .dd::after{content:"";position:absolute;left:-12px;right:-12px;top:100%;height:26px}
   .dd-menu{position:absolute;top:calc(100% + 14px);left:-12px;background:#fff;border:1px solid var(--hair);border-radius:var(--r-lg);box-shadow:0 18px 48px -20px rgba(27,27,31,.35);padding:10px;min-width:300px;display:none;z-index:40}
-  .dd:hover .dd-menu, .dd:focus-within .dd-menu{display:block}
+  .dd:hover .dd-menu, .dd:focus-within .dd-menu, .dd.open .dd-menu{display:block}
   .dd-menu a{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:center;padding:9px 10px;border-radius:var(--r);color:var(--ink);font-weight:600;font-size:14.5px}
   .dd-menu a span{font-weight:500;font-size:12.5px;color:var(--muted);display:block}
   .dd-menu a:hover{background:var(--blush)}
@@ -357,7 +358,19 @@
           <a href="#data"><i>06</i><div>Data &amp; enablement<span>Data readiness, upskilling, change, analytics</span></div></a>
         </div>
       </div>
-      <a href="#industries">Industries</a>
+      <div class="dd">
+        <a href="#industries" aria-haspopup="true">Industries</a>
+        <div class="dd-menu">
+          <a href="#bfsi"><i>I1</i><div>Banking, financial services &amp; insurance<span>Fraud, credit, claims, model risk</span></div></a>
+          <a href="#healthcare"><i>I2</i><div>Healthcare &amp; life sciences<span>Radiology triage, clinical notes</span></div></a>
+          <a href="#legal"><i>I3</i><div>Legal<span>Contract review, matter intake</span></div></a>
+          <a href="#manufacturing"><i>I4</i><div>Manufacturing<span>Predictive maintenance, visual QC</span></div></a>
+          <a href="#logistics"><i>I5</i><div>Logistics &amp; supply chain<span>Dispatch, routing, exceptions</span></div></a>
+          <a href="#public-sector"><i>I6</i><div>Public sector<span>Document-heavy workflows, sovereignty</span></div></a>
+          <a href="#retail-cx"><i>I7</i><div>Retail &amp; customer experience<span>Support agents, personalisation</span></div></a>
+          <a href="#aec"><i>I8</i><div>AEC &amp; engineering<span>Drawings, BIM, site data</span></div></a>
+        </div>
+      </div>
       <div class="dd">
         <a href="#solutions" aria-haspopup="true">Solutions</a>
         <div class="dd-menu">
@@ -370,7 +383,15 @@
           <a href="#advisor"><i>P2</i><div>Insurance Advisor CRM<span>Product · CRM for insurance advisers</span></div></a>
         </div>
       </div>
-      <a href="#engagement">Engagement</a>
+      <div class="dd">
+        <a href="#engagement" aria-haspopup="true">Engagement</a>
+        <div class="dd-menu">
+          <a href="#assessment"><i>E1</i><div>Assessment<span>2 to 4 weeks · fixed fee</span></div></a>
+          <a href="#build"><i>E2</i><div>Fixed-scope build<span>6 to 16 weeks per phase · fixed fee</span></div></a>
+          <a href="#managed-operations"><i>E3</i><div>Managed operations<span>Monthly retainer · SLAs</span></div></a>
+          <a href="#fractional-caio"><i>E4</i><div>Fractional Chief AI Officer<span>2 to 6 days a month</span></div></a>
+        </div>
+      </div>
       <a href="#about">About</a>
       <a class="cta" href="#contact">Book a call</a>
     </nav>
@@ -747,49 +768,49 @@
         <p>We bring use-case playbooks, data patterns and regulatory context for eight industries, so the first workshop starts from what has worked, not from a blank page.</p>
       </div>
       <div class="ind">
-        <article>
+        <article id="bfsi">
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 10l9-6 9 6"/><path d="M5 10v9M19 10v9M9 10v9M15 10v9M3 19h18"/></svg></div>
           <h3>Banking, financial services &amp; insurance</h3>
           <p>The biggest buyer of AI consulting and the most regulated.</p>
           <ul><li>Fraud detection and transaction monitoring</li><li>Credit decisioning and collections</li><li>Claims intake, triage and settlement</li><li>Model risk management and validation</li></ul>
         </article>
-        <article>
+        <article id="healthcare">
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/><circle cx="12" cy="12" r="9"/></svg></div>
           <h3>Healthcare &amp; life sciences</h3>
           <p>Clinician time and documentation burden are the levers.</p>
           <ul><li>Radiology and pathology triage support</li><li>Clinical notes and discharge summaries</li><li>Prior authorisation and coding</li><li>Patient communication agents</li></ul>
         </article>
-        <article>
+        <article id="legal">
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 7h14M7 7l-3 7a3 3 0 0 0 6 0zM17 7l-3 7a3 3 0 0 0 6 0z"/></svg></div>
           <h3>Legal</h3>
           <p>Document-heavy work with a low tolerance for error.</p>
           <ul><li>Contract review and clause extraction</li><li>Matter intake and conflict checks</li><li>Due-diligence data rooms</li><li>Knowledge search across precedents</li></ul>
         </article>
-        <article>
+        <article id="manufacturing">
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 20V9l5 3V9l5 3V9l5 3v8z"/><path d="M3 20h18"/></svg></div>
           <h3>Manufacturing</h3>
           <p>Sensor data, drawings and quality records waiting to be used.</p>
           <ul><li>Predictive maintenance</li><li>Visual quality control</li><li>Production planning and scheduling</li><li>Technician copilots on SOPs and manuals</li></ul>
         </article>
-        <article>
+        <article id="logistics">
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></div>
           <h3>Logistics &amp; supply chain</h3>
           <p>Margins live in dispatch, routing and exceptions.</p>
           <ul><li>Dispatch and route optimisation</li><li>Exception and delay handling agents</li><li>Demand forecasting</li><li>Document automation for customs and freight</li></ul>
         </article>
-        <article>
+        <article id="public-sector">
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-6h6v6"/></svg></div>
           <h3>Public sector</h3>
           <p>Document-heavy workflows at scale, with sovereignty constraints.</p>
           <ul><li>Citizen service and grievance handling</li><li>Records search and case files</li><li>Permit and application processing</li><li>On-premises and sovereign deployments</li></ul>
         </article>
-        <article>
+        <article id="retail-cx">
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 8h16l-1.5 11h-13z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg></div>
           <h3>Retail &amp; customer experience</h3>
           <p>Support volume and personalisation at the same time.</p>
           <ul><li>Support agents across chat, voice and email</li><li>Returns, refunds and order queries</li><li>Personalised recommendations</li><li>Catalogue and content generation</li></ul>
         </article>
-        <article>
+        <article id="aec">
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div>
           <h3>AEC &amp; engineering</h3>
           <p>Architecture, engineering and construction data is rich and underused.</p>
@@ -902,7 +923,7 @@
         <p>Pick the entry point that matches where you are. Most clients start with an assessment, move into a fixed-scope build, and keep us on for operations.</p>
       </div>
       <div class="eng">
-        <article>
+        <article id="assessment">
           <span class="kicker">Start here</span>
           <h3>Assessment</h3>
           <div class="dur">2 to 4 weeks · fixed fee</div>
@@ -910,7 +931,7 @@
           <ul><li>Stakeholder interviews and data review</li><li>Scored use-case portfolio</li><li>Roadmap, budget and risk view</li></ul>
           <a class="btn btn-line btn-sm" href="#contact">Book an assessment</a>
         </article>
-        <article class="hi">
+        <article id="build" class="hi">
           <span class="kicker">Most common</span>
           <h3>Fixed-scope build</h3>
           <div class="dur">6 to 16 weeks per phase · fixed fee</div>
@@ -918,7 +939,7 @@
           <ul><li>Evaluation set agreed up front</li><li>Guardrails and monitoring included</li><li>Documented hand-over to your team</li></ul>
           <a class="btn btn-fire btn-sm" href="#contact">Scope a build</a>
         </article>
-        <article>
+        <article id="managed-operations">
           <span class="kicker">Ongoing</span>
           <h3>Managed operations</h3>
           <div class="dur">Monthly retainer · SLAs</div>
@@ -926,7 +947,7 @@
           <ul><li>Named service levels</li><li>Monthly health and cost report</li><li>Continuous improvement backlog</li></ul>
           <a class="btn btn-line btn-sm" href="#contact">Ask about a retainer</a>
         </article>
-        <article>
+        <article id="fractional-caio">
           <span class="kicker">Leadership</span>
           <h3>Fractional Chief AI Officer</h3>
           <div class="dur">2 to 6 days a month</div>
