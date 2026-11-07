@@ -79,6 +79,27 @@ for _g in GROUPS:
         if _g["slug"] == "industries":
             TOPICS[_id] = ("", _label)
 
+# Photographs: page id -> alt text (files live in src/img, sized copies in assets/img via build_images.py).
+IMAGES = {
+    "bfsi": "Glass office towers in a financial district",
+    "healthcare": "An empty hospital corridor with waiting benches",
+    "legal": "Shelves of bound law reports in a library",
+    "manufacturing": "Robotic arms assembling a car body on a production line",
+    "logistics": "Cranes loading containers onto a ship at a port at dusk",
+    "public-sector": "Classical stone columns on a government building",
+    "retail-cx": "A stocked aisle in a retail store",
+    "aec": "Tower cranes over a steel building frame on a construction site",
+    "solutions": "Rows of server cabinets in a modern data centre",
+}
+
+
+def banner(sid):
+    if sid not in IMAGES:
+        return ""
+    return (f'<div class="banner"><img src="/assets/img/{sid}.webp" alt="{attr(IMAGES[sid])}" '
+            f'width="1600" height="720"></div>\n')
+
+
 # Old single-page anchors -> new URLs.
 URL = {"top": "/", "contact": "/contact/", "about": "/about/", "faq": "/about/#faq",
        "approach": "/about/#approach", "platforms": "/#platforms"}
@@ -229,11 +250,11 @@ def build():
     for g in GROUPS:
         hub = section(g["slug"])
         write_page(f"/{g['slug']}/", title=f"{g['title']} — {BRAND}", description=describe(hub),
-                   main=relink(promote_h1(hub)) + CTABAND, subnav_html=subnav(g, None),
+                   main=banner(g["slug"]) + relink(promote_h1(hub)) + CTABAND, subnav_html=subnav(g, None),
                    jsonld=breadcrumb([("Home", "/"), (g["label"], f"/{g['slug']}/")]), priority=0.8)
         for i, (sid, label) in enumerate(g["items"]):
             sec = section(sid)
-            main = relink(promote_h1(sec), contact_topic=sid) + pager(g, i) + CTABAND
+            main = banner(sid) + relink(promote_h1(sec), contact_topic=sid) + pager(g, i) + CTABAND
             write_page(URL[sid], title=f"{label} — {g['label']} — {BRAND}", description=describe(sec),
                        main=main, subnav_html=subnav(g, sid),
                        jsonld=breadcrumb([("Home", "/"), (g["label"], f"/{g['slug']}/"), (label, URL[sid])]))
