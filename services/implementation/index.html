@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Implementation &amp; build — Services — MindYards</title>
+<meta name="description" content="This is where most of our engineering time goes. We build the application, the model work and the integration as one delivery, with evaluation sets.">
+<link rel="canonical" href="https://mindyards.in/services/implementation/">
+<meta property="og:title" content="Implementation &amp; build — Services — MindYards">
+<meta property="og:description" content="This is where most of our engineering time goes. We build the application, the model work and the integration as one delivery, with evaluation sets.">
+<meta property="og:url" content="https://mindyards.in/services/implementation/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://mindyards.in/assets/logo.png">
+<meta name="theme-color" content="#F26A1B">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=51532766">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mindyards.in/"}, {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://mindyards.in/services/"}, {"@type": "ListItem", "position": 3, "name": "Implementation & build", "item": "https://mindyards.in/services/implementation/"}]}</script>
+</head>
+<body class="">
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="MindYards home"><img src="/assets/logo.png" alt="MindYards" width="940" height="402"></a>
+    <button class="menu" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <div class="dd">
+        <a href="/services/" aria-haspopup="true">Services</a>
+        <div class="dd-menu">
+          <a href="/services/implementation/"><i>01</i><div>Implementation &amp; build<span>LLM apps, MLOps, integration, infra</span></div></a>
+          <a href="/services/agentic/"><i>02</i><div>Agentic AI<span>Multi-agent systems, orchestration, AgentOps</span></div></a>
+          <a href="/services/managed-ops/"><i>03</i><div>Managed AI operations<span>Monitoring, LLMOps, agents as a service</span></div></a>
+          <a href="/services/strategy/"><i>04</i><div>Strategy &amp; advisory<span>Roadmap, prioritisation, fractional CAIO</span></div></a>
+          <a href="/services/governance/"><i>05</i><div>Governance, risk &amp; compliance<span>EU AI Act, ISO 42001, audit, red-teaming</span></div></a>
+          <a href="/services/data/"><i>06</i><div>Data &amp; enablement<span>Data readiness, upskilling, change, analytics</span></div></a>
+        </div>
+      </div>
+      <div class="dd">
+        <a href="/industries/" aria-haspopup="true">Industries</a>
+        <div class="dd-menu">
+          <a href="/industries/bfsi/"><i>I1</i><div>Banking, financial services &amp; insurance<span>Fraud, credit, claims, model risk</span></div></a>
+          <a href="/industries/healthcare/"><i>I2</i><div>Healthcare &amp; life sciences<span>Radiology triage, clinical notes</span></div></a>
+          <a href="/industries/legal/"><i>I3</i><div>Legal<span>Contract review, matter intake</span></div></a>
+          <a href="/industries/manufacturing/"><i>I4</i><div>Manufacturing<span>Predictive maintenance, visual QC</span></div></a>
+          <a href="/industries/logistics/"><i>I5</i><div>Logistics &amp; supply chain<span>Dispatch, routing, exceptions</span></div></a>
+          <a href="/industries/public-sector/"><i>I6</i><div>Public sector<span>Document-heavy workflows, sovereignty</span></div></a>
+          <a href="/industries/retail-cx/"><i>I7</i><div>Retail &amp; customer experience<span>Support agents, personalisation</span></div></a>
+          <a href="/industries/aec/"><i>I8</i><div>AEC &amp; engineering<span>Drawings, BIM, site data</span></div></a>
+        </div>
+      </div>
+      <div class="dd">
+        <a href="/solutions/" aria-haspopup="true">Solutions</a>
+        <div class="dd-menu">
+          <a href="/solutions/compliance-service/"><i>S1</i><div>Compliance as a service<span>Ongoing AI compliance on retainer</span></div></a>
+          <a href="/solutions/voice-agents/"><i>S2</i><div>Voice &amp; sales agents<span>Outbound, inbound, collections</span></div></a>
+          <a href="/solutions/ma-diligence/"><i>S3</i><div>AI M&amp;A due diligence<span>Technical diligence on AI assets</span></div></a>
+          <a href="/solutions/evals/"><i>S4</i><div>Evals &amp; red-teaming<span>Independent testing before launch</span></div></a>
+          <a href="/solutions/cost-optimisation/"><i>S5</i><div>AI cost optimisation<span>Token and GPU spend</span></div></a>
+          <a href="/solutions/document-intelligence/"><i>S6</i><div>Document intelligence accelerator<span>Extraction with validation and review</span></div></a>
+          <a href="/solutions/knowledge-assistant/"><i>S7</i><div>Enterprise knowledge assistant<span>Cited answers from your own content</span></div></a>
+          <a href="/solutions/msoftai/"><i>P1</i><div>MsoftAI Manifold Designer<span>Product · hydraulic manifold CAD</span></div></a>
+          <a href="/solutions/advisor/"><i>P2</i><div>Insurance Advisor CRM<span>Product · CRM for insurance advisers</span></div></a>
+        </div>
+      </div>
+      <div class="dd">
+        <a href="/engagement/" aria-haspopup="true">Engagement</a>
+        <div class="dd-menu">
+          <a href="/engagement/assessment/"><i>E1</i><div>Assessment<span>2 to 4 weeks · fixed fee</span></div></a>
+          <a href="/engagement/build/"><i>E2</i><div>Fixed-scope build<span>6 to 16 weeks per phase · fixed fee</span></div></a>
+          <a href="/engagement/managed-operations/"><i>E3</i><div>Managed operations<span>Monthly retainer · SLAs</span></div></a>
+          <a href="/engagement/fractional-caio/"><i>E4</i><div>Fractional Chief AI Officer<span>2 to 6 days a month</span></div></a>
+        </div>
+      </div>
+      <a href="/about/">About</a>
+      <a class="cta" href="/contact/">Book a call</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="subnav" aria-label="Services pages"><div class="wrap"><a class="hub" href="/services/">Services overview</a><a class="on" href="/services/implementation/">Implementation &amp; build</a><a href="/services/agentic/">Agentic AI</a><a href="/services/managed-ops/">Managed AI operations</a><a href="/services/strategy/">Strategy &amp; advisory</a><a href="/services/governance/">Governance, risk &amp; compliance</a><a href="/services/data/">Data &amp; enablement</a></div></nav>
+
+<main id="top">
+  <section id="implementation" class="line">
+    <div class="wrap">
+      <div class="intro">
+        <span class="kicker">01 · Implementation &amp; build</span>
+        <h1 class="pg">Production-grade AI, built on your data and wired into your systems</h1>
+        <p>This is where most of our engineering time goes. We build the application, the model work and the integration as one delivery, with evaluation sets, guardrails and monitoring from the first sprint rather than bolted on later.</p>
+        <dl class="meta">
+          <div><dt>Typical scope</dt><dd>6 to 16 weeks per phase, fixed fee</dd></div>
+          <div><dt>Best for</dt><dd>Teams with a validated use case that needs to ship</dd></div>
+          <div><dt>Stack</dt><dd>Python, Node.js, React, Angular; Azure, AWS, GCP; OpenAI, Anthropic, Google and open-weight models</dd></div>
+        </dl>
+        <a class="btn btn-fire btn-sm" href="/contact/?topic=implementation">Scope a build</a>
+      </div>
+      <div class="caps">
+        <article class="cap">
+          <h3>GenAI / LLM applications</h3>
+          <p>Retrieval-augmented assistants, copilots and document-AI pipelines on your own content, with evaluation suites so you can trust what ships.</p>
+          <ul><li>RAG over policies, contracts, tickets and knowledge bases</li><li>Copilots inside your existing tools</li><li>Document extraction, classification and summarisation at scale</li></ul>
+        </article>
+        <article class="cap">
+          <h3>ML model development &amp; MLOps</h3>
+          <p>Custom models for forecasting, scoring, classification and recommendation, with the pipelines and retraining loops to keep them accurate.</p>
+          <ul><li>Feature pipelines, experiment tracking, model registry</li><li>CI/CD for models with automated validation gates</li><li>Fine-tuning and distillation where it beats prompting</li></ul>
+        </article>
+        <article class="cap">
+          <h3>Enterprise integration</h3>
+          <p>AI wired into SAP, Salesforce, Microsoft 365, Dynamics and your ERP, so outputs land where people already work instead of in another tab.</p>
+          <ul><li>API, event and workflow integration patterns</li><li>Identity, permissions and audit carried through to the model</li><li>Legacy system connectors and data contracts</li></ul>
+        </article>
+        <article class="cap">
+          <h3>Custom AI products</h3>
+          <p>Productised AI built for one client: the API, front end, admin, billing and operational tooling around the model, ready for your customers.</p>
+          <ul><li>Full-stack delivery from design to launch</li><li>Multi-tenant architecture and usage metering</li><li>Hand-over with documentation and a trained team</li></ul>
+        </article>
+        <article class="cap wide">
+          <h3>AI infrastructure &amp; cloud</h3>
+          <p>GPU capacity, model serving, vector stores, gateways and hyperscaler landing zones sized for your workload and your budget, on Azure, AWS, GCP or on-premises.</p>
+          <ul><li>Serving and routing across hosted and self-hosted models</li><li>Private networking, key management and data residency controls</li><li>Cost modelling before you commit to capacity</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+<div class="pager"><div class="wrap"><a class="next" href="/services/agentic/"><small>Next</small>Agentic AI</a></div></div>
+  <div class="ctaband">
+    <div class="wrap">
+      <div>
+        <h2>Tell us the problem. We'll tell you if AI is the answer.</h2>
+        <p>A 30-minute call, no deck, no obligation.</p>
+      </div>
+      <a class="btn btn-line" href="/contact/">Book a discovery call</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <svg class="band" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
+    <defs><linearGradient id="bg" x1="0" x2="1"><stop offset="0" stop-color="#F7761F"/><stop offset=".6" stop-color="#F15A22"/><stop offset="1" stop-color="#E8431B"/></linearGradient></defs>
+    <polyline points="0,6 334,6 386,23 1440,23" fill="none" stroke="#5B5F66" stroke-width="4"/>
+    <polygon points="0,12 326,12 376,29 1440,29 1440,47 0,47" fill="url(#bg)"/>
+    <polyline points="356,52 404,58 1440,58" fill="none" stroke="#5B5F66" stroke-width="3"/>
+  </svg>
+  <div class="wrap">
+    <div class="fcols">
+      <div>
+        <a class="logo" href="/" aria-label="MindYards home"><img src="/assets/logo.png" alt="MindYards" width="940" height="402"></a>
+        <p>AI consulting across strategy, build, governance and operations, for mid-market and enterprise teams in India and the Middle East.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services/implementation/">Implementation &amp; build</a></li>
+          <li><a href="/services/agentic/">Agentic AI</a></li>
+          <li><a href="/services/managed-ops/">Managed AI operations</a></li>
+          <li><a href="/services/strategy/">Strategy &amp; advisory</a></li>
+          <li><a href="/services/governance/">Governance, risk &amp; compliance</a></li>
+          <li><a href="/services/data/">Data &amp; enablement</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="/solutions/compliance-service/">Compliance as a service</a></li>
+          <li><a href="/solutions/voice-agents/">Voice &amp; sales agents</a></li>
+          <li><a href="/solutions/ma-diligence/">AI M&amp;A due diligence</a></li>
+          <li><a href="/solutions/evals/">Evals &amp; red-teaming</a></li>
+          <li><a href="/solutions/cost-optimisation/">AI cost optimisation</a></li>
+          <li><a href="/solutions/document-intelligence/">Document intelligence accelerator</a></li>
+          <li><a href="/solutions/knowledge-assistant/">Enterprise knowledge assistant</a></li>
+          <li><a href="/solutions/msoftai/">MsoftAI Manifold Designer</a></li>
+          <li><a href="/solutions/advisor/">Insurance Advisor CRM</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/engagement/">Engagement models</a></li>
+          <li><a href="/about/#approach">How we work</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/about/#faq">FAQ</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="mailto:contact@mindyards.in">contact@mindyards.in</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <div>© <span id="year"></span> MindYards. All rights reserved.</div>
+      <div>Chennai, Tamil Nadu, India &nbsp;·&nbsp; mindyards.in</div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js?v=311fba8c"></script>
+</body>
+</html>

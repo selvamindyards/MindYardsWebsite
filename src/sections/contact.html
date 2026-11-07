@@ -1,0 +1,52 @@
+  <section id="contact" class="sec contact">
+    <div class="wrap">
+      <div>
+        <div class="tick"></div>
+        <h2 style="margin-bottom:14px">Tell us what you're trying to do</h2>
+        <p style="color:var(--ink-2)">We reply within two working days. A short note is enough; we'll ask the right questions on the call.</p>
+        <ul class="details">
+          <li><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span class="val"><a href="mailto:contact@mindyards.in">contact@mindyards.in</a></span></li>
+          <!-- Add your phone number here when ready:
+          <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span><span class="val"><a href="tel:+91XXXXXXXXXX">+91 XXXXX XXXXX</a></span></li>
+          -->
+          <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span class="val">Chennai, Tamil Nadu, India</span></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="val">Mon–Fri, 9:30–18:30 IST</span></li>
+        </ul>
+        <div class="expect">
+          <h3>What happens next</h3>
+          <ol>
+            <li>We reply with a few clarifying questions or a call slot.</li>
+            <li>A 30-minute discovery call with a senior consultant.</li>
+            <li>A written proposal with scope, timeline and fixed price.</li>
+          </ol>
+        </div>
+      </div>
+      <form id="contactForm" action="mailto:contact@mindyards.in" method="post" enctype="text/plain">
+        <div class="f2">
+          <div class="f"><label for="name">Name</label><input id="name" name="Name" required autocomplete="name"></div>
+          <div class="f"><label for="email">Work email</label><input id="email" name="Email" type="email" required autocomplete="email"></div>
+        </div>
+        <div class="f2">
+          <div class="f"><label for="company">Company</label><input id="company" name="Company" autocomplete="organization"></div>
+          <div class="f"><label for="service">What are you interested in?</label>
+            <select id="service" name="Service">
+              <option value="">Not sure yet</option>
+              <option>Implementation &amp; build</option>
+              <option>Agentic AI</option>
+              <option>Managed AI operations</option>
+              <option>Strategy &amp; advisory</option>
+              <option>Governance, risk &amp; compliance</option>
+              <option>Data &amp; enablement</option>
+              <option>A packaged solution</option>
+              <option>MsoftAI Manifold Designer</option>
+              <option>Insurance Advisor CRM</option>
+              <option>Fractional Chief AI Officer</option>
+            </select>
+          </div>
+        </div>
+        <div class="f"><label for="msg">What are you trying to do?</label><textarea id="msg" name="Message" required placeholder="A few lines about the problem, your timeline and anything already in place."></textarea></div>
+        <button class="btn btn-fire" type="submit">Send message</button>
+        <p class="note">Opens your email app with the message pre-filled. Or write to contact@mindyards.in directly.</p>
+      </form>
+    </div>
+  </section>

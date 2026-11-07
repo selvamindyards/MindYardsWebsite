@@ -7,15 +7,16 @@
 <meta name="description" content="MindYards is an AI consulting firm in Chennai serving India and the Middle East. Six service lines: implementation and build, agentic AI, managed AI operations, strategy and advisory, governance and compliance, data and enablement.">
 <link rel="canonical" href="https://mindyards.in/">
 <meta property="og:title" content="MindYards — AI Consulting: Strategy, Build, Govern, Run">
-<meta property="og:description" content="From AI roadmap to production agents to managed operations. One accountable team, fixed scopes, written outcomes.">
+<meta property="og:description" content="MindYards is an AI consulting firm in Chennai serving India and the Middle East. Six service lines: implementation and build, agentic AI, managed AI operations, strategy and advisory, governance and compliance, data and enablement.">
 <meta property="og:url" content="https://mindyards.in/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://mindyards.in/assets/logo.png">
 <meta name="theme-color" content="#F26A1B">
-<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=51532766">
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -41,383 +42,69 @@
   }
 }
 </script>
-<style>
-  :root{
-    color-scheme:light;
-    --bg:#FFFFFF; --blush:#FFF7F2; --blush-2:#FDEFE6;
-    --ink:#1B1B1F; --ink-2:#3C3F45; --graphite:#5B5F66; --muted:#7A7E86;
-    --orange:#F26A1B; --flame:#E64A19; --ember:#C4410C; --peach:#FBD3BC;
-    --hair:#EEE3DB; --r:6px; --r-lg:12px;
-    --display:"Sora",system-ui,sans-serif; --body:"Manrope",system-ui,sans-serif;
-    --band:linear-gradient(90deg,#F7761F 0%,#F15A22 60%,#E8431B 100%);
-    --pad-top:env(safe-area-inset-top,0px); --pad-bot:env(safe-area-inset-bottom,0px);
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth;scroll-padding-top:calc(84px + var(--pad-top))}
-  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;padding-top:var(--pad-top);padding-bottom:var(--pad-bot)}
-  img{max-width:100%;height:auto;display:block}
-  a{color:var(--ember);text-decoration:none}
-  a:hover{color:var(--flame)}
-  :focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:2px}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-  h1,h2,h3,h4{font-family:var(--display);font-weight:600;letter-spacing:-.02em;margin:0;line-height:1.1}
-  h2{font-size:clamp(28px,3.6vw,42px)}
-  h3{font-size:21px;letter-spacing:-.01em}
-  h4{font-size:17px;letter-spacing:-.01em}
-  p{margin:0}
-  ul{margin:0;padding:0;list-style:none}
-  .lede{font-size:19px;color:var(--ink-2);max-width:58ch}
-  .sec{padding:96px 0}
-  .sec-head{max-width:64ch;margin-bottom:48px}
-  .sec-head h2{margin-bottom:14px}
-  .sec-head p{color:var(--ink-2);font-size:18px}
-  .tick{width:46px;height:4px;background:var(--band);border-radius:2px;margin-bottom:18px}
-  .kicker{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ember);margin-bottom:12px}
-  .blush{background:var(--blush);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
-  .tag{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:var(--ember);background:var(--blush-2);border:1px solid var(--peach);border-radius:999px;padding:4px 11px;white-space:nowrap}
-  .tag.grey{color:var(--graphite);background:#fff;border-color:var(--hair)}
-
-  /* header */
-  .top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid var(--hair)}
-  body::before{content:"";position:fixed;inset:0 0 auto;height:var(--pad-top);background:#fff;z-index:40}
-  .top .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
-  .logo img{height:40px;width:auto}
-  .nav{display:flex;align-items:center;gap:26px}
-  .nav > a, .nav .dd > a{color:var(--ink-2);font-weight:600;font-size:15px}
-  .nav > a:hover, .nav .dd > a:hover{color:var(--ember)}
-  .nav .cta{background:var(--band);color:#fff;padding:10px 18px;border-radius:var(--r);font-weight:700;box-shadow:0 6px 16px -8px rgba(230,74,25,.7)}
-  .nav .cta:hover{color:#fff;filter:brightness(1.05)}
-  .dd{position:relative}
-  .dd > a::after{content:"";display:inline-block;width:6px;height:6px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin:0 0 3px 7px}
-  .dd::after{content:"";position:absolute;left:-12px;right:-12px;top:100%;height:26px}
-  .dd-menu{position:absolute;top:calc(100% + 14px);left:-12px;background:#fff;border:1px solid var(--hair);border-radius:var(--r-lg);box-shadow:0 18px 48px -20px rgba(27,27,31,.35);padding:10px;min-width:300px;display:none;z-index:40}
-  .dd:hover .dd-menu, .dd:focus-within .dd-menu, .dd.open .dd-menu{display:block}
-  .dd-menu a{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:center;padding:9px 10px;border-radius:var(--r);color:var(--ink);font-weight:600;font-size:14.5px}
-  .dd-menu a span{font-weight:500;font-size:12.5px;color:var(--muted);display:block}
-  .dd-menu a:hover{background:var(--blush)}
-  .dd-menu i{display:grid;place-items:center;width:28px;height:28px;border-radius:7px;background:var(--band);color:#fff;font:600 12px var(--display);font-style:normal}
-  .menu{display:none;background:none;border:1px solid var(--hair);color:var(--ink);border-radius:var(--r);padding:8px 12px;font:600 14px var(--body);cursor:pointer}
-
-  /* buttons */
-  .actions{display:flex;gap:14px;flex-wrap:wrap}
-  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:var(--r);font-weight:700;font-size:15px;border:1.5px solid transparent;transition:transform .12s,filter .12s;cursor:pointer;font-family:inherit;line-height:1.2}
-  .btn:active{transform:translateY(1px)}
-  .btn-fire{background:var(--band);color:#fff;box-shadow:0 10px 24px -10px rgba(230,74,25,.75)}
-  .btn-fire:hover{color:#fff;filter:brightness(1.06)}
-  .btn-line{border-color:var(--ink);color:var(--ink);background:#fff}
-  .btn-line:hover{border-color:var(--ember);color:var(--ember)}
-  .btn-sm{padding:10px 16px;font-size:14px}
-  .arrow::after{content:"→";font-weight:600}
-
-  /* hero */
-  .hero{position:relative;overflow:hidden;background:var(--bg)}
-  .hero .plexus{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-  .hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding-top:84px;padding-bottom:96px}
-  .hero h1{font-size:clamp(38px,5.2vw,62px);font-weight:700;margin:0 0 22px;max-width:15ch}
-  .hero h1 em{font-style:normal;background:var(--band);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .hero .lede{margin-bottom:34px}
-  .hero-proof{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:30px;font-size:14.5px;color:var(--graphite);font-weight:600}
-  .hero-proof li{display:flex;align-items:center;gap:8px}
-  .hero-proof li::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--orange)}
-
-  /* service navigator in the hero */
-  .navigator{position:relative;background:#fff;border:1px solid var(--hair);border-radius:var(--r-lg);box-shadow:0 30px 60px -36px rgba(27,27,31,.4);overflow:hidden}
-  .navigator::before{content:"";display:block;height:6px;background:var(--band)}
-  .navigator .hd{padding:18px 22px 10px;font-family:var(--display);font-weight:600;font-size:15px;color:var(--graphite)}
-  .navigator a{display:grid;grid-template-columns:38px 1fr auto;gap:14px;align-items:center;padding:13px 22px;border-top:1px solid var(--hair);color:var(--ink);transition:background .12s}
-  .navigator a:hover{background:var(--blush)}
-  .navigator a i{display:grid;place-items:center;width:38px;height:38px;border-radius:9px;background:var(--blush-2);color:var(--ember);font:600 13px var(--display);font-style:normal}
-  .navigator a b{display:block;font-family:var(--display);font-weight:600;font-size:15.5px}
-  .navigator a span{font-size:13px;color:var(--muted)}
-  .navigator a em{font-style:normal;font-size:12px;font-weight:700;color:var(--ember);white-space:nowrap}
-
-  /* stat strip */
-  .strip{background:var(--ink);color:#fff}
-  .strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:34px 24px}
-  .strip b{display:block;font-family:var(--display);font-size:30px;font-weight:600;letter-spacing:-.02em;line-height:1}
-  .strip span{display:block;font-size:14px;color:#C9CCD2;margin-top:8px}
-
-  /* services overview */
-  .ov{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .ov article{background:#fff;border:1px solid var(--hair);border-radius:var(--r-lg);padding:26px 26px 22px;display:flex;flex-direction:column;gap:12px;position:relative;transition:transform .15s,box-shadow .15s}
-  .ov article:hover{transform:translateY(-3px);box-shadow:0 24px 44px -30px rgba(27,27,31,.4)}
-  .ov .ic{width:46px;height:46px;border-radius:11px;background:var(--band);display:grid;place-items:center}
-  .ov .ic svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-  .ov .num{position:absolute;top:22px;right:24px;font:600 13px var(--display);color:var(--muted)}
-  .ov h3{margin-top:4px}
-  .ov p{color:var(--ink-2);font-size:15.5px;flex:1}
-  .ov ul{display:flex;flex-wrap:wrap;gap:6px}
-  .ov li{font-size:12.5px;color:var(--graphite);background:var(--blush);border:1px solid var(--hair);border-radius:999px;padding:3px 10px}
-  .ov .more{font-weight:700;font-size:14.5px;margin-top:6px}
-
-  /* service detail sections */
-  .line{padding:88px 0;border-top:1px solid var(--hair)}
-  .line.alt{background:var(--blush)}
-  .line .wrap{display:grid;grid-template-columns:.9fr 1.4fr;gap:56px;align-items:start}
-  .line .intro{position:sticky;top:calc(96px + var(--pad-top))}
-  .line .intro h2{font-size:clamp(26px,3vw,36px);margin-bottom:14px}
-  .line .intro p{color:var(--ink-2);font-size:16.5px}
-  .line .intro p + p{margin-top:12px}
-  .meta{margin-top:24px;border-top:1px solid var(--hair);display:grid;gap:0}
-  .meta div{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:11px 0;border-bottom:1px solid var(--hair);font-size:14.5px}
-  .meta dt{font-weight:700;color:var(--graphite)}
-  .meta dd{margin:0;color:var(--ink-2)}
-  .line .intro .btn{margin-top:24px}
-  .caps{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .cap{background:#fff;border:1px solid var(--hair);border-radius:var(--r-lg);padding:22px 22px 20px;border-top:3px solid var(--orange)}
-  .cap h3{font-size:17.5px;margin-bottom:8px}
-  .cap p{color:var(--ink-2);font-size:15px}
-  .cap ul{margin-top:12px;display:grid;gap:5px;font-size:14px;color:var(--ink-2)}
-  .cap li{padding-left:18px;position:relative}
-  .cap li::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:2px;background:var(--orange)}
-  .cap.wide{grid-column:1 / -1}
-
-  /* industries */
-  .ind{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-  .ind article{background:#fff;border:1px solid var(--hair);border-radius:var(--r-lg);padding:22px}
-  .ind .ic{width:40px;height:40px;border-radius:10px;background:var(--blush-2);display:grid;place-items:center;margin-bottom:14px}
-  .ind .ic svg{width:22px;height:22px;fill:none;stroke:var(--ember);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-  .ind h3{font-size:18px;margin-bottom:8px}
-  .ind p{font-size:14.5px;color:var(--ink-2)}
-  .ind ul{margin-top:12px;display:grid;gap:4px;font-size:14px;color:var(--ink-2)}
-  .ind li{padding-left:16px;position:relative}
-  .ind li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:2px;background:var(--orange)}
-  .ind .more,.sol .more{display:inline-block;margin-top:14px;font-weight:700;font-size:14px}
-  .sol .more{color:#FBD3BC;margin-top:4px}
-  .sol article.product .more{color:#fff}
-
-  /* solutions */
-  .sol{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  .sol article{background:var(--ink);color:#fff;border-radius:var(--r-lg);padding:24px 22px;display:flex;flex-direction:column;gap:10px;min-height:280px}
-  .sol article .tag{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#FBD3BC;align-self:flex-start}
-  .sol article.product{background:var(--band);border:none}
-  .sol article.product .tag{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.35);color:#fff}
-  .sol article.product p{color:#FFE7D8}
-  .sol article.product ul{color:#fff}
-  .sol article.product li::before{background:#fff}
-  .sol article.product .fmt{color:#fff}
-  .sol .launch{display:inline-flex;align-items:center;gap:6px;margin-top:10px;background:#fff;color:var(--ember);font-weight:700;font-size:14px;padding:9px 14px;border-radius:var(--r);align-self:flex-start}
-  .sol .launch:hover{color:var(--flame)}
-  .sol h3{font-size:18.5px;color:#fff}
-  .sol p{font-size:14.5px;color:#C9CCD2;flex:1}
-  .sol ul{display:grid;gap:4px;font-size:13.5px;color:#E6E8EC}
-  .sol li{padding-left:16px;position:relative}
-  .sol li::before{content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:2px;background:var(--orange)}
-  .sol .fmt{font-size:12.5px;font-weight:700;color:#FBD3BC;margin-top:4px}
-
-  /* platforms */
-  .plat{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
-  .stack{display:grid;gap:12px}
-  .stack > div{display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:start;background:#fff;border:1px solid var(--hair);border-radius:var(--r-lg);padding:18px 20px}
-  .stack .ic{width:52px;height:52px;border-radius:12px;background:var(--blush-2);display:grid;place-items:center;font:700 14px var(--display);color:var(--ember)}
-  .stack b{display:block;font-family:var(--display);font-weight:600;font-size:17px;margin-bottom:4px}
-  .stack span{font-size:15px;color:var(--ink-2)}
-  .focus{background:var(--ink);color:#fff;border-radius:var(--r-lg);padding:30px}
-  .focus h3{color:#fff;font-size:22px;margin-bottom:12px}
-  .focus p{color:#C9CCD2;font-size:15.5px}
-  .focus p + p{margin-top:12px}
-  .focus ul{margin-top:18px;display:grid;gap:10px;font-size:15px}
-  .focus li{display:grid;grid-template-columns:22px 1fr;gap:10px}
-  .focus li::before{content:"✓";color:var(--orange);font-weight:700}
-
-  /* engagement models */
-  .eng{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-  .eng article{background:#fff;border:1px solid var(--hair);border-radius:var(--r-lg);padding:26px 24px;display:flex;flex-direction:column}
-  .eng article.hi{border-color:var(--orange);box-shadow:0 20px 40px -28px rgba(230,74,25,.6)}
-  .eng .kicker{margin-bottom:8px}
-  .eng h3{font-size:20px;margin-bottom:6px}
-  .eng .dur{font-size:14px;color:var(--muted);font-weight:600;margin-bottom:14px}
-  .eng p{font-size:15px;color:var(--ink-2)}
-  .eng ul{margin:14px 0 20px;display:grid;gap:6px;font-size:14.5px;color:var(--ink-2);flex:1}
-  .eng li{padding-left:18px;position:relative}
-  .eng li::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:2px;background:var(--orange)}
-  .cmp-wrap{margin-top:40px;overflow-x:auto;border:1px solid var(--hair);border-radius:var(--r-lg);background:#fff}
-  .cmp{width:100%;border-collapse:collapse;font-size:14.5px;min-width:720px}
-  .cmp th,.cmp td{padding:13px 16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--hair)}
-  .cmp thead th{font-family:var(--display);font-weight:600;font-size:15px;background:var(--blush);color:var(--ink)}
-  .cmp tbody th{font-weight:700;color:var(--graphite);white-space:nowrap;width:120px}
-  .cmp tbody tr:last-child th,.cmp tbody tr:last-child td{border-bottom:none}
-  .cmp td{color:var(--ink-2)}
-  .incl{margin-top:28px;background:var(--ink);color:#fff;border-radius:var(--r-lg);padding:26px 28px}
-  .incl h3{color:#fff;font-size:18px;margin-bottom:14px}
-  .incl ul{display:grid;grid-template-columns:1fr 1fr;gap:10px 28px;font-size:15px}
-  .incl li{display:grid;grid-template-columns:22px 1fr;gap:10px;color:#E6E8EC}
-  .incl li::before{content:"✓";color:var(--orange);font-weight:700}
-
-  /* approach */
-  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
-  .steps::before{content:"";position:absolute;left:0;right:0;top:19px;height:2px;background:linear-gradient(90deg,var(--peach),var(--orange) 50%,var(--peach))}
-  .step{position:relative;padding:0 26px 0 0}
-  .step .dot{position:relative;width:40px;height:40px;border-radius:50%;background:var(--band);color:#fff;display:grid;place-items:center;font:600 15px var(--display);box-shadow:0 0 0 6px #fff;margin-bottom:22px}
-  .blush .step .dot{box-shadow:0 0 0 6px var(--blush)}
-  .step h3{margin-bottom:8px}
-  .step p{color:var(--ink-2);font-size:15.5px}
-
-  /* about */
-  .about{position:relative;background:var(--bg);overflow:hidden;border-top:1px solid var(--hair)}
-  .about .mark{position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:min(44vw,520px);opacity:.06;pointer-events:none}
-  .about .wrap{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-  .about p + p{margin-top:16px}
-  .about p{color:var(--ink-2)}
-  .quote{font-family:var(--display);font-size:clamp(22px,2.4vw,28px);font-weight:500;line-height:1.35;color:var(--ink);border-left:4px solid var(--orange);padding-left:24px;margin:0}
-  .quote small{display:block;font-family:var(--body);font-size:14px;font-weight:600;color:var(--graphite);margin-top:16px}
-  .facts{display:grid;grid-template-columns:1fr 1fr;gap:20px 28px;margin-top:40px;border-top:1px solid var(--hair);padding-top:28px}
-  .facts div b{display:block;font-family:var(--display);font-size:18px;font-weight:600;margin-bottom:4px}
-  .facts div span{font-size:15px;color:var(--ink-2)}
-
-  /* faq */
-  .faq{max-width:820px}
-  .faq details{border-top:1px solid var(--hair);padding:4px 0}
-  .faq details:last-child{border-bottom:1px solid var(--hair)}
-  .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:18px 0;font-family:var(--display);font-weight:600;font-size:18px}
-  .faq summary::-webkit-details-marker{display:none}
-  .faq summary::after{content:"+";font-size:24px;color:var(--ember);flex:none;line-height:1}
-  .faq details[open] summary::after{content:"–"}
-  .faq details p{color:var(--ink-2);padding:0 0 20px;max-width:70ch}
-
-  /* cta band */
-  .ctaband{background:var(--band);color:#fff}
-  .ctaband .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding:48px 24px}
-  .ctaband h2{color:#fff;font-size:clamp(24px,3vw,34px);max-width:22ch}
-  .ctaband p{color:#FFE7D8;margin-top:8px}
-  .ctaband .btn-line{border-color:#fff;color:var(--ember);background:#fff}
-
-  /* contact */
-  .contact{background:var(--blush);border-top:1px solid var(--hair)}
-  .contact .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:start}
-  .details{list-style:none;margin:28px 0 0;padding:0}
-  .details li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center;padding:14px 0;border-top:1px solid var(--hair)}
-  .details .ic{width:40px;height:40px;border-radius:50%;background:var(--graphite);display:grid;place-items:center}
-  .details .ic svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-  .details span.val{font-weight:600;color:var(--ink)}
-  .details span.val a{color:var(--ember)}
-  .expect{margin-top:28px;background:#fff;border:1px solid var(--hair);border-radius:var(--r-lg);padding:20px 22px}
-  .expect h3{font-size:16px;margin-bottom:10px}
-  .expect ol{margin:0;padding-left:20px;font-size:14.5px;color:var(--ink-2);display:grid;gap:6px}
-  form{background:#fff;border:1px solid var(--hair);border-radius:var(--r-lg);padding:30px;box-shadow:0 14px 40px -28px rgba(27,27,31,.35)}
-  .f{margin-bottom:16px}
-  .f2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .f label{display:block;font-size:14px;font-weight:700;color:var(--ink-2);margin-bottom:6px}
-  .f input,.f textarea,.f select{width:100%;font:inherit;font-size:16px;color:var(--ink);background:#fff;border:1.5px solid var(--hair);border-radius:var(--r);padding:12px 13px}
-  .f select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%235B5F66' stroke-width='2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
-  .f input:focus,.f textarea:focus,.f select:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(242,106,27,.18)}
-  .f textarea{min-height:130px;resize:vertical}
-  .note{font-size:13.5px;color:var(--muted);margin-top:12px}
-
-  /* footer */
-  footer{position:relative;background:#fff;padding:0 0 calc(28px + var(--pad-bot))}
-  .band{display:block;width:100%;height:48px;margin-top:20px}
-  .fcols{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:36px;padding:36px 0 30px;border-bottom:1px solid var(--hair)}
-  .fcols h4{font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);margin-bottom:14px}
-  .fcols ul{display:grid;gap:8px;font-size:14.5px}
-  .fcols a{color:var(--ink-2);font-weight:500}
-  .fcols a:hover{color:var(--ember)}
-  .fcols p{font-size:14.5px;color:var(--ink-2);max-width:34ch;margin-top:14px}
-  .fbot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;padding-top:22px;font-size:14px;color:var(--graphite)}
-  footer .logo img{height:28px}
-
-  @media (max-width:1024px){
-    .ov{grid-template-columns:1fr 1fr}
-    .ind{grid-template-columns:1fr 1fr}
-    .sol{grid-template-columns:repeat(2,1fr)}
-    .eng{grid-template-columns:1fr 1fr}
-    .strip .wrap{grid-template-columns:1fr 1fr}
-    .line .wrap{grid-template-columns:1fr;gap:32px}
-    .line .intro{position:static}
-    .fcols{grid-template-columns:1fr 1fr}
-  }
-  @media (max-width:900px){
-    .nav{display:none}
-    .nav.open{display:flex;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;padding:18px 24px 22px;gap:16px;border-bottom:1px solid var(--hair);max-height:calc(100vh - 72px);overflow:auto}
-    .nav.open .dd-menu{display:block;position:static;box-shadow:none;border:none;padding:6px 0 0 0;min-width:0}
-    .nav.open .dd > a::after{display:none}
-    .menu{display:inline-block}
-    .hero .wrap{grid-template-columns:1fr;padding-top:52px;padding-bottom:64px;gap:40px}
-    .hero h1{max-width:none}
-    .sec,.line{padding:68px 0}
-    .plat{grid-template-columns:1fr;gap:32px}
-    .steps{grid-template-columns:1fr;gap:28px}
-    .steps::before{left:19px;right:auto;top:0;bottom:0;width:2px;height:auto;background:linear-gradient(180deg,var(--peach),var(--orange) 50%,var(--peach))}
-    .step{padding:0 0 0 60px}
-    .step .dot{position:absolute;left:0;top:0;margin:0}
-    .about .wrap,.contact .wrap{grid-template-columns:1fr;gap:40px}
-    .about .mark{display:none}
-  }
-  @media (max-width:600px){
-    .wrap{padding:0 16px}
-    .ov,.ind,.sol,.eng,.caps,.strip .wrap,.fcols,.f2,.incl ul{grid-template-columns:1fr}
-    .facts{grid-template-columns:1fr}
-    form{padding:22px}
-    .meta div{grid-template-columns:1fr;gap:2px}
-    .navigator a{grid-template-columns:38px 1fr}
-    .navigator a em{display:none}
-  }
-</style>
 </head>
-<body>
+<body class="">
 
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="#top" aria-label="MindYards home"><img src="assets/logo.png" alt="MindYards" width="940" height="402"></a>
+    <a class="logo" href="/" aria-label="MindYards home"><img src="/assets/logo.png" alt="MindYards" width="940" height="402"></a>
     <button class="menu" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav class="nav" id="nav" aria-label="Main">
       <div class="dd">
-        <a href="#services" aria-haspopup="true">Services</a>
+        <a href="/services/" aria-haspopup="true">Services</a>
         <div class="dd-menu">
-          <a href="#implementation"><i>01</i><div>Implementation &amp; build<span>LLM apps, MLOps, integration, infra</span></div></a>
-          <a href="#agentic"><i>02</i><div>Agentic AI<span>Multi-agent systems, orchestration, AgentOps</span></div></a>
-          <a href="#managed-ops"><i>03</i><div>Managed AI operations<span>Monitoring, LLMOps, agents as a service</span></div></a>
-          <a href="#strategy"><i>04</i><div>Strategy &amp; advisory<span>Roadmap, prioritisation, fractional CAIO</span></div></a>
-          <a href="#governance"><i>05</i><div>Governance, risk &amp; compliance<span>EU AI Act, ISO 42001, audit, red-teaming</span></div></a>
-          <a href="#data"><i>06</i><div>Data &amp; enablement<span>Data readiness, upskilling, change, analytics</span></div></a>
+          <a href="/services/implementation/"><i>01</i><div>Implementation &amp; build<span>LLM apps, MLOps, integration, infra</span></div></a>
+          <a href="/services/agentic/"><i>02</i><div>Agentic AI<span>Multi-agent systems, orchestration, AgentOps</span></div></a>
+          <a href="/services/managed-ops/"><i>03</i><div>Managed AI operations<span>Monitoring, LLMOps, agents as a service</span></div></a>
+          <a href="/services/strategy/"><i>04</i><div>Strategy &amp; advisory<span>Roadmap, prioritisation, fractional CAIO</span></div></a>
+          <a href="/services/governance/"><i>05</i><div>Governance, risk &amp; compliance<span>EU AI Act, ISO 42001, audit, red-teaming</span></div></a>
+          <a href="/services/data/"><i>06</i><div>Data &amp; enablement<span>Data readiness, upskilling, change, analytics</span></div></a>
         </div>
       </div>
       <div class="dd">
-        <a href="#industries" aria-haspopup="true">Industries</a>
+        <a href="/industries/" aria-haspopup="true">Industries</a>
         <div class="dd-menu">
-          <a href="#bfsi"><i>I1</i><div>Banking, financial services &amp; insurance<span>Fraud, credit, claims, model risk</span></div></a>
-          <a href="#healthcare"><i>I2</i><div>Healthcare &amp; life sciences<span>Radiology triage, clinical notes</span></div></a>
-          <a href="#legal"><i>I3</i><div>Legal<span>Contract review, matter intake</span></div></a>
-          <a href="#manufacturing"><i>I4</i><div>Manufacturing<span>Predictive maintenance, visual QC</span></div></a>
-          <a href="#logistics"><i>I5</i><div>Logistics &amp; supply chain<span>Dispatch, routing, exceptions</span></div></a>
-          <a href="#public-sector"><i>I6</i><div>Public sector<span>Document-heavy workflows, sovereignty</span></div></a>
-          <a href="#retail-cx"><i>I7</i><div>Retail &amp; customer experience<span>Support agents, personalisation</span></div></a>
-          <a href="#aec"><i>I8</i><div>AEC &amp; engineering<span>Drawings, BIM, site data</span></div></a>
+          <a href="/industries/bfsi/"><i>I1</i><div>Banking, financial services &amp; insurance<span>Fraud, credit, claims, model risk</span></div></a>
+          <a href="/industries/healthcare/"><i>I2</i><div>Healthcare &amp; life sciences<span>Radiology triage, clinical notes</span></div></a>
+          <a href="/industries/legal/"><i>I3</i><div>Legal<span>Contract review, matter intake</span></div></a>
+          <a href="/industries/manufacturing/"><i>I4</i><div>Manufacturing<span>Predictive maintenance, visual QC</span></div></a>
+          <a href="/industries/logistics/"><i>I5</i><div>Logistics &amp; supply chain<span>Dispatch, routing, exceptions</span></div></a>
+          <a href="/industries/public-sector/"><i>I6</i><div>Public sector<span>Document-heavy workflows, sovereignty</span></div></a>
+          <a href="/industries/retail-cx/"><i>I7</i><div>Retail &amp; customer experience<span>Support agents, personalisation</span></div></a>
+          <a href="/industries/aec/"><i>I8</i><div>AEC &amp; engineering<span>Drawings, BIM, site data</span></div></a>
         </div>
       </div>
       <div class="dd">
-        <a href="#solutions" aria-haspopup="true">Solutions</a>
+        <a href="/solutions/" aria-haspopup="true">Solutions</a>
         <div class="dd-menu">
-          <a href="#compliance-service"><i>S1</i><div>Compliance as a service<span>Ongoing AI compliance on retainer</span></div></a>
-          <a href="#voice-agents"><i>S2</i><div>Voice &amp; sales agents<span>Outbound, inbound, collections</span></div></a>
-          <a href="#ma-diligence"><i>S3</i><div>AI M&amp;A due diligence<span>Technical diligence on AI assets</span></div></a>
-          <a href="#evals"><i>S4</i><div>Evals &amp; red-teaming<span>Independent testing before launch</span></div></a>
-          <a href="#cost-optimisation"><i>S5</i><div>AI cost optimisation<span>Token and GPU spend</span></div></a>
-          <a href="#document-intelligence"><i>S6</i><div>Document intelligence accelerator<span>Extraction with validation and review</span></div></a>
-          <a href="#knowledge-assistant"><i>S7</i><div>Enterprise knowledge assistant<span>Cited answers from your own content</span></div></a>
-          <a href="#msoftai"><i>P1</i><div>MsoftAI Manifold Designer<span>Product · hydraulic manifold CAD</span></div></a>
-          <a href="#advisor"><i>P2</i><div>Insurance Advisor CRM<span>Product · CRM for insurance advisers</span></div></a>
+          <a href="/solutions/compliance-service/"><i>S1</i><div>Compliance as a service<span>Ongoing AI compliance on retainer</span></div></a>
+          <a href="/solutions/voice-agents/"><i>S2</i><div>Voice &amp; sales agents<span>Outbound, inbound, collections</span></div></a>
+          <a href="/solutions/ma-diligence/"><i>S3</i><div>AI M&amp;A due diligence<span>Technical diligence on AI assets</span></div></a>
+          <a href="/solutions/evals/"><i>S4</i><div>Evals &amp; red-teaming<span>Independent testing before launch</span></div></a>
+          <a href="/solutions/cost-optimisation/"><i>S5</i><div>AI cost optimisation<span>Token and GPU spend</span></div></a>
+          <a href="/solutions/document-intelligence/"><i>S6</i><div>Document intelligence accelerator<span>Extraction with validation and review</span></div></a>
+          <a href="/solutions/knowledge-assistant/"><i>S7</i><div>Enterprise knowledge assistant<span>Cited answers from your own content</span></div></a>
+          <a href="/solutions/msoftai/"><i>P1</i><div>MsoftAI Manifold Designer<span>Product · hydraulic manifold CAD</span></div></a>
+          <a href="/solutions/advisor/"><i>P2</i><div>Insurance Advisor CRM<span>Product · CRM for insurance advisers</span></div></a>
         </div>
       </div>
       <div class="dd">
-        <a href="#engagement" aria-haspopup="true">Engagement</a>
+        <a href="/engagement/" aria-haspopup="true">Engagement</a>
         <div class="dd-menu">
-          <a href="#assessment"><i>E1</i><div>Assessment<span>2 to 4 weeks · fixed fee</span></div></a>
-          <a href="#build"><i>E2</i><div>Fixed-scope build<span>6 to 16 weeks per phase · fixed fee</span></div></a>
-          <a href="#managed-operations"><i>E3</i><div>Managed operations<span>Monthly retainer · SLAs</span></div></a>
-          <a href="#fractional-caio"><i>E4</i><div>Fractional Chief AI Officer<span>2 to 6 days a month</span></div></a>
+          <a href="/engagement/assessment/"><i>E1</i><div>Assessment<span>2 to 4 weeks · fixed fee</span></div></a>
+          <a href="/engagement/build/"><i>E2</i><div>Fixed-scope build<span>6 to 16 weeks per phase · fixed fee</span></div></a>
+          <a href="/engagement/managed-operations/"><i>E3</i><div>Managed operations<span>Monthly retainer · SLAs</span></div></a>
+          <a href="/engagement/fractional-caio/"><i>E4</i><div>Fractional Chief AI Officer<span>2 to 6 days a month</span></div></a>
         </div>
       </div>
-      <a href="#about">About</a>
-      <a class="cta" href="#contact">Book a call</a>
+      <a href="/about/">About</a>
+      <a class="cta" href="/contact/">Book a call</a>
     </nav>
   </div>
 </header>
 
-<main id="top">
 
-  <!-- ============ HERO ============ -->
+<main id="top">
   <section class="hero">
     <svg class="plexus" viewBox="0 0 1440 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
       <g stroke="#F26A1B" stroke-width="1" fill="none" opacity=".13">
@@ -436,8 +123,8 @@
         <h1>AI consulting for the <em>whole lifecycle</em>. Strategy, build, govern, run.</h1>
         <p class="lede">MindYards helps mid-market and enterprise teams turn AI into dependable products, agents and day-to-day operations. Six service lines, one accountable team, fixed scopes with written outcomes.</p>
         <div class="actions">
-          <a class="btn btn-fire" href="#contact">Book a discovery call</a>
-          <a class="btn btn-line" href="#services">Explore our services</a>
+          <a class="btn btn-fire" href="/contact/">Book a discovery call</a>
+          <a class="btn btn-line" href="/services/">Explore our services</a>
         </div>
         <ul class="hero-proof" aria-label="Why MindYards">
           <li>Senior practitioners on every engagement</li>
@@ -447,16 +134,15 @@
       </div>
       <aside class="navigator" aria-label="Service lines">
         <div class="hd">What we do</div>
-        <a href="#implementation"><i>01</i><div><b>Implementation &amp; build</b><span>GenAI apps, ML &amp; MLOps, integration, infra</span></div><em>Core</em></a>
-        <a href="#agentic"><i>02</i><div><b>Agentic AI</b><span>Multi-agent systems, orchestration, AgentOps</span></div><em>Fastest growing</em></a>
-        <a href="#managed-ops"><i>03</i><div><b>Managed AI operations</b><span>Monitoring, LLMOps, agents as a service</span></div><em>Retainer</em></a>
-        <a href="#strategy"><i>04</i><div><b>Strategy &amp; advisory</b><span>Roadmap, prioritisation, fractional CAIO</span></div><em>Advisory</em></a>
-        <a href="#governance"><i>05</i><div><b>Governance, risk &amp; compliance</b><span>EU AI Act, ISO 42001, audit, red-teaming</span></div><em>Regulated</em></a>
-        <a href="#data"><i>06</i><div><b>Data &amp; enablement</b><span>Data readiness, upskilling, change, analytics</span></div><em>Foundation</em></a>
+        <a href="/services/implementation/"><i>01</i><div><b>Implementation &amp; build</b><span>GenAI apps, ML &amp; MLOps, integration, infra</span></div><em>Core</em></a>
+        <a href="/services/agentic/"><i>02</i><div><b>Agentic AI</b><span>Multi-agent systems, orchestration, AgentOps</span></div><em>Fastest growing</em></a>
+        <a href="/services/managed-ops/"><i>03</i><div><b>Managed AI operations</b><span>Monitoring, LLMOps, agents as a service</span></div><em>Retainer</em></a>
+        <a href="/services/strategy/"><i>04</i><div><b>Strategy &amp; advisory</b><span>Roadmap, prioritisation, fractional CAIO</span></div><em>Advisory</em></a>
+        <a href="/services/governance/"><i>05</i><div><b>Governance, risk &amp; compliance</b><span>EU AI Act, ISO 42001, audit, red-teaming</span></div><em>Regulated</em></a>
+        <a href="/services/data/"><i>06</i><div><b>Data &amp; enablement</b><span>Data readiness, upskilling, change, analytics</span></div><em>Foundation</em></a>
       </aside>
     </div>
   </section>
-
   <div class="strip" aria-label="At a glance">
     <div class="wrap">
       <div><b>6</b><span>service lines covering strategy to operations</span></div>
@@ -465,8 +151,6 @@
       <div><b>2–4 wks</b><span>from first call to a prioritised roadmap</span></div>
     </div>
   </div>
-
-  <!-- ============ SERVICES OVERVIEW ============ -->
   <section id="services" class="sec blush">
     <div class="wrap">
       <div class="sec-head">
@@ -481,7 +165,7 @@
           <h3>Implementation &amp; build</h3>
           <p>GenAI and LLM applications, custom ML models, enterprise integration and the cloud infrastructure underneath. The largest part of what we do.</p>
           <ul><li>GenAI / LLM apps</li><li>ML &amp; MLOps</li><li>Enterprise integration</li><li>Custom AI products</li><li>AI infra &amp; cloud</li></ul>
-          <a class="more arrow" href="#implementation">See capabilities </a>
+          <a class="more arrow" href="/services/implementation/">See capabilities </a>
         </article>
         <article>
           <span class="num">02</span>
@@ -489,7 +173,7 @@
           <h3>Agentic AI</h3>
           <p>Agents that plan, call tools and complete work inside your real processes, with the observability and guardrails to run them safely.</p>
           <ul><li>Multi-agent systems</li><li>Workflow orchestration</li><li>AgentOps &amp; monitoring</li><li>Lifecycle management</li></ul>
-          <a class="more arrow" href="#agentic">See capabilities </a>
+          <a class="more arrow" href="/services/agentic/">See capabilities </a>
         </article>
         <article>
           <span class="num">03</span>
@@ -497,7 +181,7 @@
           <h3>Managed AI operations</h3>
           <p>We keep models, agents and LLM workloads accurate, affordable and compliant after launch, on a monthly retainer with SLAs.</p>
           <ul><li>Monitoring &amp; retraining</li><li>LLMOps / AI FinOps</li><li>Agents as a service</li><li>AI-first IT managed services</li></ul>
-          <a class="more arrow" href="#managed-ops">See capabilities </a>
+          <a class="more arrow" href="/services/managed-ops/">See capabilities </a>
         </article>
         <article>
           <span class="num">04</span>
@@ -505,7 +189,7 @@
           <h3>Strategy &amp; advisory</h3>
           <p>Roadmaps, prioritised use cases and leadership advisory that end in decisions and budgets, not slide decks.</p>
           <ul><li>Roadmap &amp; readiness</li><li>Use-case prioritisation</li><li>Board / CxO advisory</li><li>Fractional Chief AI Officer</li><li>AI operating model</li></ul>
-          <a class="more arrow" href="#strategy">See capabilities </a>
+          <a class="more arrow" href="/services/strategy/">See capabilities </a>
         </article>
         <article>
           <span class="num">05</span>
@@ -513,7 +197,7 @@
           <h3>Governance, risk &amp; compliance</h3>
           <p>Deadline-driven, audit-ready work for regulated sectors: EU AI Act, NIST AI RMF, ISO 42001, model risk and red-teaming.</p>
           <ul><li>EU AI Act readiness</li><li>NIST AI RMF / ISO 42001</li><li>AI audit &amp; assurance</li><li>Red-teaming, bias &amp; safety</li><li>Model risk management</li></ul>
-          <a class="more arrow" href="#governance">See capabilities </a>
+          <a class="more arrow" href="/services/governance/">See capabilities </a>
         </article>
         <article>
           <span class="num">06</span>
@@ -521,1066 +205,11 @@
           <h3>Data &amp; enablement</h3>
           <p>The foundations AI depends on: usable data, trained people, redesigned workflows and analytics that leaders actually read.</p>
           <ul><li>Data readiness</li><li>AI literacy &amp; upskilling</li><li>Change management</li><li>Analytics &amp; insights</li></ul>
-          <a class="more arrow" href="#data">See capabilities </a>
+          <a class="more arrow" href="/services/data/">See capabilities </a>
         </article>
       </div>
     </div>
   </section>
-
-  <!-- ============ 01 IMPLEMENTATION ============ -->
-  <section id="implementation" class="line">
-    <div class="wrap">
-      <div class="intro">
-        <span class="kicker">01 · Implementation &amp; build</span>
-        <h2>Production-grade AI, built on your data and wired into your systems</h2>
-        <p>This is where most of our engineering time goes. We build the application, the model work and the integration as one delivery, with evaluation sets, guardrails and monitoring from the first sprint rather than bolted on later.</p>
-        <dl class="meta">
-          <div><dt>Typical scope</dt><dd>6 to 16 weeks per phase, fixed fee</dd></div>
-          <div><dt>Best for</dt><dd>Teams with a validated use case that needs to ship</dd></div>
-          <div><dt>Stack</dt><dd>Python, Node.js, React, Angular; Azure, AWS, GCP; OpenAI, Anthropic, Google and open-weight models</dd></div>
-        </dl>
-        <a class="btn btn-fire btn-sm" href="#contact">Scope a build</a>
-      </div>
-      <div class="caps">
-        <article class="cap">
-          <h3>GenAI / LLM applications</h3>
-          <p>Retrieval-augmented assistants, copilots and document-AI pipelines on your own content, with evaluation suites so you can trust what ships.</p>
-          <ul><li>RAG over policies, contracts, tickets and knowledge bases</li><li>Copilots inside your existing tools</li><li>Document extraction, classification and summarisation at scale</li></ul>
-        </article>
-        <article class="cap">
-          <h3>ML model development &amp; MLOps</h3>
-          <p>Custom models for forecasting, scoring, classification and recommendation, with the pipelines and retraining loops to keep them accurate.</p>
-          <ul><li>Feature pipelines, experiment tracking, model registry</li><li>CI/CD for models with automated validation gates</li><li>Fine-tuning and distillation where it beats prompting</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Enterprise integration</h3>
-          <p>AI wired into SAP, Salesforce, Microsoft 365, Dynamics and your ERP, so outputs land where people already work instead of in another tab.</p>
-          <ul><li>API, event and workflow integration patterns</li><li>Identity, permissions and audit carried through to the model</li><li>Legacy system connectors and data contracts</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Custom AI products</h3>
-          <p>Productised AI built for one client: the API, front end, admin, billing and operational tooling around the model, ready for your customers.</p>
-          <ul><li>Full-stack delivery from design to launch</li><li>Multi-tenant architecture and usage metering</li><li>Hand-over with documentation and a trained team</li></ul>
-        </article>
-        <article class="cap wide">
-          <h3>AI infrastructure &amp; cloud</h3>
-          <p>GPU capacity, model serving, vector stores, gateways and hyperscaler landing zones sized for your workload and your budget, on Azure, AWS, GCP or on-premises.</p>
-          <ul><li>Serving and routing across hosted and self-hosted models</li><li>Private networking, key management and data residency controls</li><li>Cost modelling before you commit to capacity</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 02 AGENTIC ============ -->
-  <section id="agentic" class="line alt">
-    <div class="wrap">
-      <div class="intro">
-        <span class="kicker">02 · Agentic AI</span>
-        <h2>Agents that do the work, inside processes you can still control</h2>
-        <p>Agentic AI is at the top of every roadmap and execution is the bottleneck. We design agents around a real business process, give them the tools and data they need, put a human at the right checkpoints, and instrument everything so you know what they did and why.</p>
-        <dl class="meta">
-          <div><dt>Typical scope</dt><dd>Pilot in 6 to 8 weeks, then scale in phases</dd></div>
-          <div><dt>Best for</dt><dd>High-volume, rules-heavy work with clear hand-off points</dd></div>
-          <div><dt>Frameworks</dt><dd>Open frameworks you can own, Azure AI Foundry, Agentforce, or your own platform</dd></div>
-        </dl>
-        <a class="btn btn-fire btn-sm" href="#contact">Discuss an agent pilot</a>
-      </div>
-      <div class="caps">
-        <article class="cap">
-          <h3>Multi-agent systems</h3>
-          <p>Agents that plan, call tools, and hand off to each other or to a person, with explicit contracts for what each agent may do.</p>
-          <ul><li>Planner, worker and reviewer patterns</li><li>Tool and data access scoped per agent</li><li>Human approval steps where risk demands them</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Workflow orchestration</h3>
-          <p>Agents embedded in real business processes such as case handling, approvals, onboarding and order-to-cash, not standalone chat windows.</p>
-          <ul><li>Process mapping and redesign before automation</li><li>Integration with workflow, ticketing and ERP systems</li><li>Exception handling and escalation design</li></ul>
-        </article>
-        <article class="cap">
-          <h3>AgentOps &amp; monitoring</h3>
-          <p>Observability, guardrails, tracing and cost controls so every agent action is logged, every failure is visible and spend stays predictable.</p>
-          <ul><li>Trace-level logging and replay</li><li>Policy guardrails on inputs, tools and outputs</li><li>Cost, latency and quality dashboards</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Agent lifecycle management</h3>
-          <p>Versioning, access, ownership and retirement for a growing fleet of agents, so they stay governed rather than sprawling across the business.</p>
-          <ul><li>Agent registry and ownership model</li><li>Change control, testing and release gates</li><li>Decommissioning and knowledge retention</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 03 MANAGED OPS ============ -->
-  <section id="managed-ops" class="line">
-    <div class="wrap">
-      <div class="intro">
-        <span class="kicker">03 · Managed AI operations</span>
-        <h2>We run it after launch, so your team doesn't have to</h2>
-        <p>Models drift, prompts regress, token bills grow and agents need tending. Our managed operations service keeps your AI accurate, affordable and compliant on a monthly retainer, with named SLAs and a report you can take to your leadership.</p>
-        <dl class="meta">
-          <div><dt>Format</dt><dd>Monthly retainer, quarterly review, cancel with notice</dd></div>
-          <div><dt>Best for</dt><dd>Anything in production that has to stay reliable without a full-time internal team</dd></div>
-          <div><dt>Includes</dt><dd>Monitoring, on-call, improvements, monthly reporting</dd></div>
-        </dl>
-        <a class="btn btn-fire btn-sm" href="#contact">Ask about a retainer</a>
-      </div>
-      <div class="caps">
-        <article class="cap">
-          <h3>Model monitoring &amp; retraining</h3>
-          <p>Drift, accuracy and data-quality monitoring against agreed SLAs, with scheduled retraining, validation and sign-off.</p>
-          <ul><li>Performance and drift alerts with thresholds you set</li><li>Retraining pipelines with champion/challenger tests</li><li>Monthly model health report</li></ul>
-        </article>
-        <article class="cap">
-          <h3>LLMOps / AI FinOps</h3>
-          <p>Token spend, prompt versioning, evaluation regression and model routing managed as one discipline, reported monthly.</p>
-          <ul><li>Prompt and eval regression suites on every change</li><li>Caching, routing and model-tier optimisation</li><li>Spend forecasting and chargeback by team</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Agents as a service</h3>
-          <p>Done-for-you agents on a monthly retainer. We build, run, tune and improve them. You consume the outcome, measured in tickets resolved, documents processed or calls handled.</p>
-          <ul><li>Outcome-based scope and pricing</li><li>Continuous tuning from production feedback</li><li>Human-in-the-loop coverage where needed</li></ul>
-        </article>
-        <article class="cap">
-          <h3>AI-first IT managed services</h3>
-          <p>Service desk, document handling and back-office operations run by AI with people in the loop, under a single contract with service levels.</p>
-          <ul><li>L1 support and request handling by agents</li><li>Document and email operations</li><li>Escalation to your team or ours</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 04 STRATEGY ============ -->
-  <section id="strategy" class="line alt">
-    <div class="wrap">
-      <div class="intro">
-        <span class="kicker">04 · Strategy &amp; advisory</span>
-        <h2>Decisions and budgets, not decks</h2>
-        <p>Generic AI strategy is being commoditised, and rightly so. Ours is different because the people advising you are the people who build. Every recommendation comes with an estimate, a risk view and a delivery plan we would be willing to execute ourselves.</p>
-        <dl class="meta">
-          <div><dt>Typical scope</dt><dd>2 to 4 weeks for an assessment; ongoing for fractional roles</dd></div>
-          <div><dt>Best for</dt><dd>Leadership teams deciding where to invest and in what order</dd></div>
-          <div><dt>Output</dt><dd>Written roadmap, business cases, operating model, board material</dd></div>
-        </dl>
-        <a class="btn btn-fire btn-sm" href="#contact">Start with an assessment</a>
-      </div>
-      <div class="caps">
-        <article class="cap">
-          <h3>AI roadmap &amp; readiness</h3>
-          <p>A two-to-four-week assessment of your data, skills, platforms and risk posture, ending in a sequenced roadmap with business cases for each initiative.</p>
-          <ul><li>Maturity assessment across data, tech, people, governance</li><li>Opportunity mapping across your value chain</li><li>12 to 18 month roadmap with budgets</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Use-case prioritisation</h3>
-          <p>Which three bets, in what order. Candidates scored on value, feasibility, data readiness and risk, with owners and success metrics attached.</p>
-          <ul><li>Scoring framework you can reuse</li><li>Build, buy or partner recommendation per case</li><li>Quick wins versus platform plays</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Board / CxO advisory</h3>
-          <p>Plain-language briefings and decision support for boards and leadership teams weighing AI investment, risk and competitive position.</p>
-          <ul><li>Board briefings and investment memos</li><li>Vendor and partner evaluation</li><li>Independent second opinion on proposals</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Fractional Chief AI Officer</h3>
-          <p>Part-time AI leadership for mid-market companies: strategy, vendor decisions, hiring, governance and delivery oversight, a few days a month.</p>
-          <ul><li>Named senior lead with a monthly cadence</li><li>Owns the roadmap and reports to the CEO or board</li><li>Scales down as your internal team grows</li></ul>
-        </article>
-        <article class="cap wide">
-          <h3>AI operating model</h3>
-          <p>Centre of excellence design, team structures, decision rights, funding models and intake processes that make AI repeatable instead of a series of one-off projects.</p>
-          <ul><li>Hub, spoke or federated model recommendation</li><li>Roles, skills and hiring plan</li><li>Intake, prioritisation and governance workflow</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 05 GOVERNANCE ============ -->
-  <section id="governance" class="line">
-    <div class="wrap">
-      <div class="intro">
-        <span class="kicker">05 · Governance, risk &amp; compliance</span>
-        <h2>Audit-ready AI for regulated businesses</h2>
-        <p>Regulators, auditors and enterprise customers now ask for AI controls by name. We help banks, insurers, healthcare providers and public bodies classify their systems, close the gaps and produce evidence that stands up to scrutiny.</p>
-        <dl class="meta">
-          <div><dt>Typical scope</dt><dd>4 to 10 weeks for a gap assessment; recurring for assurance</dd></div>
-          <div><dt>Best for</dt><dd>Regulated sectors, vendors selling AI into them, and anyone facing the EU AI Act</dd></div>
-          <div><dt>Frameworks</dt><dd>EU AI Act, NIST AI RMF, ISO/IEC 42001, SR 11-7, RBI and local guidance</dd></div>
-        </dl>
-        <a class="btn btn-fire btn-sm" href="#contact">Request a gap assessment</a>
-      </div>
-      <div class="caps">
-        <article class="cap">
-          <h3>EU AI Act readiness</h3>
-          <p>Classification of your AI systems, obligation mapping and the technical documentation, logging and oversight that high-risk use requires.</p>
-          <ul><li>System inventory and risk classification</li><li>Gap assessment against current obligations</li><li>Technical files, conformity evidence, transparency notices</li></ul>
-        </article>
-        <article class="cap">
-          <h3>NIST AI RMF / ISO 42001</h3>
-          <p>Framework mapping, policy sets and an AI management system built to pass certification audits and customer due diligence.</p>
-          <ul><li>Policy and control library</li><li>AI management system implementation</li><li>Internal audit and certification support</li></ul>
-        </article>
-        <article class="cap">
-          <h3>AI audit &amp; assurance</h3>
-          <p>Independent review of models and agents: lineage, audit trails, performance evidence and attestations that your auditors and customers will accept.</p>
-          <ul><li>Model and agent audits with written findings</li><li>Lineage and audit-trail design</li><li>Third-party attestation support</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Red-teaming, bias &amp; safety</h3>
-          <p>Adversarial testing, bias measurement and safety evaluations before launch and on a schedule after, with fixes, not just findings.</p>
-          <ul><li>Prompt injection, jailbreak and data-leak testing</li><li>Fairness testing across protected groups</li><li>Safety evals built into your release process</li></ul>
-        </article>
-        <article class="cap wide">
-          <h3>Model risk management</h3>
-          <p>SR 11-7 style model inventories, independent validation and ongoing controls for banks, insurers and lenders, extended to cover LLMs and agents.</p>
-          <ul><li>Model inventory and tiering</li><li>Validation reports and challenger models</li><li>Ongoing monitoring and committee reporting</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 06 DATA & ENABLEMENT ============ -->
-  <section id="data" class="line alt">
-    <div class="wrap">
-      <div class="intro">
-        <span class="kicker">06 · Data &amp; enablement</span>
-        <h2>The foundations every other service depends on</h2>
-        <p>AI fails on bad data and unprepared people far more often than on models. We usually bundle this work into larger programmes, but it is available on its own when the gap is clear.</p>
-        <dl class="meta">
-          <div><dt>Typical scope</dt><dd>Bundled into programmes, or 4 to 12 weeks standalone</dd></div>
-          <div><dt>Best for</dt><dd>Organisations whose data, skills or workflows are holding AI back</dd></div>
-          <div><dt>Output</dt><dd>Working pipelines, trained teams, adoption plans, dashboards</dd></div>
-        </dl>
-        <a class="btn btn-fire btn-sm" href="#contact">Talk about foundations</a>
-      </div>
-      <div class="caps">
-        <article class="cap">
-          <h3>Data readiness &amp; modernisation</h3>
-          <p>Pipelines, quality rules, lineage and access controls: the unglamorous prerequisite for any AI that works in production.</p>
-          <ul><li>Data audit and quality baseline</li><li>Lakehouse, warehouse and vector-store setup</li><li>Access, retention and residency controls</li></ul>
-        </article>
-        <article class="cap">
-          <h3>AI literacy &amp; upskilling</h3>
-          <p>Role-based programmes for staff, engineers and leaders, from prompt fluency to building and operating agents, delivered on your real work.</p>
-          <ul><li>Executive briefings and leadership workshops</li><li>Hands-on developer bootcamps</li><li>Embedded coaching on live projects</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Change management</h3>
-          <p>Adoption plans, redesigned roles and workflows, and the communication that makes new tools stick rather than gather dust.</p>
-          <ul><li>Stakeholder mapping and adoption metrics</li><li>Role and process redesign</li><li>Champion networks and feedback loops</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Analytics &amp; insights</h3>
-          <p>Classic BI and reporting with an AI layer: natural-language querying, anomaly detection and forecasting on the dashboards leaders already use.</p>
-          <ul><li>Power BI, Looker and Tableau delivery</li><li>Conversational analytics over governed data</li><li>Forecasting and anomaly alerts</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ INDUSTRIES ============ -->
-  <section id="industries" class="sec">
-    <div class="wrap">
-      <div class="sec-head">
-        <div class="tick"></div>
-        <h2>Vertical depth beats horizontal promises</h2>
-        <p>We bring use-case playbooks, data patterns and regulatory context for eight industries, so the first workshop starts from what has worked, not from a blank page. Each industry below has its own page section with use cases, the rules that apply and where to start.</p>
-      </div>
-      <div class="ind">
-        <article>
-          <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 10l9-6 9 6"/><path d="M5 10v9M19 10v9M9 10v9M15 10v9M3 19h18"/></svg></div>
-          <h3>Banking, financial services &amp; insurance</h3>
-          <p>The biggest buyer of AI consulting and the most regulated.</p>
-          <ul><li>Fraud detection and transaction monitoring</li><li>Credit decisioning and collections</li><li>Claims intake, triage and settlement</li><li>Model risk management and validation</li></ul>
-          <a class="more arrow" href="#bfsi">See use cases </a>
-        </article>
-        <article>
-          <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/><circle cx="12" cy="12" r="9"/></svg></div>
-          <h3>Healthcare &amp; life sciences</h3>
-          <p>Clinician time and documentation burden are the levers.</p>
-          <ul><li>Radiology and pathology triage support</li><li>Clinical notes and discharge summaries</li><li>Prior authorisation and coding</li><li>Patient communication agents</li></ul>
-          <a class="more arrow" href="#healthcare">See use cases </a>
-        </article>
-        <article>
-          <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 7h14M7 7l-3 7a3 3 0 0 0 6 0zM17 7l-3 7a3 3 0 0 0 6 0z"/></svg></div>
-          <h3>Legal</h3>
-          <p>Document-heavy work with a low tolerance for error.</p>
-          <ul><li>Contract review and clause extraction</li><li>Matter intake and conflict checks</li><li>Due-diligence data rooms</li><li>Knowledge search across precedents</li></ul>
-          <a class="more arrow" href="#legal">See use cases </a>
-        </article>
-        <article>
-          <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 20V9l5 3V9l5 3V9l5 3v8z"/><path d="M3 20h18"/></svg></div>
-          <h3>Manufacturing</h3>
-          <p>Sensor data, drawings and quality records waiting to be used.</p>
-          <ul><li>Predictive maintenance</li><li>Visual quality control</li><li>Production planning and scheduling</li><li>Technician copilots on SOPs and manuals</li></ul>
-          <a class="more arrow" href="#manufacturing">See use cases </a>
-        </article>
-        <article>
-          <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></div>
-          <h3>Logistics &amp; supply chain</h3>
-          <p>Margins live in dispatch, routing and exceptions.</p>
-          <ul><li>Dispatch and route optimisation</li><li>Exception and delay handling agents</li><li>Demand forecasting</li><li>Document automation for customs and freight</li></ul>
-          <a class="more arrow" href="#logistics">See use cases </a>
-        </article>
-        <article>
-          <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-6h6v6"/></svg></div>
-          <h3>Public sector</h3>
-          <p>Document-heavy workflows at scale, with sovereignty constraints.</p>
-          <ul><li>Citizen service and grievance handling</li><li>Records search and case files</li><li>Permit and application processing</li><li>On-premises and sovereign deployments</li></ul>
-          <a class="more arrow" href="#public-sector">See use cases </a>
-        </article>
-        <article>
-          <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 8h16l-1.5 11h-13z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg></div>
-          <h3>Retail &amp; customer experience</h3>
-          <p>Support volume and personalisation at the same time.</p>
-          <ul><li>Support agents across chat, voice and email</li><li>Returns, refunds and order queries</li><li>Personalised recommendations</li><li>Catalogue and content generation</li></ul>
-          <a class="more arrow" href="#retail-cx">See use cases </a>
-        </article>
-        <article>
-          <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div>
-          <h3>AEC &amp; engineering</h3>
-          <p>Architecture, engineering and construction data is rich and underused.</p>
-          <ul><li>Drawing and specification search</li><li>BIM data extraction and checks</li><li>Site reports and progress tracking</li><li>Tender and bid document assembly</li></ul>
-          <a class="more arrow" href="#aec">See use cases </a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="bfsi" class="line alt">
-    <div class="wrap">
-      <div class="intro">
-        <span class="kicker">Industry · Banking, financial services &amp; insurance</span>
-        <h2>AI for banks, NBFCs and insurers that passes the regulator's test</h2>
-        <p>BFSI is the largest buyer of AI consulting and the most scrutinised. We build models and agents that move fraud, credit, claims and service metrics, and we document them the way RBI, SEBI, IRDAI and your internal audit expect.</p>
-        <dl class="meta">
-          <div><dt>Regulatory context</dt><dd>RBI and IRDAI guidance, SEBI, DPDP Act 2023, SR 11-7 style model risk, GCC central bank rules</dd></div>
-          <div><dt>Data you already have</dt><dd>Core banking, cards, policy admin, claims, KYC, call recordings</dd></div>
-          <div><dt>Start with</dt><dd>8-week fraud or claims triage pilot on live data</dd></div>
-        </dl>
-        <a class="btn btn-fire btn-sm" href="#contact">Talk about a BFSI pilot</a>
-      </div>
-      <div class="caps">
-        <article class="cap">
-          <h3>Fraud detection &amp; transaction monitoring</h3>
-          <p>Real-time scoring of transactions and accounts with an explainable reason for every alert, cutting false positives without missing true fraud.</p>
-          <ul><li>Graph and sequence models on payment flows</li><li>Alert explanations analysts can act on</li><li>Tuned against your SAR and STR history</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Credit decisioning &amp; collections</h3>
-          <p>Scorecards and LLM-assisted underwriting on bureau, bank-statement and alternative data, with collections agents that prioritise and contact the right accounts.</p>
-          <ul><li>Bank statement and payslip extraction</li><li>Policy-compliant decision rules and overrides</li><li>Collections prioritisation and multilingual outreach</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Claims intake, triage &amp; settlement</h3>
-          <p>Document AI reads claim forms, invoices and medical records, triages by severity and fraud risk, and drafts settlements for adjuster approval.</p>
-          <ul><li>Intake across email, portal and WhatsApp</li><li>Fraud and leakage indicators</li><li>Straight-through processing for low-risk claims</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Model risk management &amp; validation</h3>
-          <p>Inventory, tiering, validation and ongoing monitoring for models and LLMs, matching SR 11-7 style expectations and ready for RBI or internal audit.</p>
-          <ul><li>Model inventory and tiering</li><li>Independent validation reports</li><li>Committee-ready monitoring packs</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="healthcare" class="line">
-    <div class="wrap">
-      <div class="intro">
-        <span class="kicker">Industry · Healthcare &amp; life sciences</span>
-        <h2>Give clinicians their time back, safely</h2>
-        <p>Documentation burden and administrative queues are where AI helps most in healthcare. We build clinical and operational assistants with human sign-off at every clinical decision, and we treat patient data with the care the DPDP Act and your ethics committee demand.</p>
-        <dl class="meta">
-          <div><dt>Regulatory context</dt><dd>DPDP Act 2023, ABDM standards, clinical safety sign-off, HIPAA for US-facing work</dd></div>
-          <div><dt>Data you already have</dt><dd>EMR and HIS, PACS, lab systems, billing, call centre</dd></div>
-          <div><dt>Start with</dt><dd>6-week clinical documentation pilot with one department</dd></div>
-        </dl>
-        <a class="btn btn-fire btn-sm" href="#contact">Talk about a healthcare pilot</a>
-      </div>
-      <div class="caps">
-        <article class="cap">
-          <h3>Radiology &amp; pathology triage support</h3>
-          <p>Worklist prioritisation and finding detection that puts urgent studies in front of the right reader first, with the radiologist always making the call.</p>
-          <ul><li>Integration with PACS and RIS</li><li>Audit trail for every flag</li><li>Measured against reader agreement</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Clinical notes &amp; discharge summaries</h3>
-          <p>Ambient and dictation-based drafting that turns consultations into structured notes and discharge summaries for clinician review.</p>
-          <ul><li>Specialty-specific templates</li><li>Coding suggestions attached</li><li>Clinician edits feed improvement</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Prior authorisation &amp; coding</h3>
-          <p>Agents that assemble authorisation requests, chase insurers and suggest codes from the note, reducing denials and days to payment.</p>
-          <ul><li>Payer rule libraries</li><li>Denial-reason analytics</li><li>Human approval before submission</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Patient communication agents</h3>
-          <p>Appointment, preparation, follow-up and billing conversations over WhatsApp, voice and SMS in the patient's language, escalating to staff when needed.</p>
-          <ul><li>Multilingual, including Indian languages</li><li>Consent and opt-out handling</li><li>Escalation to nurse lines</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="legal" class="line alt">
-    <div class="wrap">
-      <div class="intro">
-        <span class="kicker">Industry · Legal</span>
-        <h2>Document-heavy legal work with a low tolerance for error</h2>
-        <p>Law firms and in-house teams want speed on review, intake and research without surrendering privilege or accuracy. We build retrieval systems grounded in your own precedents, with citations you can check and nothing leaving your environment.</p>
-        <dl class="meta">
-          <div><dt>Regulatory context</dt><dd>Client privilege and confidentiality, Bar Council rules, DPDP Act, cross-border data limits</dd></div>
-          <div><dt>Data you already have</dt><dd>Document management system, matter files, time records, precedents</dd></div>
-          <div><dt>Start with</dt><dd>4-week contract review assistant on one agreement type</dd></div>
-        </dl>
-        <a class="btn btn-fire btn-sm" href="#contact">Talk about a legal pilot</a>
-      </div>
-      <div class="caps">
-        <article class="cap">
-          <h3>Contract review &amp; clause extraction</h3>
-          <p>Playbook-driven review that extracts clauses, flags deviations from your standard positions and drafts redlines for lawyer approval.</p>
-          <ul><li>Your playbooks, not generic ones</li><li>Deviation reports with citations</li><li>Works inside Word and your DMS</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Matter intake &amp; conflict checks</h3>
-          <p>Structured intake from email and forms, automated conflict searches and engagement letter drafting, so new matters open in hours.</p>
-          <ul><li>Entity resolution across clients</li><li>Conflict report with evidence</li><li>Fee estimate suggestions</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Due-diligence data rooms</h3>
-          <p>Classification, extraction and issue-spotting across thousands of data-room documents, with a diligence report your associates finish rather than start.</p>
-          <ul><li>Document classification at scale</li><li>Red-flag detection by deal type</li><li>Traceable findings per document</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Knowledge search across precedents</h3>
-          <p>Retrieval over your precedents, opinions and research memos with cited answers and access controls mirrored from the DMS.</p>
-          <ul><li>Permission-aware retrieval</li><li>Citations to source paragraphs</li><li>Private deployment options</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="manufacturing" class="line">
-    <div class="wrap">
-      <div class="intro">
-        <span class="kicker">Industry · Manufacturing</span>
-        <h2>Turn sensor data, drawings and quality records into uptime and yield</h2>
-        <p>Plants already generate the data AI needs: machine logs, inspection images, maintenance records, SOPs and drawings. We connect it, build the models and put the results in front of operators and planners inside the tools they already use.</p>
-        <dl class="meta">
-          <div><dt>Regulatory context</dt><dd>ISO 9001 and IATF 16949 quality systems, IEC 62443 for OT security, customer audit requirements</dd></div>
-          <div><dt>Data you already have</dt><dd>SCADA and MES, CMMS, inspection images, ERP, SOPs and drawings</dd></div>
-          <div><dt>Start with</dt><dd>8-week predictive maintenance pilot on one critical line</dd></div>
-        </dl>
-        <a class="btn btn-fire btn-sm" href="#contact">Talk about a plant pilot</a>
-      </div>
-      <div class="caps">
-        <article class="cap">
-          <h3>Predictive maintenance</h3>
-          <p>Failure prediction and remaining-useful-life models on sensor and maintenance data, with work orders raised in your CMMS before the breakdown.</p>
-          <ul><li>Works with existing historians</li><li>Alerts tuned to planner capacity</li><li>Measured in avoided downtime</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Visual quality control</h3>
-          <p>Camera-based defect detection trained on your parts and your defects, deployed at the line with operator feedback loops.</p>
-          <ul><li>Edge or on-premises inference</li><li>Defect libraries you own</li><li>Escape-rate reporting</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Production planning &amp; scheduling</h3>
-          <p>Optimisation and forecasting that balance orders, capacity, changeovers and material availability, with planners in control of the final schedule.</p>
-          <ul><li>Constraint-based scheduling</li><li>Demand and material forecasts</li><li>What-if scenarios for planners</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Technician copilots on SOPs &amp; manuals</h3>
-          <p>Assistants that answer from your SOPs, manuals and past work orders, on the shop floor, in the technician's language.</p>
-          <ul><li>Retrieval over manuals and drawings</li><li>Voice and mobile access</li><li>Feedback into document updates</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="logistics" class="line alt">
-    <div class="wrap">
-      <div class="intro">
-        <span class="kicker">Industry · Logistics &amp; supply chain</span>
-        <h2>Margins live in dispatch, routing and the exceptions in between</h2>
-        <p>Logistics runs on thin margins and constant exceptions. We build optimisation and agents that improve dispatch, routing and exception handling, and document automation that keeps freight moving through customs and compliance.</p>
-        <dl class="meta">
-          <div><dt>Regulatory context</dt><dd>Customs and GST e-way bill rules, carrier and port documentation, DPDP for customer data</dd></div>
-          <div><dt>Data you already have</dt><dd>TMS and WMS, telematics, order and shipment events, customer emails</dd></div>
-          <div><dt>Start with</dt><dd>6-week exception-handling agent on one lane or customer</dd></div>
-        </dl>
-        <a class="btn btn-fire btn-sm" href="#contact">Talk about a logistics pilot</a>
-      </div>
-      <div class="caps">
-        <article class="cap">
-          <h3>Dispatch &amp; route optimisation</h3>
-          <p>Models that assign and sequence loads against time windows, capacity and cost, with dispatchers overriding where they know better.</p>
-          <ul><li>Live re-planning on delays</li><li>Driver and vehicle constraints</li><li>Fuel and cost reporting</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Exception &amp; delay handling agents</h3>
-          <p>Agents that detect late or stuck shipments, contact carriers and customers, and propose recovery options for a person to approve.</p>
-          <ul><li>Event monitoring across systems</li><li>Proactive customer updates</li><li>Escalation playbooks</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Demand forecasting</h3>
-          <p>Forecasts by lane, product and customer that drive capacity, inventory and pricing decisions, with accuracy tracked every cycle.</p>
-          <ul><li>Hierarchical forecasting</li><li>Seasonality and promotion effects</li><li>Planner-facing dashboards</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Document automation for customs &amp; freight</h3>
-          <p>Extraction and validation of invoices, packing lists, bills of lading and customs declarations, cutting clearance delays and penalties.</p>
-          <ul><li>Multi-format document extraction</li><li>Rule checks before filing</li><li>Audit trail per shipment</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="public-sector" class="line">
-    <div class="wrap">
-      <div class="intro">
-        <span class="kicker">Industry · Public sector</span>
-        <h2>Document-heavy services at scale, inside sovereignty rules</h2>
-        <p>Government and public bodies handle enormous document volumes under strict rules on where data lives. We deliver citizen service, records and application-processing AI on sovereign or on-premises infrastructure, with transparency built in.</p>
-        <dl class="meta">
-          <div><dt>Regulatory context</dt><dd>MeitY and state IT policies, GIGW accessibility, data localisation, procurement and audit rules</dd></div>
-          <div><dt>Data you already have</dt><dd>Case files, applications, grievance records, legacy registers, scanned archives</dd></div>
-          <div><dt>Start with</dt><dd>8-week grievance triage pilot with one department</dd></div>
-        </dl>
-        <a class="btn btn-fire btn-sm" href="#contact">Talk about a public sector pilot</a>
-      </div>
-      <div class="caps">
-        <article class="cap">
-          <h3>Citizen service &amp; grievance handling</h3>
-          <p>Multilingual assistants that answer, route and track citizen requests across web, WhatsApp and call centre, with every answer sourced from approved content.</p>
-          <ul><li>Ten or more Indian languages</li><li>Routing to the right office</li><li>Status tracking and SLAs</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Records search &amp; case files</h3>
-          <p>Digitisation, classification and search across scanned archives and case files, with access rules mirrored from your records policy.</p>
-          <ul><li>OCR for scanned and handwritten records</li><li>Entity and date extraction</li><li>Role-based access</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Permit &amp; application processing</h3>
-          <p>Agents that check completeness, verify against rules and draft decisions for officer approval, shortening queues without removing accountability.</p>
-          <ul><li>Rule-based eligibility checks</li><li>Missing-document requests</li><li>Officer review and audit trail</li></ul>
-        </article>
-        <article class="cap">
-          <h3>On-premises &amp; sovereign deployments</h3>
-          <p>Self-hosted models and private deployments in government data centres or sovereign cloud, with no data leaving your boundary.</p>
-          <ul><li>Open-weight model options</li><li>Air-gapped deployment patterns</li><li>Security and audit documentation</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="retail-cx" class="line alt">
-    <div class="wrap">
-      <div class="intro">
-        <span class="kicker">Industry · Retail &amp; customer experience</span>
-        <h2>Resolve support volume and personalise at the same time</h2>
-        <p>Retail and consumer businesses face rising support volume and rising expectations. We build agents that resolve the routine and personalise the rest, measured on resolution rate, satisfaction and revenue per visit rather than on deflection alone.</p>
-        <dl class="meta">
-          <div><dt>Regulatory context</dt><dd>DPDP consent and purpose limits, PCI DSS for payments, consumer protection and refund rules</dd></div>
-          <div><dt>Data you already have</dt><dd>Commerce platform, CRM, order and returns history, tickets, reviews</dd></div>
-          <div><dt>Start with</dt><dd>6-week support agent pilot on returns and order queries</dd></div>
-        </dl>
-        <a class="btn btn-fire btn-sm" href="#contact">Talk about a CX pilot</a>
-      </div>
-      <div class="caps">
-        <article class="cap">
-          <h3>Support agents across chat, voice &amp; email</h3>
-          <p>Agents that resolve order, delivery and account queries end to end, integrated with your commerce and ticketing systems, handing off to people with full context.</p>
-          <ul><li>Order and delivery actions, not just answers</li><li>Multilingual coverage</li><li>Quality monitoring and coaching</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Returns, refunds &amp; order queries</h3>
-          <p>Policy-aware automation of returns and refunds with fraud checks, cutting handling time while protecting margin.</p>
-          <ul><li>Policy rules encoded</li><li>Abuse and fraud signals</li><li>Finance reconciliation</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Personalised recommendations</h3>
-          <p>Recommendation and search ranking on your catalogue and behaviour data, measured through A/B tests on revenue and conversion.</p>
-          <ul><li>Cold-start handling</li><li>Search and merchandising integration</li><li>Experiment framework</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Catalogue &amp; content generation</h3>
-          <p>Product descriptions, attributes and imagery variants generated at scale from supplier data, reviewed by your merchandising team.</p>
-          <ul><li>Attribute extraction from supplier feeds</li><li>Brand voice controls</li><li>Marketplace-ready formats</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="aec" class="line">
-    <div class="wrap">
-      <div class="intro">
-        <span class="kicker">Industry · AEC &amp; engineering</span>
-        <h2>Drawings, BIM and site data, finally usable</h2>
-        <p>Architecture, engineering and construction teams sit on decades of drawings, specifications, models and site reports. We make that data searchable, checkable and reusable, and we build tools engineers actually open, as we did with MsoftAI.</p>
-        <dl class="meta">
-          <div><dt>Regulatory context</dt><dd>ISO 19650 for BIM, IS and international design codes, contract and tender rules, HSE reporting</dd></div>
-          <div><dt>Data you already have</dt><dd>CAD and BIM files, specifications, RFIs, site photos and reports, tenders</dd></div>
-          <div><dt>Start with</dt><dd>6-week drawing and specification search pilot on one project</dd></div>
-        </dl>
-        <a class="btn btn-fire btn-sm" href="#contact">Talk about an AEC pilot</a>
-      </div>
-      <div class="caps">
-        <article class="cap">
-          <h3>Drawing &amp; specification search</h3>
-          <p>Retrieval across drawings, specs, RFIs and submittals with answers that cite the sheet and revision, so engineers stop re-reading PDFs.</p>
-          <ul><li>Drawing and revision awareness</li><li>Cross-reference of specs and RFIs</li><li>Project-level access control</li></ul>
-        </article>
-        <article class="cap">
-          <h3>BIM data extraction &amp; checks</h3>
-          <p>Automated extraction of quantities and attributes from BIM models with rule-based checks against codes and client standards.</p>
-          <ul><li>IFC and native model support</li><li>Code and standard rule libraries</li><li>Quantity take-off outputs</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Site reports &amp; progress tracking</h3>
-          <p>Site photos, daily reports and schedules turned into progress, safety and quality insights with exceptions flagged to the project team.</p>
-          <ul><li>Photo and report classification</li><li>Schedule variance alerts</li><li>HSE incident patterns</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Tender &amp; bid document assembly</h3>
-          <p>Assistants that assemble compliant bid documents from past submissions, specifications and pricing, with reviewers in control.</p>
-          <ul><li>Requirement extraction from tenders</li><li>Reuse of approved content</li><li>Compliance matrix drafting</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ SOLUTIONS ============ -->
-  <section id="solutions" class="sec blush">
-    <div class="wrap">
-      <div class="sec-head">
-        <div class="tick"></div>
-        <h2>Packaged solutions for problems we see every month</h2>
-        <p>Defined scope, defined price, defined outcome. Each one combines capabilities from several service lines into something you can buy in one decision. Seven packaged services and two products we built ourselves.</p>
-      </div>
-      <div class="sol">
-        <article>
-          <span class="tag">Recurring</span>
-          <h3>Compliance as a service</h3>
-          <p>Ongoing AI compliance for regulated businesses: inventory, controls, evidence and reporting kept current as rules and systems change.</p>
-          <ul><li>Quarterly gap reviews</li><li>Living policy set</li><li>Audit-ready evidence pack</li></ul>
-          <div class="fmt">Monthly retainer</div>
-          <a class="more arrow" href="#compliance-service">See details </a>
-        </article>
-        <article>
-          <span class="tag">High volume</span>
-          <h3>Voice &amp; sales agents</h3>
-          <p>Outbound and inbound agents for sales qualification, support and collections, integrated with your CRM and telephony.</p>
-          <ul><li>Multilingual, including Indian languages</li><li>CRM and dialler integration</li><li>Quality monitoring and hand-off</li></ul>
-          <div class="fmt">Pilot, then per-conversation</div>
-          <a class="more arrow" href="#voice-agents">See details </a>
-        </article>
-        <article>
-          <span class="tag">Transactions</span>
-          <h3>AI M&amp;A due diligence</h3>
-          <p>Independent technical diligence on AI assets for acquirers and investors: what is real, what is fragile, what it costs to run.</p>
-          <ul><li>Code, data and model review</li><li>Dependency and licence risk</li><li>Valuation inputs and 100-day plan</li></ul>
-          <div class="fmt">Fixed fee, 2 to 3 weeks</div>
-          <a class="more arrow" href="#ma-diligence">See details </a>
-        </article>
-        <article>
-          <span class="tag">Standalone</span>
-          <h3>Evals &amp; red-teaming</h3>
-          <p>Independent evaluation and adversarial testing of your LLM features and agents before launch, with a fix list your engineers can act on.</p>
-          <ul><li>Task-specific eval sets</li><li>Security and safety red-team</li><li>Release gate you can keep</li></ul>
-          <div class="fmt">Fixed fee per system</div>
-          <a class="more arrow" href="#evals">See details </a>
-        </article>
-        <article>
-          <span class="tag">Savings</span>
-          <h3>AI cost optimisation</h3>
-          <p>Cut token and GPU spend without hurting quality: routing, caching, right-sizing, and a FinOps view your finance team understands.</p>
-          <ul><li>Spend audit and baseline</li><li>Model-tier and caching changes</li><li>Chargeback and forecasting</li></ul>
-          <div class="fmt">Fixed fee, optional share of savings</div>
-          <a class="more arrow" href="#cost-optimisation">See details </a>
-        </article>
-        <article>
-          <span class="tag">Accelerator</span>
-          <h3>Document intelligence accelerator</h3>
-          <p>Extract, classify and validate data from invoices, contracts, forms, claims and KYC documents, with human review only where confidence is low.</p>
-          <ul><li>Any format, scanned or digital</li><li>Validation against your rules</li><li>Review queue and audit trail</li></ul>
-          <div class="fmt">Fixed-fee pilot, 6 weeks</div>
-          <a class="more arrow" href="#document-intelligence">See details </a>
-        </article>
-        <article>
-          <span class="tag">Accelerator</span>
-          <h3>Enterprise knowledge assistant</h3>
-          <p>A permission-aware assistant over your policies, SOPs, tickets and documents, with cited answers, inside Teams, Slack or your intranet.</p>
-          <ul><li>Respects existing access rights</li><li>Citations to the source</li><li>Usage and content-gap analytics</li></ul>
-          <div class="fmt">Fixed fee, 8 weeks</div>
-          <a class="more arrow" href="#knowledge-assistant">See details </a>
-        </article>
-        <article class="product">
-          <span class="tag">Product · built by MindYards</span>
-          <h3>MsoftAI Manifold Designer</h3>
-          <p>Browser-based CAD for hydraulic manifold blocks. Define the block, place cavities, connect the drillings and run design checks, with no desktop install.</p>
-          <ul><li>Block, cavity and drilling design in 3D</li><li>Automated checks, reports and net colouring</li><li>Designs saved to your account, downloadable</li></ul>
-          <div class="fmt">Live web application</div>
-          <a class="more arrow" href="#msoftai">See details </a>
-          <a class="launch arrow" href="https://msoftai.mindyards.in/" target="_blank" rel="noopener">Open MsoftAI </a>
-        </article>
-        <article class="product">
-          <span class="tag">Product · built by MindYards</span>
-          <h3>Insurance Advisor CRM</h3>
-          <p>A CRM for insurance and protection advisers: enquiries to completion, with a work queue driven by SLA rules, document chasing and AI-extracted client data.</p>
-          <ul><li>Pipeline by stage with follow-up and document SLAs</li><li>AI extraction of payslips and documents for review</li><li>Microsoft 365 calendar sync and commission reconciliation</li></ul>
-          <div class="fmt">Live web application · demo data</div>
-          <a class="more arrow" href="#advisor">See details </a>
-          <a class="launch arrow" href="https://advisor.mindyards.in/#/home" target="_blank" rel="noopener">Open Insurance Advisor </a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="compliance-service" class="line">
-    <div class="wrap">
-      <div class="intro">
-        <span class="kicker">Solution · Compliance as a service</span>
-        <h2>AI compliance that stays current, not a one-off binder</h2>
-        <p>Rules change, models change and auditors ask harder questions each year. Compliance as a service keeps your AI inventory, controls, evidence and reporting current on a retainer, so you are ready for the next audit, customer questionnaire or regulator query.</p>
-        <dl class="meta">
-          <div><dt>Who it's for</dt><dd>Banks, insurers, healthcare, public bodies and vendors selling AI into them</dd></div>
-          <div><dt>Format</dt><dd>Monthly retainer, quarterly reviews, cancel with notice</dd></div>
-          <div><dt>Frameworks</dt><dd>EU AI Act, NIST AI RMF, ISO/IEC 42001, RBI and IRDAI guidance, DPDP Act</dd></div>
-        </dl>
-        <a class="btn btn-fire btn-sm" href="#contact">Ask about compliance cover</a>
-      </div>
-      <div class="caps">
-        <article class="cap">
-          <h3>What's included</h3>
-          <p>Everything needed to show, at any time, that your AI is inventoried, controlled and evidenced.</p>
-          <ul><li>Living AI system inventory and risk classification</li><li>Policy and control library kept current</li><li>Quarterly gap reviews and remediation plans</li></ul>
-        </article>
-        <article class="cap">
-          <h3>How it works</h3>
-          <p>A named compliance lead runs a steady cadence, with extra reviews whenever a system or rule changes.</p>
-          <ul><li>Onboarding assessment in month one</li><li>Monthly cadence with your risk and tech owners</li><li>Reviews triggered by new systems or regulation</li></ul>
-        </article>
-        <article class="cap">
-          <h3>What you get</h3>
-          <p>Answers and evidence on demand rather than a scramble before each audit.</p>
-          <ul><li>Audit-ready evidence pack on request</li><li>Responses to customer due-diligence questionnaires</li><li>Board and committee reporting</li></ul>
-        </article>
-        <article class="cap">
-          <h3>How we measure it</h3>
-          <p>Compliance is measured by findings closed and time saved, not documents produced.</p>
-          <ul><li>Open findings closed per quarter</li><li>Time to answer an audit or questionnaire</li><li>No surprise findings at external audit</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="voice-agents" class="line alt">
-    <div class="wrap">
-      <div class="intro">
-        <span class="kicker">Solution · Voice &amp; sales agents</span>
-        <h2>Agents that call, qualify, support and collect, in your customer's language</h2>
-        <p>Voice and sales agents handle the high-volume conversations people cannot staff economically: lead qualification, appointment booking, support and collections. We integrate them with your CRM and telephony, monitor quality, and hand off to people when it matters.</p>
-        <dl class="meta">
-          <div><dt>Who it's for</dt><dd>Lenders, insurers, real estate, healthcare and consumer brands with high call volumes</dd></div>
-          <div><dt>Format</dt><dd>4 to 6 week pilot, then per-conversation or monthly pricing</dd></div>
-          <div><dt>Languages</dt><dd>English, Hindi, Tamil and other Indian languages, Arabic</dd></div>
-        </dl>
-        <a class="btn btn-fire btn-sm" href="#contact">Discuss a voice agent pilot</a>
-      </div>
-      <div class="caps">
-        <article class="cap">
-          <h3>What's included</h3>
-          <p>Conversation design, integration and the compliance rules that keep outbound calling legal.</p>
-          <ul><li>Scripts modelled on your best agents</li><li>CRM, dialler and telephony integration</li><li>Calling-hour, consent and do-not-call rules</li></ul>
-        </article>
-        <article class="cap">
-          <h3>How it works</h3>
-          <p>A controlled pilot proves the numbers before you scale.</p>
-          <ul><li>Pilot on one campaign with a control group</li><li>Weekly tuning from call transcripts</li><li>Scale once conversion and satisfaction targets are met</li></ul>
-        </article>
-        <article class="cap">
-          <h3>What you get</h3>
-          <p>Outcomes in your systems, not a separate dashboard to check.</p>
-          <ul><li>Qualified leads and booked appointments in your CRM</li><li>Full transcripts with outcome tagging</li><li>Live hand-off to agents with context</li></ul>
-        </article>
-        <article class="cap">
-          <h3>How we measure it</h3>
-          <p>Measured against the control group, every week.</p>
-          <ul><li>Contact and conversion rates versus control</li><li>Cost per qualified lead or resolved call</li><li>Customer satisfaction and complaint rate</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="ma-diligence" class="line">
-    <div class="wrap">
-      <div class="intro">
-        <span class="kicker">Solution · AI M&amp;A due diligence</span>
-        <h2>Know what you are buying before you buy it</h2>
-        <p>Acquirers and investors increasingly pay for AI capability they cannot verify. We open the code, data, models and contracts, test what works, estimate what it costs to run, and give your deal team and board a view they can rely on.</p>
-        <dl class="meta">
-          <div><dt>Who it's for</dt><dd>Private equity, corporate development teams, venture investors, boards</dd></div>
-          <div><dt>Format</dt><dd>Fixed fee, 2 to 3 weeks, under NDA</dd></div>
-          <div><dt>Output</dt><dd>Written diligence report, risk register, valuation inputs, 100-day plan</dd></div>
-        </dl>
-        <a class="btn btn-fire btn-sm" href="#contact">Request diligence support</a>
-      </div>
-      <div class="caps">
-        <article class="cap">
-          <h3>What we review</h3>
-          <p>The substance behind the AI claims in the deck.</p>
-          <ul><li>Code quality, architecture and dependencies</li><li>Data provenance, rights and quality</li><li>Model performance claims against our own tests</li></ul>
-        </article>
-        <article class="cap">
-          <h3>How it works</h3>
-          <p>Hands-on testing, not just document review.</p>
-          <ul><li>Management interviews and data-room review</li><li>Direct testing of the product and models</li><li>Findings reviewed with your deal team before the report</li></ul>
-        </article>
-        <article class="cap">
-          <h3>What you get</h3>
-          <p>Inputs your deal model and integration plan can use directly.</p>
-          <ul><li>Red, amber, green risk register</li><li>Run-cost and re-platforming estimates</li><li>Integration and key-person retention notes</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Why it matters</h3>
-          <p>AI diligence changes prices and protects you after close.</p>
-          <ul><li>Separates genuine AI from thin wrappers</li><li>Surfaces licence and privacy liabilities</li><li>Grounds price and earn-out negotiation</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="evals" class="line alt">
-    <div class="wrap">
-      <div class="intro">
-        <span class="kicker">Solution · Evals &amp; red-teaming</span>
-        <h2>Independent proof that your AI behaves, before your customers find out</h2>
-        <p>Most LLM features ship with no evaluation beyond a demo. We build task-specific evaluation sets, run adversarial and safety tests, and leave you with a release gate your team keeps running on every change.</p>
-        <dl class="meta">
-          <div><dt>Who it's for</dt><dd>Product teams shipping LLM features or agents, security and risk teams, vendors facing customer security reviews</dd></div>
-          <div><dt>Format</dt><dd>Fixed fee per system, 2 to 4 weeks, with a retest option</dd></div>
-          <div><dt>Covers</dt><dd>Accuracy, prompt injection, jailbreaks, data leakage, bias, safety, cost and latency</dd></div>
-        </dl>
-        <a class="btn btn-fire btn-sm" href="#contact">Book an evaluation</a>
-      </div>
-      <div class="caps">
-        <article class="cap">
-          <h3>What's included</h3>
-          <p>Evaluation and attack coverage built around your real tasks and threat model.</p>
-          <ul><li>Evaluation set built from your real tasks</li><li>Red-team campaign across injection, jailbreak and leakage</li><li>Bias and fairness measurement where relevant</li></ul>
-        </article>
-        <article class="cap">
-          <h3>How it works</h3>
-          <p>Criteria first, then automated and manual testing, then triage with your engineers.</p>
-          <ul><li>Threat model and success criteria agreed first</li><li>Automated and manual testing</li><li>Findings triaged with your engineers</li></ul>
-        </article>
-        <article class="cap">
-          <h3>What you get</h3>
-          <p>A fix list and a harness, not just a report.</p>
-          <ul><li>Scored findings with reproduction steps</li><li>Fix recommendations ranked by risk</li><li>Evaluation harness integrated in your CI</li></ul>
-        </article>
-        <article class="cap">
-          <h3>How we measure it</h3>
-          <p>Before-and-after numbers your release process can enforce.</p>
-          <ul><li>Pass rate on the eval set before and after fixes</li><li>Severity and count of open findings</li><li>Regressions caught per release</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="cost-optimisation" class="line">
-    <div class="wrap">
-      <div class="intro">
-        <span class="kicker">Solution · AI cost optimisation</span>
-        <h2>Same quality, materially lower AI bill</h2>
-        <p>Token and GPU spend grows faster than value when nobody owns it. We audit your usage, route and cache intelligently, right-size models and infrastructure, and give finance a view of AI spend by product and team.</p>
-        <dl class="meta">
-          <div><dt>Who it's for</dt><dd>Companies spending meaningfully on LLM APIs or GPU infrastructure</dd></div>
-          <div><dt>Format</dt><dd>Fixed fee, with an optional share of verified savings</dd></div>
-          <div><dt>Typical levers</dt><dd>Model tiering, caching, prompt and context trimming, batching, reserved capacity</dd></div>
-        </dl>
-        <a class="btn btn-fire btn-sm" href="#contact">Request a spend audit</a>
-      </div>
-      <div class="caps">
-        <article class="cap">
-          <h3>What's included</h3>
-          <p>An audit and a redesign of how requests are routed, cached and sized.</p>
-          <ul><li>Spend and usage audit across providers</li><li>Quality-preserving routing and caching design</li><li>Infrastructure right-sizing and commitment plan</li></ul>
-        </article>
-        <article class="cap">
-          <h3>How it works</h3>
-          <p>Quality is protected by an evaluation set before any cost change goes live.</p>
-          <ul><li>Baseline and eval set agreed first</li><li>Changes rolled out behind metrics</li><li>Monthly FinOps reporting handed to your team</li></ul>
-        </article>
-        <article class="cap">
-          <h3>What you get</h3>
-          <p>Savings you can verify and a cost model finance understands.</p>
-          <ul><li>Verified savings against baseline</li><li>Chargeback by product and team</li><li>Forecast and budget guardrails</li></ul>
-        </article>
-        <article class="cap">
-          <h3>How we measure it</h3>
-          <p>Cost per outcome, with quality held within tolerance.</p>
-          <ul><li>Cost per request and per outcome</li><li>Quality within agreed tolerance</li><li>Forecast accuracy month on month</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="document-intelligence" class="line alt">
-    <div class="wrap">
-      <div class="intro">
-        <span class="kicker">Solution · Document intelligence accelerator</span>
-        <h2>From document piles to structured, validated data in six weeks</h2>
-        <p>Every industry runs on documents nobody wants to read twice. The accelerator combines OCR, layout understanding and LLM extraction with validation rules and a review queue, so your systems receive clean data and people only see the exceptions.</p>
-        <dl class="meta">
-          <div><dt>Who it's for</dt><dd>Finance, operations, claims, KYC, legal and procurement teams</dd></div>
-          <div><dt>Format</dt><dd>6-week fixed-fee pilot on one document type, then per-document or platform pricing</dd></div>
-          <div><dt>Integrates with</dt><dd>ERP, core systems, DMS, email and shared mailboxes</dd></div>
-        </dl>
-        <a class="btn btn-fire btn-sm" href="#contact">Start a document pilot</a>
-      </div>
-      <div class="caps">
-        <article class="cap">
-          <h3>What's included</h3>
-          <p>A working pipeline for one document family, with the controls around it.</p>
-          <ul><li>Extraction for one document family in the pilot</li><li>Validation rules and confidence thresholds</li><li>Reviewer interface and audit trail</li></ul>
-        </article>
-        <article class="cap">
-          <h3>How it works</h3>
-          <p>Accuracy is measured per field against ground truth from day one.</p>
-          <ul><li>Sample set and ground truth agreed first</li><li>Field-level accuracy tracked each week</li><li>Exceptions routed to reviewers, feedback improves the model</li></ul>
-        </article>
-        <article class="cap">
-          <h3>What you get</h3>
-          <p>Structured data in your systems and a repeatable path to the next document type.</p>
-          <ul><li>Structured data delivered to your systems</li><li>Accuracy and throughput reporting</li><li>Playbook to add the next document type</li></ul>
-        </article>
-        <article class="cap">
-          <h3>How we measure it</h3>
-          <p>Straight-through rate and minutes saved, not pages processed.</p>
-          <ul><li>Field-level accuracy against ground truth</li><li>Straight-through processing rate</li><li>Minutes saved per document</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="knowledge-assistant" class="line">
-    <div class="wrap">
-      <div class="intro">
-        <span class="kicker">Solution · Enterprise knowledge assistant</span>
-        <h2>Answers from your own knowledge, with the source attached</h2>
-        <p>Staff lose hours searching SharePoint, wikis and inboxes. The knowledge assistant grounds every answer in your approved content, respects the permissions you already have, and shows where each answer came from, so people trust it and use it.</p>
-        <dl class="meta">
-          <div><dt>Who it's for</dt><dd>HR, IT, operations, support and field teams in organisations with sprawling documentation</dd></div>
-          <div><dt>Format</dt><dd>8-week fixed-fee build, then managed operations if wanted</dd></div>
-          <div><dt>Deploys in</dt><dd>Microsoft Teams, Slack, intranet and support tools, on Azure or your cloud</dd></div>
-        </dl>
-        <a class="btn btn-fire btn-sm" href="#contact">Scope a knowledge assistant</a>
-      </div>
-      <div class="caps">
-        <article class="cap">
-          <h3>What's included</h3>
-          <p>Connectors, permission-aware retrieval and an evaluation set from real questions.</p>
-          <ul><li>Connectors to SharePoint, Confluence, drives and ticketing</li><li>Permission-aware retrieval with citations</li><li>Evaluation set from real staff questions</li></ul>
-        </article>
-        <article class="cap">
-          <h3>How it works</h3>
-          <p>Content audit first, then a measured pilot, then rollout with champions.</p>
-          <ul><li>Content audit and cleanup plan</li><li>Pilot with one team, measured weekly</li><li>Rollout with champions and usage analytics</li></ul>
-        </article>
-        <article class="cap">
-          <h3>What you get</h3>
-          <p>An assistant where people already work, plus insight into your content gaps.</p>
-          <ul><li>Assistant inside Teams, Slack or your intranet</li><li>Content gap and freshness reports</li><li>Admin controls and audit log</li></ul>
-        </article>
-        <article class="cap">
-          <h3>How we measure it</h3>
-          <p>Accuracy, adoption and the searching it replaces.</p>
-          <ul><li>Answer accuracy on the eval set</li><li>Adoption and repeat usage</li><li>Tickets and search time avoided</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="msoftai" class="line alt">
-    <div class="wrap">
-      <div class="intro">
-        <span class="kicker">Product · MsoftAI Manifold Designer</span>
-        <h2>Hydraulic manifold design in the browser, from block to checked drawing</h2>
-        <p>MsoftAI Manifold Designer is a MindYards product for hydraulic and fluid-power engineers. Define the block, place cavities, route drillings, connect ports and run design checks in a web browser, with designs saved to your account and ready for manufacturing.</p>
-        <dl class="meta">
-          <div><dt>Who it's for</dt><dd>Hydraulic manifold designers, fluid-power OEMs, machine builders and manufacturing engineers</dd></div>
-          <div><dt>Format</dt><dd>Live web application, with team licences and customisation on request</dd></div>
-          <div><dt>Runs on</dt><dd>Any modern browser, no installation, sign-in with your account</dd></div>
-        </dl>
-        <a class="btn btn-fire btn-sm" href="#contact">Ask about MsoftAI for your team</a>
-        <a class="btn btn-line btn-sm arrow" href="https://msoftai.mindyards.in/" target="_blank" rel="noopener">Open MsoftAI </a>
-      </div>
-      <div class="caps">
-        <article class="cap">
-          <h3>What it does</h3>
-          <p>The full manifold workflow in one tool.</p>
-          <ul><li>3D block definition with units and material</li><li>Cavity, drilling and port placement with offset holes</li><li>Checks for intersections, depth to tip and net connectivity</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Who it's for</h3>
-          <p>Teams replacing spreadsheet and desktop-CAD workflows for manifold design.</p>
-          <ul><li>Hydraulic and fluid-power design teams</li><li>Manifold manufacturers quoting and producing blocks</li><li>Engineering firms standardising their manifold process</li></ul>
-        </article>
-        <article class="cap">
-          <h3>How it's delivered</h3>
-          <p>Zero-install software with your designs kept safe.</p>
-          <ul><li>Runs in the browser, nothing to deploy</li><li>Designs saved to your account and per browser</li><li>Reports and downloads for manufacturing</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Customisation</h3>
-          <p>Make it yours with libraries, integrations and private hosting.</p>
-          <ul><li>Company cavity and component libraries</li><li>Integration with your ERP or quoting tools</li><li>Private deployment for larger teams</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="advisor" class="line">
-    <div class="wrap">
-      <div class="intro">
-        <span class="kicker">Product · Insurance Advisor CRM</span>
-        <h2>A CRM built around the adviser's day, not the database</h2>
-        <p>Insurance Advisor CRM is a MindYards product for insurance and protection advisers. It manages enquiries to completion with an SLA-driven work queue, document chasing, AI-extracted client data and commission reconciliation, synced with Microsoft 365.</p>
-        <dl class="meta">
-          <div><dt>Who it's for</dt><dd>Insurance and protection advisers, broker firms and adviser networks</dd></div>
-          <div><dt>Format</dt><dd>Live web application with demo data, tenant setup and customisation on request</dd></div>
-          <div><dt>Integrates with</dt><dd>Microsoft 365 calendar and mail, with provider and payroll feeds on request</dd></div>
-        </dl>
-        <a class="btn btn-fire btn-sm" href="#contact">Ask about Insurance Advisor</a>
-        <a class="btn btn-line btn-sm arrow" href="https://advisor.mindyards.in/#/home" target="_blank" rel="noopener">Open Insurance Advisor </a>
-      </div>
-      <div class="caps">
-        <article class="cap">
-          <h3>What it does</h3>
-          <p>One screen for the work that matters today.</p>
-          <ul><li>Pipeline by stage with follow-up and document SLAs</li><li>Parties, cases, tasks and appointments in one view</li><li>Earnings expected versus reconciled, with clawback visibility</li></ul>
-        </article>
-        <article class="cap">
-          <h3>AI inside</h3>
-          <p>AI that removes admin, with the adviser approving every result.</p>
-          <ul><li>Extraction of payslips and documents into case fields for review</li><li>Suggested next actions in the work queue</li><li>Natural-language search across parties and cases</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Compliance</h3>
-          <p>Built for a regulated profession.</p>
-          <ul><li>Suitability and licence expiry tracking</li><li>Audit trail for every change</li><li>Role-based access</li></ul>
-        </article>
-        <article class="cap">
-          <h3>Customisation</h3>
-          <p>Your process, your providers, your cloud.</p>
-          <ul><li>Your stages, SLA rules and document lists</li><li>Provider integrations</li><li>Private tenant on your cloud</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PLATFORMS & FIT ============ -->
   <section id="platforms" class="sec blush">
     <div class="wrap">
       <div class="sec-head">
@@ -1609,228 +238,6 @@
       </div>
     </div>
   </section>
-
-  <!-- ============ ENGAGEMENT MODELS ============ -->
-  <section id="engagement" class="sec">
-    <div class="wrap">
-      <div class="sec-head">
-        <div class="tick"></div>
-        <h2>Four ways to work with us</h2>
-        <p>Pick the entry point that matches where you are. Most clients start with an assessment, move into a fixed-scope build, and keep us on for operations.</p>
-      </div>
-      <div class="eng">
-        <article>
-          <span class="kicker">Start here</span>
-          <h3>Assessment</h3>
-          <div class="dur">2 to 4 weeks · fixed fee</div>
-          <p>Readiness, use-case prioritisation or a compliance gap review, ending in a written roadmap and estimates.</p>
-          <ul><li>Stakeholder interviews and data review</li><li>Scored use-case portfolio</li><li>Roadmap, budget and risk view</li></ul>
-          <a class="btn btn-line btn-sm" href="#assessment">How an assessment works</a>
-        </article>
-        <article class="hi">
-          <span class="kicker">Most common</span>
-          <h3>Fixed-scope build</h3>
-          <div class="dur">6 to 16 weeks per phase · fixed fee</div>
-          <p>A production-grade application, model or agent delivered in phases with written acceptance criteria.</p>
-          <ul><li>Evaluation set agreed up front</li><li>Guardrails and monitoring included</li><li>Documented hand-over to your team</li></ul>
-          <a class="btn btn-fire btn-sm" href="#build">How a build works</a>
-        </article>
-        <article>
-          <span class="kicker">Ongoing</span>
-          <h3>Managed operations</h3>
-          <div class="dur">Monthly retainer · SLAs</div>
-          <p>We monitor, maintain, improve and report on your models, agents and LLM workloads after launch.</p>
-          <ul><li>Named service levels</li><li>Monthly health and cost report</li><li>Continuous improvement backlog</li></ul>
-          <a class="btn btn-line btn-sm" href="#managed-operations">How operations work</a>
-        </article>
-        <article>
-          <span class="kicker">Leadership</span>
-          <h3>Fractional Chief AI Officer</h3>
-          <div class="dur">2 to 6 days a month</div>
-          <p>Senior AI leadership that owns your roadmap, vendors and governance without a full-time hire.</p>
-          <ul><li>Monthly leadership cadence</li><li>Board and investor reporting</li><li>Hiring and vendor decisions</li></ul>
-          <a class="btn btn-line btn-sm" href="#fractional-caio">How the role works</a>
-        </article>
-      </div>
-      <div class="cmp-wrap">
-        <table class="cmp" aria-label="Engagement models compared">
-          <thead><tr><th></th><th>Assessment</th><th>Fixed-scope build</th><th>Managed operations</th><th>Fractional CAIO</th></tr></thead>
-          <tbody>
-            <tr><th>Duration</th><td>2 to 4 weeks</td><td>6 to 16 weeks per phase</td><td>Monthly, 3-month minimum</td><td>2 to 6 days a month</td></tr>
-            <tr><th>Pricing</th><td>Fixed fee</td><td>Fixed fee per phase</td><td>Tiered retainer with SLAs</td><td>Retainer by days</td></tr>
-            <tr><th>Best for</th><td>Deciding what to do first</td><td>Shipping a validated use case</td><td>Keeping live systems healthy</td><td>Leadership without a full-time hire</td></tr>
-            <tr><th>You get</th><td>Roadmap, budget, risk view</td><td>Working software, evals, docs</td><td>SLAs, monthly report, backlog</td><td>Owned roadmap, decisions, hiring plan</td></tr>
-            <tr><th>Team</th><td>Senior lead + specialist</td><td>Lead + 2 to 4 engineers</td><td>Service lead + on-call</td><td>One named leader</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="incl">
-        <h3>Included in every engagement</h3>
-        <ul>
-          <li>Written scope and acceptance criteria before we start</li>
-          <li>A named senior lead who stays for the whole engagement</li>
-          <li>Weekly demos or reviews, never a big reveal at the end</li>
-          <li>Your IP, your environment, your data, documented on hand-over</li>
-          <li>NDA, security questionnaire and vendor onboarding support</li>
-          <li>An honest stop recommendation if something is not worth continuing</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="assessment" class="line alt">
-    <div class="wrap">
-      <div class="intro">
-        <span class="kicker">Engagement · Assessment</span>
-        <h2>Two to four weeks to a roadmap you can fund</h2>
-        <p>An assessment is the lowest-risk way to start. We interview stakeholders, examine your data and systems, score candidate use cases and return a written roadmap with estimates, so your next decision is a budget decision, not a leap of faith.</p>
-        <dl class="meta">
-          <div><dt>Duration</dt><dd>2 to 4 weeks</dd></div>
-          <div><dt>Pricing</dt><dd>Fixed fee, agreed before we start</dd></div>
-          <div><dt>Team</dt><dd>One senior consultant lead plus a data or compliance specialist</dd></div>
-        </dl>
-        <a class="btn btn-fire btn-sm" href="#contact">Book an assessment</a>
-      </div>
-      <div class="caps">
-        <article class="cap">
-          <h3>Who it's for</h3>
-          <p>Leaders who need a ranked, costed view before committing budget.</p>
-          <ul><li>Leaders deciding where to invest first</li><li>Teams with a list of ideas and no ranking</li><li>Regulated firms needing a compliance gap view</li></ul>
-        </article>
-        <article class="cap">
-          <h3>What happens</h3>
-          <p>A tight sequence with leadership time protected.</p>
-          <ul><li>Week 1: interviews and system walkthroughs</li><li>Weeks 2 to 3: data review, scoring and estimates</li><li>Final week: roadmap readout with leadership</li></ul>
-        </article>
-        <article class="cap">
-          <h3>What you get</h3>
-          <p>Written deliverables you can circulate and fund.</p>
-          <ul><li>Scored use-case portfolio with owners</li><li>12 to 18 month roadmap and budget</li><li>Risk, data and governance findings</li></ul>
-        </article>
-        <article class="cap">
-          <h3>What it leads to</h3>
-          <p>A clear next step, including the option to wait.</p>
-          <ul><li>A fixed-scope build on the top use case</li><li>A fractional leadership arrangement</li><li>Or an honest recommendation to hold</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="build" class="line">
-    <div class="wrap">
-      <div class="intro">
-        <span class="kicker">Engagement · Fixed-scope build</span>
-        <h2>Production-grade delivery in phases, with acceptance criteria in writing</h2>
-        <p>Most of our work is fixed-scope build: an application, model or agent delivered in phases of six to sixteen weeks, each with written scope, an evaluation set agreed up front and a demo every week, so there are no surprises at the end.</p>
-        <dl class="meta">
-          <div><dt>Duration</dt><dd>6 to 16 weeks per phase</dd></div>
-          <div><dt>Pricing</dt><dd>Fixed fee per phase, milestone-based invoicing</dd></div>
-          <div><dt>Team</dt><dd>Senior lead, two to four engineers, design and QA as needed</dd></div>
-        </dl>
-        <a class="btn btn-fire btn-sm" href="#contact">Scope a build</a>
-      </div>
-      <div class="caps">
-        <article class="cap">
-          <h3>Who it's for</h3>
-          <p>Teams that know what they want shipped.</p>
-          <ul><li>Teams with a validated use case ready to ship</li><li>Companies replacing a demo with a production system</li><li>Vendors adding AI features to a product</li></ul>
-        </article>
-        <article class="cap">
-          <h3>What happens</h3>
-          <p>Scope locks early, demos run weekly, hardening is in the plan.</p>
-          <ul><li>Discovery and scope lock in week one</li><li>Weekly demos on your real data</li><li>Hardening, security review and acceptance testing</li></ul>
-        </article>
-        <article class="cap">
-          <h3>What you get</h3>
-          <p>Software in your environment, with the evidence that it works.</p>
-          <ul><li>Working software in your environment</li><li>Evaluation results, guardrails and monitoring</li><li>Documentation and a trained team</li></ul>
-        </article>
-        <article class="cap">
-          <h3>What it leads to</h3>
-          <p>Further phases, operations or independence, your choice.</p>
-          <ul><li>Further phases as value is proven</li><li>Managed operations for the live system</li><li>Your team running it independently</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="managed-operations" class="line alt">
-    <div class="wrap">
-      <div class="intro">
-        <span class="kicker">Engagement · Managed operations</span>
-        <h2>Keep it accurate, affordable and compliant after launch</h2>
-        <p>AI systems degrade without attention: drift, prompt regressions, rising bills and new compliance questions. Managed operations gives you a named team, service levels and a monthly report for a predictable fee.</p>
-        <dl class="meta">
-          <div><dt>Duration</dt><dd>Monthly retainer, three-month minimum</dd></div>
-          <div><dt>Pricing</dt><dd>Tiered by number of systems and service level</dd></div>
-          <div><dt>Team</dt><dd>Named service lead, on-call engineers, specialists on demand</dd></div>
-        </dl>
-        <a class="btn btn-fire btn-sm" href="#contact">Ask about a retainer</a>
-      </div>
-      <div class="caps">
-        <article class="cap">
-          <h3>Who it's for</h3>
-          <p>Anything in production that has to stay reliable.</p>
-          <ul><li>Systems without a full-time internal AI team</li><li>Agents that customers and staff rely on daily</li><li>Regulated firms needing continuous evidence</li></ul>
-        </article>
-        <article class="cap">
-          <h3>What happens</h3>
-          <p>Runbooks first, then steady monitoring and monthly review.</p>
-          <ul><li>Onboarding and runbooks in month one</li><li>Monitoring, alerts and on-call cover</li><li>Monthly review of health, cost and backlog</li></ul>
-        </article>
-        <article class="cap">
-          <h3>What you get</h3>
-          <p>Service levels and a report you can forward to leadership.</p>
-          <ul><li>Named SLAs for uptime, response and accuracy</li><li>Monthly health, cost and compliance report</li><li>Improvement backlog delivered within the retainer</li></ul>
-        </article>
-        <article class="cap">
-          <h3>What it leads to</h3>
-          <p>Stable systems and a team free to build the next thing.</p>
-          <ul><li>Lower run cost over time</li><li>Capacity for your team to build, not babysit</li><li>Hand-back to your team whenever you choose</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="fractional-caio" class="line">
-    <div class="wrap">
-      <div class="intro">
-        <span class="kicker">Engagement · Fractional Chief AI Officer</span>
-        <h2>Senior AI leadership, a few days a month</h2>
-        <p>Mid-market companies need AI leadership before they can justify a full-time hire. A fractional Chief AI Officer owns your roadmap, vendors, governance and delivery oversight, reports to your CEO or board, and scales down as your own team grows.</p>
-        <dl class="meta">
-          <div><dt>Duration</dt><dd>2 to 6 days a month, six-month minimum</dd></div>
-          <div><dt>Pricing</dt><dd>Monthly retainer by days committed</dd></div>
-          <div><dt>Team</dt><dd>One named senior leader with MindYards specialists on call</dd></div>
-        </dl>
-        <a class="btn btn-fire btn-sm" href="#contact">Discuss a fractional role</a>
-      </div>
-      <div class="caps">
-        <article class="cap">
-          <h3>Who it's for</h3>
-          <p>Companies between a first project and a real programme.</p>
-          <ul><li>CEOs with AI on the board agenda</li><li>Companies scaling from one project to a portfolio</li><li>Firms choosing vendors and platforms</li></ul>
-        </article>
-        <article class="cap">
-          <h3>What happens</h3>
-          <p>A monthly leadership cadence with real decision rights.</p>
-          <ul><li>Monthly steering and roadmap ownership</li><li>Vendor, hiring and budget decisions</li><li>Governance and board reporting</li></ul>
-        </article>
-        <article class="cap">
-          <h3>What you get</h3>
-          <p>An owned, funded roadmap and faster decisions.</p>
-          <ul><li>A roadmap with budget and owners</li><li>Better-informed, faster decisions</li><li>Hiring plan for your in-house team</li></ul>
-        </article>
-        <article class="cap">
-          <h3>What it leads to</h3>
-          <p>Your own AI leader, with a clear hand-over.</p>
-          <ul><li>Your own AI leader and team</li><li>MindYards as a build or operations partner</li><li>A planned exit when the role is no longer needed</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ APPROACH ============ -->
   <section id="approach" class="sec blush">
     <div class="wrap">
       <div class="sec-head">
@@ -1846,129 +253,15 @@
       </ol>
     </div>
   </section>
-
-  <!-- ============ ABOUT ============ -->
-  <section id="about" class="sec about">
-    <img class="mark" src="assets/mark.png" alt="" aria-hidden="true" width="391" height="402">
-    <div class="wrap">
-      <div>
-        <div class="tick"></div>
-        <h2 style="margin-bottom:18px">Built by practitioners</h2>
-        <p>MindYards was founded by Selvakumar Dhanasekaran, a technology leader who has led engineering teams across enterprise platforms and AI products, from Node.js and Angular platforms to full-stack AI applications and agent systems.</p>
-        <p>We are based in Chennai and work with clients across India and the Middle East. We prefer short, well-defined engagements, written deliverables, and an honest conversation when something isn't worth building.</p>
-        <div class="facts">
-          <div><b>Senior-led delivery</b><span>The people you meet are the people who build.</span></div>
-          <div><b>Your stack, your cloud</b><span>We work inside your environment and leave it documented.</span></div>
-          <div><b>Evaluation first</b><span>Every model decision is backed by a test set you can see.</span></div>
-          <div><b>Transparent pricing</b><span>Fixed-fee phases with a written scope before we start.</span></div>
-        </div>
-      </div>
-      <blockquote class="quote">
-        The hard part of AI isn't the model. It's the hundred small decisions between a demo and something your customers rely on.
-        <small>MindYards operating principle</small>
-      </blockquote>
-    </div>
-  </section>
-
-  <!-- ============ FAQ ============ -->
-  <section id="faq" class="sec blush">
-    <div class="wrap">
-      <div class="sec-head">
-        <div class="tick"></div>
-        <h2>Questions we get on the first call</h2>
-      </div>
-      <div class="faq">
-        <details>
-          <summary>How quickly can we start, and what does the first month look like?</summary>
-          <p>Usually within two weeks of a signed scope. The first two to four weeks are an assessment: interviews, a look at your data and systems, and a written roadmap with estimates. You can stop there or move straight into a build.</p>
-        </details>
-        <details>
-          <summary>Do you work on fixed fees or time and materials?</summary>
-          <p>Fixed fees for assessments and build phases, with written scope and acceptance criteria. Managed operations and fractional roles are monthly retainers you can end with notice. We avoid open-ended time-and-materials work.</p>
-        </details>
-        <details>
-          <summary>Which models and clouds do you use?</summary>
-          <p>Whichever fit the use case. We work on Azure, AWS and GCP, with OpenAI, Anthropic, Google and open-weight models, and we self-host when data residency requires it. We are not paid by any vendor to recommend them.</p>
-        </details>
-        <details>
-          <summary>Can you help if our data isn't ready?</summary>
-          <p>Yes. Data readiness is one of our service lines, and most programmes include some of it. We will tell you honestly if the data gap is big enough that a build should wait.</p>
-        </details>
-        <details>
-          <summary>Do you handle EU AI Act and other regulatory work for companies outside Europe?</summary>
-          <p>Yes. Indian and Middle East companies selling into the EU, or serving EU customers, carry obligations too. We also work with NIST AI RMF, ISO 42001, SR 11-7 style model risk controls and local regulator guidance.</p>
-        </details>
-        <details>
-          <summary>What happens after the build is done?</summary>
-          <p>Either your team takes over with documentation, training and a few weeks of on-call support from us, or we keep running it under a managed operations retainer with service levels and monthly reporting.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
   <div class="ctaband">
     <div class="wrap">
       <div>
         <h2>Tell us the problem. We'll tell you if AI is the answer.</h2>
         <p>A 30-minute call, no deck, no obligation.</p>
       </div>
-      <a class="btn btn-line" href="#contact">Book a discovery call</a>
+      <a class="btn btn-line" href="/contact/">Book a discovery call</a>
     </div>
   </div>
-
-  <!-- ============ CONTACT ============ -->
-  <section id="contact" class="sec contact">
-    <div class="wrap">
-      <div>
-        <div class="tick"></div>
-        <h2 style="margin-bottom:14px">Tell us what you're trying to do</h2>
-        <p style="color:var(--ink-2)">We reply within two working days. A short note is enough; we'll ask the right questions on the call.</p>
-        <ul class="details">
-          <li><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span class="val"><a href="mailto:contact@mindyards.in">contact@mindyards.in</a></span></li>
-          <!-- Add your phone number here when ready:
-          <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span><span class="val"><a href="tel:+91XXXXXXXXXX">+91 XXXXX XXXXX</a></span></li>
-          -->
-          <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span class="val">Chennai, Tamil Nadu, India</span></li>
-          <li><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="val">Mon–Fri, 9:30–18:30 IST</span></li>
-        </ul>
-        <div class="expect">
-          <h3>What happens next</h3>
-          <ol>
-            <li>We reply with a few clarifying questions or a call slot.</li>
-            <li>A 30-minute discovery call with a senior consultant.</li>
-            <li>A written proposal with scope, timeline and fixed price.</li>
-          </ol>
-        </div>
-      </div>
-      <form id="contactForm" action="mailto:contact@mindyards.in" method="post" enctype="text/plain">
-        <div class="f2">
-          <div class="f"><label for="name">Name</label><input id="name" name="Name" required autocomplete="name"></div>
-          <div class="f"><label for="email">Work email</label><input id="email" name="Email" type="email" required autocomplete="email"></div>
-        </div>
-        <div class="f2">
-          <div class="f"><label for="company">Company</label><input id="company" name="Company" autocomplete="organization"></div>
-          <div class="f"><label for="service">What are you interested in?</label>
-            <select id="service" name="Service">
-              <option value="">Not sure yet</option>
-              <option>Implementation &amp; build</option>
-              <option>Agentic AI</option>
-              <option>Managed AI operations</option>
-              <option>Strategy &amp; advisory</option>
-              <option>Governance, risk &amp; compliance</option>
-              <option>Data &amp; enablement</option>
-              <option>A packaged solution</option>
-              <option>MsoftAI Manifold Designer</option>
-              <option>Insurance Advisor CRM</option>
-              <option>Fractional Chief AI Officer</option>
-            </select>
-          </div>
-        </div>
-        <div class="f"><label for="msg">What are you trying to do?</label><textarea id="msg" name="Message" required placeholder="A few lines about the problem, your timeline and anything already in place."></textarea></div>
-        <button class="btn btn-fire" type="submit">Send message</button>
-        <p class="note">Opens your email app with the message pre-filled. Or write to contact@mindyards.in directly.</p>
-      </form>
-    </div>
-  </section>
 </main>
 
 <footer>
@@ -1981,42 +274,42 @@
   <div class="wrap">
     <div class="fcols">
       <div>
-        <a class="logo" href="#top" aria-label="MindYards home"><img src="assets/logo.png" alt="MindYards" width="940" height="402"></a>
+        <a class="logo" href="/" aria-label="MindYards home"><img src="/assets/logo.png" alt="MindYards" width="940" height="402"></a>
         <p>AI consulting across strategy, build, governance and operations, for mid-market and enterprise teams in India and the Middle East.</p>
       </div>
       <div>
         <h4>Services</h4>
         <ul>
-          <li><a href="#implementation">Implementation &amp; build</a></li>
-          <li><a href="#agentic">Agentic AI</a></li>
-          <li><a href="#managed-ops">Managed AI operations</a></li>
-          <li><a href="#strategy">Strategy &amp; advisory</a></li>
-          <li><a href="#governance">Governance, risk &amp; compliance</a></li>
-          <li><a href="#data">Data &amp; enablement</a></li>
+          <li><a href="/services/implementation/">Implementation &amp; build</a></li>
+          <li><a href="/services/agentic/">Agentic AI</a></li>
+          <li><a href="/services/managed-ops/">Managed AI operations</a></li>
+          <li><a href="/services/strategy/">Strategy &amp; advisory</a></li>
+          <li><a href="/services/governance/">Governance, risk &amp; compliance</a></li>
+          <li><a href="/services/data/">Data &amp; enablement</a></li>
         </ul>
       </div>
       <div>
         <h4>Solutions</h4>
         <ul>
-          <li><a href="#compliance-service">Compliance as a service</a></li>
-          <li><a href="#voice-agents">Voice &amp; sales agents</a></li>
-          <li><a href="#ma-diligence">AI M&amp;A due diligence</a></li>
-          <li><a href="#evals">Evals &amp; red-teaming</a></li>
-          <li><a href="#cost-optimisation">AI cost optimisation</a></li>
-          <li><a href="#document-intelligence">Document intelligence accelerator</a></li>
-          <li><a href="#knowledge-assistant">Enterprise knowledge assistant</a></li>
-          <li><a href="#msoftai">MsoftAI Manifold Designer</a></li>
-          <li><a href="#advisor">Insurance Advisor CRM</a></li>
+          <li><a href="/solutions/compliance-service/">Compliance as a service</a></li>
+          <li><a href="/solutions/voice-agents/">Voice &amp; sales agents</a></li>
+          <li><a href="/solutions/ma-diligence/">AI M&amp;A due diligence</a></li>
+          <li><a href="/solutions/evals/">Evals &amp; red-teaming</a></li>
+          <li><a href="/solutions/cost-optimisation/">AI cost optimisation</a></li>
+          <li><a href="/solutions/document-intelligence/">Document intelligence accelerator</a></li>
+          <li><a href="/solutions/knowledge-assistant/">Enterprise knowledge assistant</a></li>
+          <li><a href="/solutions/msoftai/">MsoftAI Manifold Designer</a></li>
+          <li><a href="/solutions/advisor/">Insurance Advisor CRM</a></li>
         </ul>
       </div>
       <div>
         <h4>Company</h4>
         <ul>
-          <li><a href="#engagement">Engagement models</a></li>
-          <li><a href="#approach">How we work</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="/engagement/">Engagement models</a></li>
+          <li><a href="/about/#approach">How we work</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/about/#faq">FAQ</a></li>
+          <li><a href="/contact/">Contact</a></li>
           <li><a href="mailto:contact@mindyards.in">contact@mindyards.in</a></li>
         </ul>
       </div>
@@ -2028,44 +321,7 @@
   </div>
 </footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  var btn = document.getElementById('menuBtn'), nav = document.getElementById('nav');
-  btn.addEventListener('click', function(){
-    var open = nav.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open);
-  });
-  nav.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){ nav.classList.remove('open'); btn.setAttribute('aria-expanded','false'); });
-  });
-
-  // Contact: compose a readable mailto rather than relying on form-post-to-mailto support.
-  var form = document.getElementById('contactForm');
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var v = function(id){ return (document.getElementById(id).value || '').trim(); };
-    var service = v('service') || 'Not sure yet';
-    var subject = 'MindYards enquiry: ' + service + (v('company') ? ' (' + v('company') + ')' : '');
-    var body = 'Name: ' + v('name') + '\n' +
-               'Email: ' + v('email') + '\n' +
-               'Company: ' + (v('company') || '-') + '\n' +
-               'Interested in: ' + service + '\n\n' +
-               v('msg') + '\n';
-    window.location.href = 'mailto:contact@mindyards.in?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-  });
-
-  // Highlight the current section in the services dropdown as the reader scrolls.
-  var links = Array.prototype.slice.call(document.querySelectorAll('.dd-menu a'));
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if (!en.isIntersecting) return;
-        links.forEach(function(l){ l.style.background = l.getAttribute('href') === '#' + en.target.id ? 'var(--blush)' : ''; });
-      });
-    }, {rootMargin:'-40% 0px -55% 0px'});
-    document.querySelectorAll('section.line').forEach(function(s){ io.observe(s); });
-  }
-</script>
+<script>window.MY_LEGACY={"top":"/","contact":"/contact/","about":"/about/","faq":"/about/#faq","approach":"/about/#approach","platforms":"/#platforms","services":"/services/","implementation":"/services/implementation/","agentic":"/services/agentic/","managed-ops":"/services/managed-ops/","strategy":"/services/strategy/","governance":"/services/governance/","data":"/services/data/","industries":"/industries/","bfsi":"/industries/bfsi/","healthcare":"/industries/healthcare/","legal":"/industries/legal/","manufacturing":"/industries/manufacturing/","logistics":"/industries/logistics/","public-sector":"/industries/public-sector/","retail-cx":"/industries/retail-cx/","aec":"/industries/aec/","solutions":"/solutions/","compliance-service":"/solutions/compliance-service/","voice-agents":"/solutions/voice-agents/","ma-diligence":"/solutions/ma-diligence/","evals":"/solutions/evals/","cost-optimisation":"/solutions/cost-optimisation/","document-intelligence":"/solutions/document-intelligence/","knowledge-assistant":"/solutions/knowledge-assistant/","msoftai":"/solutions/msoftai/","advisor":"/solutions/advisor/","engagement":"/engagement/","assessment":"/engagement/assessment/","build":"/engagement/build/","managed-operations":"/engagement/managed-operations/","fractional-caio":"/engagement/fractional-caio/"}</script>
+<script src="/assets/site.js?v=311fba8c"></script>
 </body>
 </html>
