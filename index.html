@@ -184,7 +184,7 @@
   .ind li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:2px;background:var(--orange)}
 
   /* solutions */
-  .sol{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .sol{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
   .sol article{background:var(--ink);color:#fff;border-radius:var(--r-lg);padding:24px 22px;display:flex;flex-direction:column;gap:10px;min-height:280px}
   .sol article .tag{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#FBD3BC;align-self:flex-start}
   .sol article.product{background:var(--band);border:none}
@@ -358,7 +358,18 @@
         </div>
       </div>
       <a href="#industries">Industries</a>
-      <a href="#solutions">Solutions</a>
+      <div class="dd">
+        <a href="#solutions" aria-haspopup="true">Solutions</a>
+        <div class="dd-menu">
+          <a href="#compliance-service"><i>S1</i><div>Compliance as a service<span>Ongoing AI compliance on retainer</span></div></a>
+          <a href="#voice-agents"><i>S2</i><div>Voice &amp; sales agents<span>Outbound, inbound, collections</span></div></a>
+          <a href="#ma-diligence"><i>S3</i><div>AI M&amp;A due diligence<span>Technical diligence on AI assets</span></div></a>
+          <a href="#evals"><i>S4</i><div>Evals &amp; red-teaming<span>Independent testing before launch</span></div></a>
+          <a href="#cost-optimisation"><i>S5</i><div>AI cost optimisation<span>Token and GPU spend</span></div></a>
+          <a href="#msoftai"><i>P1</i><div>MsoftAI Manifold Designer<span>Product · hydraulic manifold CAD</span></div></a>
+          <a href="#advisor"><i>P2</i><div>Pinnacle Advisor CRM<span>Product · CRM for mortgage advisers</span></div></a>
+        </div>
+      </div>
       <a href="#engagement">Engagement</a>
       <a href="#about">About</a>
       <a class="cta" href="#contact">Book a call</a>
@@ -797,35 +808,35 @@
         <p>Defined scope, defined price, defined outcome. Each one combines capabilities from several service lines into something you can buy in one decision.</p>
       </div>
       <div class="sol">
-        <article>
+        <article id="compliance-service">
           <span class="tag">Recurring</span>
           <h3>Compliance as a service</h3>
           <p>Ongoing AI compliance for regulated businesses: inventory, controls, evidence and reporting kept current as rules and systems change.</p>
           <ul><li>Quarterly gap reviews</li><li>Living policy set</li><li>Audit-ready evidence pack</li></ul>
           <div class="fmt">Monthly retainer</div>
         </article>
-        <article>
+        <article id="voice-agents">
           <span class="tag">High volume</span>
           <h3>Voice &amp; sales agents</h3>
           <p>Outbound and inbound agents for sales qualification, support and collections, integrated with your CRM and telephony.</p>
           <ul><li>Multilingual, including Indian languages</li><li>CRM and dialler integration</li><li>Quality monitoring and hand-off</li></ul>
           <div class="fmt">Pilot, then per-conversation</div>
         </article>
-        <article>
+        <article id="ma-diligence">
           <span class="tag">Transactions</span>
           <h3>AI M&amp;A due diligence</h3>
           <p>Independent technical diligence on AI assets for acquirers and investors: what is real, what is fragile, what it costs to run.</p>
           <ul><li>Code, data and model review</li><li>Dependency and licence risk</li><li>Valuation inputs and 100-day plan</li></ul>
           <div class="fmt">Fixed fee, 2 to 3 weeks</div>
         </article>
-        <article>
+        <article id="evals">
           <span class="tag">Standalone</span>
           <h3>Evals &amp; red-teaming</h3>
           <p>Independent evaluation and adversarial testing of your LLM features and agents before launch, with a fix list your engineers can act on.</p>
           <ul><li>Task-specific eval sets</li><li>Security and safety red-team</li><li>Release gate you can keep</li></ul>
           <div class="fmt">Fixed fee per system</div>
         </article>
-        <article>
+        <article id="cost-optimisation">
           <span class="tag">Savings</span>
           <h3>AI cost optimisation</h3>
           <p>Cut token and GPU spend without hurting quality: routing, caching, right-sizing, and a FinOps view your finance team understands.</p>
@@ -839,6 +850,14 @@
           <ul><li>Block, cavity and drilling design in 3D</li><li>Automated checks, reports and net colouring</li><li>Designs saved to your account, downloadable</li></ul>
           <div class="fmt">Live web application</div>
           <a class="launch arrow" href="https://msoftai.mindyards.in/" target="_blank" rel="noopener">Open MsoftAI </a>
+        </article>
+        <article class="product" id="advisor">
+          <span class="tag">Product · built by MindYards</span>
+          <h3>Pinnacle Advisor CRM</h3>
+          <p>A CRM for mortgage and protection advisers: enquiries to completion, with a work queue driven by SLA rules, document chasing and AI-extracted client data.</p>
+          <ul><li>Pipeline by stage with follow-up and document SLAs</li><li>AI extraction of payslips and documents for review</li><li>Microsoft 365 calendar sync and commission reconciliation</li></ul>
+          <div class="fmt">Live web application · demo data</div>
+          <a class="launch arrow" href="https://advisor.mindyards.in/#/home" target="_blank" rel="noopener">Open Pinnacle Advisor </a>
         </article>
       </div>
     </div>
@@ -1047,6 +1066,7 @@
               <option>Data &amp; enablement</option>
               <option>A packaged solution</option>
               <option>MsoftAI Manifold Designer</option>
+              <option>Pinnacle Advisor CRM</option>
               <option>Fractional Chief AI Officer</option>
             </select>
           </div>
@@ -1086,12 +1106,13 @@
       <div>
         <h4>Solutions</h4>
         <ul>
-          <li><a href="#solutions">Compliance as a service</a></li>
-          <li><a href="#solutions">Voice &amp; sales agents</a></li>
-          <li><a href="#solutions">AI M&amp;A due diligence</a></li>
-          <li><a href="#solutions">Evals &amp; red-teaming</a></li>
-          <li><a href="#solutions">AI cost optimisation</a></li>
+          <li><a href="#compliance-service">Compliance as a service</a></li>
+          <li><a href="#voice-agents">Voice &amp; sales agents</a></li>
+          <li><a href="#ma-diligence">AI M&amp;A due diligence</a></li>
+          <li><a href="#evals">Evals &amp; red-teaming</a></li>
+          <li><a href="#cost-optimisation">AI cost optimisation</a></li>
           <li><a href="#msoftai">MsoftAI Manifold Designer</a></li>
+          <li><a href="#advisor">Pinnacle Advisor CRM</a></li>
         </ul>
       </div>
       <div>
