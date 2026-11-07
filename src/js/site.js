@@ -341,10 +341,10 @@
   }
 
   // ---------------------------------------------------------------- share buttons on insights
-  var share = $('.share');
-  if (share) {
+  var shareBox = $('.share');
+  if (shareBox) {
     var url = location.href.split('#')[0], title = document.title;
-    $$('[data-share]', share).forEach(function (b) {
+    $$('[data-share]', shareBox).forEach(function (b) {
       var kind = b.getAttribute('data-share');
       if (kind === 'linkedin') b.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
       if (kind === 'whatsapp') b.href = 'https://wa.me/?text=' + encodeURIComponent(title + ' ' + url);
