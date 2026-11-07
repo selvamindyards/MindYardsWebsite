@@ -448,6 +448,13 @@ html.js .banner img{animation:bzoom 1.6s ease-out both;will-change:transform}
 .cal .hd{padding:16px 20px;border-bottom:1px solid var(--hair);font:600 16px var(--display)}
 .cal iframe{display:block;width:100%;height:660px;border:none}
 
+.bk{position:fixed;inset:0;z-index:60;background:rgba(27,27,31,.62);display:none;align-items:center;justify-content:center;padding:16px}
+.bk.open{display:flex}
+.bk .box{position:relative;width:min(1040px,100%);height:min(780px,100%);background:#fff;border-radius:var(--r-lg);overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.6);animation:pop .2s cubic-bezier(.2,.7,.2,1)}
+.bk iframe{display:block;width:100%;height:100%;border:0}
+.bk button{position:absolute;top:10px;right:10px;width:36px;height:36px;border-radius:50%;border:1px solid var(--hair);background:#fff;color:var(--ink);font-size:22px;line-height:1;cursor:pointer;box-shadow:0 6px 16px -8px rgba(0,0,0,.4);z-index:1}
+.bk button:hover{color:var(--ember);border-color:var(--peach)}
+
 /* ---------- Estimator ---------- */
 .estcta{background:var(--ink);color:#fff;border-top:1px solid var(--hair)}
 .estcta .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;padding:64px 24px}

@@ -20,7 +20,7 @@ BRAND = "MindYards"
 
 # Optional services. Fill in a value, rebuild, and the feature switches on; leave empty to keep the fallback.
 CONFIG = {
-    "calendly": "",    # e.g. "https://calendly.com/mindyards/discovery" -> "Book a call" opens a Calendly popup, contact page embeds it
+    "booking": "https://cal.id/selva-mindyards",  # Cal ID, Cal.com or Calendly link -> "Book a call" opens it in a popup, contact page embeds it
     "whatsapp": "916385872400",    # e.g. "919876543210" (country code + number, digits only) -> floating WhatsApp chat button
     "formKey": "",     # Web3Forms access key (free, https://web3forms.com) -> contact and newsletter forms submit directly
     "ga": "",          # GA4 measurement ID, e.g. "G-XXXXXXXXXX"

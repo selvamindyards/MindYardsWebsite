@@ -104,9 +104,11 @@
     drift();
   }
 
-  // ---------------------------------------------------------------- booking (Calendly) and floating buttons
-  var calendly = CFG.calendly;
-  if (calendly) {
+  // ---------------------------------------------------------------- booking (Cal ID / Cal.com / Calendly) and floating buttons
+  var booking = CFG.booking || CFG.calendly;
+  if (booking) {
+    var isCalendly = /calendly\.com/.test(booking);
+    var embedUrl = booking + (isCalendly ? (booking.indexOf('?') > -1 ? '&' : '?') + 'hide_gdpr_banner=1&background_color=ffffff&primary_color=f26a1b' : '');
     var calLoaded = false;
     var loadCal = function (cb) {
       if (window.Calendly) return cb();
@@ -117,20 +119,42 @@
       }
       var tries = 0, w = setInterval(function () { if (window.Calendly || ++tries > 50) { clearInterval(w); cb(); } }, 100);
     };
+    var modal = null;
+    var closeModal = function () {
+      if (!modal) return;
+      modal.classList.remove('open'); document.body.style.overflow = '';
+      var opener = modal._opener; if (opener) opener.focus();
+    };
+    var openModal = function (opener) {
+      if (!modal) {
+        modal = document.createElement('div');
+        modal.className = 'bk'; modal.setAttribute('role', 'dialog'); modal.setAttribute('aria-modal', 'true'); modal.setAttribute('aria-label', 'Book a call');
+        modal.innerHTML = '<div class="box"><button type="button" aria-label="Close">×</button><iframe title="Book a call" src="' + esc(embedUrl) + '"></iframe></div>';
+        document.body.appendChild(modal);
+        modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+        $('button', modal).addEventListener('click', closeModal);
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+      }
+      modal._opener = opener;
+      modal.classList.add('open'); document.body.style.overflow = 'hidden';
+      $('button', modal).focus();
+    };
     $$('a.book').forEach(function (a) {
       a.addEventListener('click', function (e) {
         e.preventDefault();
-        loadCal(function () {
-          if (window.Calendly) window.Calendly.initPopupWidget({ url: calendly });
-          else location.href = a.href;
-        });
+        if (isCalendly) {
+          loadCal(function () {
+            if (window.Calendly) window.Calendly.initPopupWidget({ url: booking });
+            else location.href = a.href;
+          });
+        } else openModal(a);
       });
     });
     var expect = $('.contact .expect');
     if (expect) {
       var cal = document.createElement('div');
       cal.className = 'cal';
-      cal.innerHTML = '<div class="hd">Prefer to pick a time now?</div><iframe title="Book a discovery call" loading="lazy" src="' + esc(calendly) + (calendly.indexOf('?') > -1 ? '&' : '?') + 'hide_gdpr_banner=1&background_color=ffffff&primary_color=f26a1b"></iframe>';
+      cal.innerHTML = '<div class="hd">Prefer to pick a time now?</div><iframe title="Book a discovery call" loading="lazy" src="' + esc(embedUrl) + '"></iframe>';
       expect.parentNode.insertBefore(cal, expect.nextSibling);
     }
   }
