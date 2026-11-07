@@ -153,7 +153,7 @@
 
   /* service detail sections */
   .line{padding:88px 0;border-top:1px solid var(--hair)}
-  .line:nth-of-type(even){background:var(--blush)}
+  .line.alt{background:var(--blush)}
   .line .wrap{display:grid;grid-template-columns:.9fr 1.4fr;gap:56px;align-items:start}
   .line .intro{position:sticky;top:calc(96px + var(--pad-top))}
   .line .intro h2{font-size:clamp(26px,3vw,36px);margin-bottom:14px}
@@ -183,9 +183,12 @@
   .ind ul{margin-top:12px;display:grid;gap:4px;font-size:14px;color:var(--ink-2)}
   .ind li{padding-left:16px;position:relative}
   .ind li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:2px;background:var(--orange)}
+  .ind .more,.sol .more{display:inline-block;margin-top:14px;font-weight:700;font-size:14px}
+  .sol .more{color:#FBD3BC;margin-top:4px}
+  .sol article.product .more{color:#fff}
 
   /* solutions */
-  .sol{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .sol{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   .sol article{background:var(--ink);color:#fff;border-radius:var(--r-lg);padding:24px 22px;display:flex;flex-direction:column;gap:10px;min-height:280px}
   .sol article .tag{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#FBD3BC;align-self:flex-start}
   .sol article.product{background:var(--band);border:none}
@@ -229,6 +232,18 @@
   .eng ul{margin:14px 0 20px;display:grid;gap:6px;font-size:14.5px;color:var(--ink-2);flex:1}
   .eng li{padding-left:18px;position:relative}
   .eng li::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:2px;background:var(--orange)}
+  .cmp-wrap{margin-top:40px;overflow-x:auto;border:1px solid var(--hair);border-radius:var(--r-lg);background:#fff}
+  .cmp{width:100%;border-collapse:collapse;font-size:14.5px;min-width:720px}
+  .cmp th,.cmp td{padding:13px 16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--hair)}
+  .cmp thead th{font-family:var(--display);font-weight:600;font-size:15px;background:var(--blush);color:var(--ink)}
+  .cmp tbody th{font-weight:700;color:var(--graphite);white-space:nowrap;width:120px}
+  .cmp tbody tr:last-child th,.cmp tbody tr:last-child td{border-bottom:none}
+  .cmp td{color:var(--ink-2)}
+  .incl{margin-top:28px;background:var(--ink);color:#fff;border-radius:var(--r-lg);padding:26px 28px}
+  .incl h3{color:#fff;font-size:18px;margin-bottom:14px}
+  .incl ul{display:grid;grid-template-columns:1fr 1fr;gap:10px 28px;font-size:15px}
+  .incl li{display:grid;grid-template-columns:22px 1fr;gap:10px;color:#E6E8EC}
+  .incl li::before{content:"✓";color:var(--orange);font-weight:700}
 
   /* approach */
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
@@ -331,7 +346,7 @@
   }
   @media (max-width:600px){
     .wrap{padding:0 16px}
-    .ov,.ind,.sol,.eng,.caps,.strip .wrap,.fcols,.f2{grid-template-columns:1fr}
+    .ov,.ind,.sol,.eng,.caps,.strip .wrap,.fcols,.f2,.incl ul{grid-template-columns:1fr}
     .facts{grid-template-columns:1fr}
     form{padding:22px}
     .meta div{grid-template-columns:1fr;gap:2px}
@@ -379,6 +394,8 @@
           <a href="#ma-diligence"><i>S3</i><div>AI M&amp;A due diligence<span>Technical diligence on AI assets</span></div></a>
           <a href="#evals"><i>S4</i><div>Evals &amp; red-teaming<span>Independent testing before launch</span></div></a>
           <a href="#cost-optimisation"><i>S5</i><div>AI cost optimisation<span>Token and GPU spend</span></div></a>
+          <a href="#document-intelligence"><i>S6</i><div>Document intelligence accelerator<span>Extraction with validation and review</span></div></a>
+          <a href="#knowledge-assistant"><i>S7</i><div>Enterprise knowledge assistant<span>Cited answers from your own content</span></div></a>
           <a href="#msoftai"><i>P1</i><div>MsoftAI Manifold Designer<span>Product · hydraulic manifold CAD</span></div></a>
           <a href="#advisor"><i>P2</i><div>Insurance Advisor CRM<span>Product · CRM for insurance advisers</span></div></a>
         </div>
@@ -444,7 +461,7 @@
     <div class="wrap">
       <div><b>6</b><span>service lines covering strategy to operations</span></div>
       <div><b>27</b><span>named capabilities, each with written deliverables</span></div>
-      <div><b>8</b><span>industries with ready use-case playbooks</span></div>
+      <div><b>8</b><span>industries with use-case playbooks and regulatory context</span></div>
       <div><b>2–4 wks</b><span>from first call to a prioritised roadmap</span></div>
     </div>
   </div>
@@ -555,7 +572,7 @@
   </section>
 
   <!-- ============ 02 AGENTIC ============ -->
-  <section id="agentic" class="line">
+  <section id="agentic" class="line alt">
     <div class="wrap">
       <div class="intro">
         <span class="kicker">02 · Agentic AI</span>
@@ -633,7 +650,7 @@
   </section>
 
   <!-- ============ 04 STRATEGY ============ -->
-  <section id="strategy" class="line">
+  <section id="strategy" class="line alt">
     <div class="wrap">
       <div class="intro">
         <span class="kicker">04 · Strategy &amp; advisory</span>
@@ -721,7 +738,7 @@
   </section>
 
   <!-- ============ 06 DATA & ENABLEMENT ============ -->
-  <section id="data" class="line">
+  <section id="data" class="line alt">
     <div class="wrap">
       <div class="intro">
         <span class="kicker">06 · Data &amp; enablement</span>
@@ -760,125 +777,804 @@
   </section>
 
   <!-- ============ INDUSTRIES ============ -->
-  <section id="industries" class="sec blush">
+  <section id="industries" class="sec">
     <div class="wrap">
       <div class="sec-head">
         <div class="tick"></div>
         <h2>Vertical depth beats horizontal promises</h2>
-        <p>We bring use-case playbooks, data patterns and regulatory context for eight industries, so the first workshop starts from what has worked, not from a blank page.</p>
+        <p>We bring use-case playbooks, data patterns and regulatory context for eight industries, so the first workshop starts from what has worked, not from a blank page. Each industry below has its own page section with use cases, the rules that apply and where to start.</p>
       </div>
       <div class="ind">
-        <article id="bfsi">
+        <article>
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 10l9-6 9 6"/><path d="M5 10v9M19 10v9M9 10v9M15 10v9M3 19h18"/></svg></div>
           <h3>Banking, financial services &amp; insurance</h3>
           <p>The biggest buyer of AI consulting and the most regulated.</p>
           <ul><li>Fraud detection and transaction monitoring</li><li>Credit decisioning and collections</li><li>Claims intake, triage and settlement</li><li>Model risk management and validation</li></ul>
+          <a class="more arrow" href="#bfsi">See use cases </a>
         </article>
-        <article id="healthcare">
+        <article>
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/><circle cx="12" cy="12" r="9"/></svg></div>
           <h3>Healthcare &amp; life sciences</h3>
           <p>Clinician time and documentation burden are the levers.</p>
           <ul><li>Radiology and pathology triage support</li><li>Clinical notes and discharge summaries</li><li>Prior authorisation and coding</li><li>Patient communication agents</li></ul>
+          <a class="more arrow" href="#healthcare">See use cases </a>
         </article>
-        <article id="legal">
+        <article>
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 7h14M7 7l-3 7a3 3 0 0 0 6 0zM17 7l-3 7a3 3 0 0 0 6 0z"/></svg></div>
           <h3>Legal</h3>
           <p>Document-heavy work with a low tolerance for error.</p>
           <ul><li>Contract review and clause extraction</li><li>Matter intake and conflict checks</li><li>Due-diligence data rooms</li><li>Knowledge search across precedents</li></ul>
+          <a class="more arrow" href="#legal">See use cases </a>
         </article>
-        <article id="manufacturing">
+        <article>
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 20V9l5 3V9l5 3V9l5 3v8z"/><path d="M3 20h18"/></svg></div>
           <h3>Manufacturing</h3>
           <p>Sensor data, drawings and quality records waiting to be used.</p>
           <ul><li>Predictive maintenance</li><li>Visual quality control</li><li>Production planning and scheduling</li><li>Technician copilots on SOPs and manuals</li></ul>
+          <a class="more arrow" href="#manufacturing">See use cases </a>
         </article>
-        <article id="logistics">
+        <article>
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></div>
           <h3>Logistics &amp; supply chain</h3>
           <p>Margins live in dispatch, routing and exceptions.</p>
           <ul><li>Dispatch and route optimisation</li><li>Exception and delay handling agents</li><li>Demand forecasting</li><li>Document automation for customs and freight</li></ul>
+          <a class="more arrow" href="#logistics">See use cases </a>
         </article>
-        <article id="public-sector">
+        <article>
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-6h6v6"/></svg></div>
           <h3>Public sector</h3>
           <p>Document-heavy workflows at scale, with sovereignty constraints.</p>
           <ul><li>Citizen service and grievance handling</li><li>Records search and case files</li><li>Permit and application processing</li><li>On-premises and sovereign deployments</li></ul>
+          <a class="more arrow" href="#public-sector">See use cases </a>
         </article>
-        <article id="retail-cx">
+        <article>
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 8h16l-1.5 11h-13z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg></div>
           <h3>Retail &amp; customer experience</h3>
           <p>Support volume and personalisation at the same time.</p>
           <ul><li>Support agents across chat, voice and email</li><li>Returns, refunds and order queries</li><li>Personalised recommendations</li><li>Catalogue and content generation</li></ul>
+          <a class="more arrow" href="#retail-cx">See use cases </a>
         </article>
-        <article id="aec">
+        <article>
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div>
           <h3>AEC &amp; engineering</h3>
           <p>Architecture, engineering and construction data is rich and underused.</p>
           <ul><li>Drawing and specification search</li><li>BIM data extraction and checks</li><li>Site reports and progress tracking</li><li>Tender and bid document assembly</li></ul>
+          <a class="more arrow" href="#aec">See use cases </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="bfsi" class="line alt">
+    <div class="wrap">
+      <div class="intro">
+        <span class="kicker">Industry · Banking, financial services &amp; insurance</span>
+        <h2>AI for banks, NBFCs and insurers that passes the regulator's test</h2>
+        <p>BFSI is the largest buyer of AI consulting and the most scrutinised. We build models and agents that move fraud, credit, claims and service metrics, and we document them the way RBI, SEBI, IRDAI and your internal audit expect.</p>
+        <dl class="meta">
+          <div><dt>Regulatory context</dt><dd>RBI and IRDAI guidance, SEBI, DPDP Act 2023, SR 11-7 style model risk, GCC central bank rules</dd></div>
+          <div><dt>Data you already have</dt><dd>Core banking, cards, policy admin, claims, KYC, call recordings</dd></div>
+          <div><dt>Start with</dt><dd>8-week fraud or claims triage pilot on live data</dd></div>
+        </dl>
+        <a class="btn btn-fire btn-sm" href="#contact">Talk about a BFSI pilot</a>
+      </div>
+      <div class="caps">
+        <article class="cap">
+          <h3>Fraud detection &amp; transaction monitoring</h3>
+          <p>Real-time scoring of transactions and accounts with an explainable reason for every alert, cutting false positives without missing true fraud.</p>
+          <ul><li>Graph and sequence models on payment flows</li><li>Alert explanations analysts can act on</li><li>Tuned against your SAR and STR history</li></ul>
+        </article>
+        <article class="cap">
+          <h3>Credit decisioning &amp; collections</h3>
+          <p>Scorecards and LLM-assisted underwriting on bureau, bank-statement and alternative data, with collections agents that prioritise and contact the right accounts.</p>
+          <ul><li>Bank statement and payslip extraction</li><li>Policy-compliant decision rules and overrides</li><li>Collections prioritisation and multilingual outreach</li></ul>
+        </article>
+        <article class="cap">
+          <h3>Claims intake, triage &amp; settlement</h3>
+          <p>Document AI reads claim forms, invoices and medical records, triages by severity and fraud risk, and drafts settlements for adjuster approval.</p>
+          <ul><li>Intake across email, portal and WhatsApp</li><li>Fraud and leakage indicators</li><li>Straight-through processing for low-risk claims</li></ul>
+        </article>
+        <article class="cap">
+          <h3>Model risk management &amp; validation</h3>
+          <p>Inventory, tiering, validation and ongoing monitoring for models and LLMs, matching SR 11-7 style expectations and ready for RBI or internal audit.</p>
+          <ul><li>Model inventory and tiering</li><li>Independent validation reports</li><li>Committee-ready monitoring packs</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="healthcare" class="line">
+    <div class="wrap">
+      <div class="intro">
+        <span class="kicker">Industry · Healthcare &amp; life sciences</span>
+        <h2>Give clinicians their time back, safely</h2>
+        <p>Documentation burden and administrative queues are where AI helps most in healthcare. We build clinical and operational assistants with human sign-off at every clinical decision, and we treat patient data with the care the DPDP Act and your ethics committee demand.</p>
+        <dl class="meta">
+          <div><dt>Regulatory context</dt><dd>DPDP Act 2023, ABDM standards, clinical safety sign-off, HIPAA for US-facing work</dd></div>
+          <div><dt>Data you already have</dt><dd>EMR and HIS, PACS, lab systems, billing, call centre</dd></div>
+          <div><dt>Start with</dt><dd>6-week clinical documentation pilot with one department</dd></div>
+        </dl>
+        <a class="btn btn-fire btn-sm" href="#contact">Talk about a healthcare pilot</a>
+      </div>
+      <div class="caps">
+        <article class="cap">
+          <h3>Radiology &amp; pathology triage support</h3>
+          <p>Worklist prioritisation and finding detection that puts urgent studies in front of the right reader first, with the radiologist always making the call.</p>
+          <ul><li>Integration with PACS and RIS</li><li>Audit trail for every flag</li><li>Measured against reader agreement</li></ul>
+        </article>
+        <article class="cap">
+          <h3>Clinical notes &amp; discharge summaries</h3>
+          <p>Ambient and dictation-based drafting that turns consultations into structured notes and discharge summaries for clinician review.</p>
+          <ul><li>Specialty-specific templates</li><li>Coding suggestions attached</li><li>Clinician edits feed improvement</li></ul>
+        </article>
+        <article class="cap">
+          <h3>Prior authorisation &amp; coding</h3>
+          <p>Agents that assemble authorisation requests, chase insurers and suggest codes from the note, reducing denials and days to payment.</p>
+          <ul><li>Payer rule libraries</li><li>Denial-reason analytics</li><li>Human approval before submission</li></ul>
+        </article>
+        <article class="cap">
+          <h3>Patient communication agents</h3>
+          <p>Appointment, preparation, follow-up and billing conversations over WhatsApp, voice and SMS in the patient's language, escalating to staff when needed.</p>
+          <ul><li>Multilingual, including Indian languages</li><li>Consent and opt-out handling</li><li>Escalation to nurse lines</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="legal" class="line alt">
+    <div class="wrap">
+      <div class="intro">
+        <span class="kicker">Industry · Legal</span>
+        <h2>Document-heavy legal work with a low tolerance for error</h2>
+        <p>Law firms and in-house teams want speed on review, intake and research without surrendering privilege or accuracy. We build retrieval systems grounded in your own precedents, with citations you can check and nothing leaving your environment.</p>
+        <dl class="meta">
+          <div><dt>Regulatory context</dt><dd>Client privilege and confidentiality, Bar Council rules, DPDP Act, cross-border data limits</dd></div>
+          <div><dt>Data you already have</dt><dd>Document management system, matter files, time records, precedents</dd></div>
+          <div><dt>Start with</dt><dd>4-week contract review assistant on one agreement type</dd></div>
+        </dl>
+        <a class="btn btn-fire btn-sm" href="#contact">Talk about a legal pilot</a>
+      </div>
+      <div class="caps">
+        <article class="cap">
+          <h3>Contract review &amp; clause extraction</h3>
+          <p>Playbook-driven review that extracts clauses, flags deviations from your standard positions and drafts redlines for lawyer approval.</p>
+          <ul><li>Your playbooks, not generic ones</li><li>Deviation reports with citations</li><li>Works inside Word and your DMS</li></ul>
+        </article>
+        <article class="cap">
+          <h3>Matter intake &amp; conflict checks</h3>
+          <p>Structured intake from email and forms, automated conflict searches and engagement letter drafting, so new matters open in hours.</p>
+          <ul><li>Entity resolution across clients</li><li>Conflict report with evidence</li><li>Fee estimate suggestions</li></ul>
+        </article>
+        <article class="cap">
+          <h3>Due-diligence data rooms</h3>
+          <p>Classification, extraction and issue-spotting across thousands of data-room documents, with a diligence report your associates finish rather than start.</p>
+          <ul><li>Document classification at scale</li><li>Red-flag detection by deal type</li><li>Traceable findings per document</li></ul>
+        </article>
+        <article class="cap">
+          <h3>Knowledge search across precedents</h3>
+          <p>Retrieval over your precedents, opinions and research memos with cited answers and access controls mirrored from the DMS.</p>
+          <ul><li>Permission-aware retrieval</li><li>Citations to source paragraphs</li><li>Private deployment options</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="manufacturing" class="line">
+    <div class="wrap">
+      <div class="intro">
+        <span class="kicker">Industry · Manufacturing</span>
+        <h2>Turn sensor data, drawings and quality records into uptime and yield</h2>
+        <p>Plants already generate the data AI needs: machine logs, inspection images, maintenance records, SOPs and drawings. We connect it, build the models and put the results in front of operators and planners inside the tools they already use.</p>
+        <dl class="meta">
+          <div><dt>Regulatory context</dt><dd>ISO 9001 and IATF 16949 quality systems, IEC 62443 for OT security, customer audit requirements</dd></div>
+          <div><dt>Data you already have</dt><dd>SCADA and MES, CMMS, inspection images, ERP, SOPs and drawings</dd></div>
+          <div><dt>Start with</dt><dd>8-week predictive maintenance pilot on one critical line</dd></div>
+        </dl>
+        <a class="btn btn-fire btn-sm" href="#contact">Talk about a plant pilot</a>
+      </div>
+      <div class="caps">
+        <article class="cap">
+          <h3>Predictive maintenance</h3>
+          <p>Failure prediction and remaining-useful-life models on sensor and maintenance data, with work orders raised in your CMMS before the breakdown.</p>
+          <ul><li>Works with existing historians</li><li>Alerts tuned to planner capacity</li><li>Measured in avoided downtime</li></ul>
+        </article>
+        <article class="cap">
+          <h3>Visual quality control</h3>
+          <p>Camera-based defect detection trained on your parts and your defects, deployed at the line with operator feedback loops.</p>
+          <ul><li>Edge or on-premises inference</li><li>Defect libraries you own</li><li>Escape-rate reporting</li></ul>
+        </article>
+        <article class="cap">
+          <h3>Production planning &amp; scheduling</h3>
+          <p>Optimisation and forecasting that balance orders, capacity, changeovers and material availability, with planners in control of the final schedule.</p>
+          <ul><li>Constraint-based scheduling</li><li>Demand and material forecasts</li><li>What-if scenarios for planners</li></ul>
+        </article>
+        <article class="cap">
+          <h3>Technician copilots on SOPs &amp; manuals</h3>
+          <p>Assistants that answer from your SOPs, manuals and past work orders, on the shop floor, in the technician's language.</p>
+          <ul><li>Retrieval over manuals and drawings</li><li>Voice and mobile access</li><li>Feedback into document updates</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="logistics" class="line alt">
+    <div class="wrap">
+      <div class="intro">
+        <span class="kicker">Industry · Logistics &amp; supply chain</span>
+        <h2>Margins live in dispatch, routing and the exceptions in between</h2>
+        <p>Logistics runs on thin margins and constant exceptions. We build optimisation and agents that improve dispatch, routing and exception handling, and document automation that keeps freight moving through customs and compliance.</p>
+        <dl class="meta">
+          <div><dt>Regulatory context</dt><dd>Customs and GST e-way bill rules, carrier and port documentation, DPDP for customer data</dd></div>
+          <div><dt>Data you already have</dt><dd>TMS and WMS, telematics, order and shipment events, customer emails</dd></div>
+          <div><dt>Start with</dt><dd>6-week exception-handling agent on one lane or customer</dd></div>
+        </dl>
+        <a class="btn btn-fire btn-sm" href="#contact">Talk about a logistics pilot</a>
+      </div>
+      <div class="caps">
+        <article class="cap">
+          <h3>Dispatch &amp; route optimisation</h3>
+          <p>Models that assign and sequence loads against time windows, capacity and cost, with dispatchers overriding where they know better.</p>
+          <ul><li>Live re-planning on delays</li><li>Driver and vehicle constraints</li><li>Fuel and cost reporting</li></ul>
+        </article>
+        <article class="cap">
+          <h3>Exception &amp; delay handling agents</h3>
+          <p>Agents that detect late or stuck shipments, contact carriers and customers, and propose recovery options for a person to approve.</p>
+          <ul><li>Event monitoring across systems</li><li>Proactive customer updates</li><li>Escalation playbooks</li></ul>
+        </article>
+        <article class="cap">
+          <h3>Demand forecasting</h3>
+          <p>Forecasts by lane, product and customer that drive capacity, inventory and pricing decisions, with accuracy tracked every cycle.</p>
+          <ul><li>Hierarchical forecasting</li><li>Seasonality and promotion effects</li><li>Planner-facing dashboards</li></ul>
+        </article>
+        <article class="cap">
+          <h3>Document automation for customs &amp; freight</h3>
+          <p>Extraction and validation of invoices, packing lists, bills of lading and customs declarations, cutting clearance delays and penalties.</p>
+          <ul><li>Multi-format document extraction</li><li>Rule checks before filing</li><li>Audit trail per shipment</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="public-sector" class="line">
+    <div class="wrap">
+      <div class="intro">
+        <span class="kicker">Industry · Public sector</span>
+        <h2>Document-heavy services at scale, inside sovereignty rules</h2>
+        <p>Government and public bodies handle enormous document volumes under strict rules on where data lives. We deliver citizen service, records and application-processing AI on sovereign or on-premises infrastructure, with transparency built in.</p>
+        <dl class="meta">
+          <div><dt>Regulatory context</dt><dd>MeitY and state IT policies, GIGW accessibility, data localisation, procurement and audit rules</dd></div>
+          <div><dt>Data you already have</dt><dd>Case files, applications, grievance records, legacy registers, scanned archives</dd></div>
+          <div><dt>Start with</dt><dd>8-week grievance triage pilot with one department</dd></div>
+        </dl>
+        <a class="btn btn-fire btn-sm" href="#contact">Talk about a public sector pilot</a>
+      </div>
+      <div class="caps">
+        <article class="cap">
+          <h3>Citizen service &amp; grievance handling</h3>
+          <p>Multilingual assistants that answer, route and track citizen requests across web, WhatsApp and call centre, with every answer sourced from approved content.</p>
+          <ul><li>Ten or more Indian languages</li><li>Routing to the right office</li><li>Status tracking and SLAs</li></ul>
+        </article>
+        <article class="cap">
+          <h3>Records search &amp; case files</h3>
+          <p>Digitisation, classification and search across scanned archives and case files, with access rules mirrored from your records policy.</p>
+          <ul><li>OCR for scanned and handwritten records</li><li>Entity and date extraction</li><li>Role-based access</li></ul>
+        </article>
+        <article class="cap">
+          <h3>Permit &amp; application processing</h3>
+          <p>Agents that check completeness, verify against rules and draft decisions for officer approval, shortening queues without removing accountability.</p>
+          <ul><li>Rule-based eligibility checks</li><li>Missing-document requests</li><li>Officer review and audit trail</li></ul>
+        </article>
+        <article class="cap">
+          <h3>On-premises &amp; sovereign deployments</h3>
+          <p>Self-hosted models and private deployments in government data centres or sovereign cloud, with no data leaving your boundary.</p>
+          <ul><li>Open-weight model options</li><li>Air-gapped deployment patterns</li><li>Security and audit documentation</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="retail-cx" class="line alt">
+    <div class="wrap">
+      <div class="intro">
+        <span class="kicker">Industry · Retail &amp; customer experience</span>
+        <h2>Resolve support volume and personalise at the same time</h2>
+        <p>Retail and consumer businesses face rising support volume and rising expectations. We build agents that resolve the routine and personalise the rest, measured on resolution rate, satisfaction and revenue per visit rather than on deflection alone.</p>
+        <dl class="meta">
+          <div><dt>Regulatory context</dt><dd>DPDP consent and purpose limits, PCI DSS for payments, consumer protection and refund rules</dd></div>
+          <div><dt>Data you already have</dt><dd>Commerce platform, CRM, order and returns history, tickets, reviews</dd></div>
+          <div><dt>Start with</dt><dd>6-week support agent pilot on returns and order queries</dd></div>
+        </dl>
+        <a class="btn btn-fire btn-sm" href="#contact">Talk about a CX pilot</a>
+      </div>
+      <div class="caps">
+        <article class="cap">
+          <h3>Support agents across chat, voice &amp; email</h3>
+          <p>Agents that resolve order, delivery and account queries end to end, integrated with your commerce and ticketing systems, handing off to people with full context.</p>
+          <ul><li>Order and delivery actions, not just answers</li><li>Multilingual coverage</li><li>Quality monitoring and coaching</li></ul>
+        </article>
+        <article class="cap">
+          <h3>Returns, refunds &amp; order queries</h3>
+          <p>Policy-aware automation of returns and refunds with fraud checks, cutting handling time while protecting margin.</p>
+          <ul><li>Policy rules encoded</li><li>Abuse and fraud signals</li><li>Finance reconciliation</li></ul>
+        </article>
+        <article class="cap">
+          <h3>Personalised recommendations</h3>
+          <p>Recommendation and search ranking on your catalogue and behaviour data, measured through A/B tests on revenue and conversion.</p>
+          <ul><li>Cold-start handling</li><li>Search and merchandising integration</li><li>Experiment framework</li></ul>
+        </article>
+        <article class="cap">
+          <h3>Catalogue &amp; content generation</h3>
+          <p>Product descriptions, attributes and imagery variants generated at scale from supplier data, reviewed by your merchandising team.</p>
+          <ul><li>Attribute extraction from supplier feeds</li><li>Brand voice controls</li><li>Marketplace-ready formats</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="aec" class="line">
+    <div class="wrap">
+      <div class="intro">
+        <span class="kicker">Industry · AEC &amp; engineering</span>
+        <h2>Drawings, BIM and site data, finally usable</h2>
+        <p>Architecture, engineering and construction teams sit on decades of drawings, specifications, models and site reports. We make that data searchable, checkable and reusable, and we build tools engineers actually open, as we did with MsoftAI.</p>
+        <dl class="meta">
+          <div><dt>Regulatory context</dt><dd>ISO 19650 for BIM, IS and international design codes, contract and tender rules, HSE reporting</dd></div>
+          <div><dt>Data you already have</dt><dd>CAD and BIM files, specifications, RFIs, site photos and reports, tenders</dd></div>
+          <div><dt>Start with</dt><dd>6-week drawing and specification search pilot on one project</dd></div>
+        </dl>
+        <a class="btn btn-fire btn-sm" href="#contact">Talk about an AEC pilot</a>
+      </div>
+      <div class="caps">
+        <article class="cap">
+          <h3>Drawing &amp; specification search</h3>
+          <p>Retrieval across drawings, specs, RFIs and submittals with answers that cite the sheet and revision, so engineers stop re-reading PDFs.</p>
+          <ul><li>Drawing and revision awareness</li><li>Cross-reference of specs and RFIs</li><li>Project-level access control</li></ul>
+        </article>
+        <article class="cap">
+          <h3>BIM data extraction &amp; checks</h3>
+          <p>Automated extraction of quantities and attributes from BIM models with rule-based checks against codes and client standards.</p>
+          <ul><li>IFC and native model support</li><li>Code and standard rule libraries</li><li>Quantity take-off outputs</li></ul>
+        </article>
+        <article class="cap">
+          <h3>Site reports &amp; progress tracking</h3>
+          <p>Site photos, daily reports and schedules turned into progress, safety and quality insights with exceptions flagged to the project team.</p>
+          <ul><li>Photo and report classification</li><li>Schedule variance alerts</li><li>HSE incident patterns</li></ul>
+        </article>
+        <article class="cap">
+          <h3>Tender &amp; bid document assembly</h3>
+          <p>Assistants that assemble compliant bid documents from past submissions, specifications and pricing, with reviewers in control.</p>
+          <ul><li>Requirement extraction from tenders</li><li>Reuse of approved content</li><li>Compliance matrix drafting</li></ul>
         </article>
       </div>
     </div>
   </section>
 
   <!-- ============ SOLUTIONS ============ -->
-  <section id="solutions" class="sec">
+  <section id="solutions" class="sec blush">
     <div class="wrap">
       <div class="sec-head">
         <div class="tick"></div>
         <h2>Packaged solutions for problems we see every month</h2>
-        <p>Defined scope, defined price, defined outcome. Each one combines capabilities from several service lines into something you can buy in one decision.</p>
+        <p>Defined scope, defined price, defined outcome. Each one combines capabilities from several service lines into something you can buy in one decision. Seven packaged services and two products we built ourselves.</p>
       </div>
       <div class="sol">
-        <article id="compliance-service">
+        <article>
           <span class="tag">Recurring</span>
           <h3>Compliance as a service</h3>
           <p>Ongoing AI compliance for regulated businesses: inventory, controls, evidence and reporting kept current as rules and systems change.</p>
           <ul><li>Quarterly gap reviews</li><li>Living policy set</li><li>Audit-ready evidence pack</li></ul>
           <div class="fmt">Monthly retainer</div>
+          <a class="more arrow" href="#compliance-service">See details </a>
         </article>
-        <article id="voice-agents">
+        <article>
           <span class="tag">High volume</span>
           <h3>Voice &amp; sales agents</h3>
           <p>Outbound and inbound agents for sales qualification, support and collections, integrated with your CRM and telephony.</p>
           <ul><li>Multilingual, including Indian languages</li><li>CRM and dialler integration</li><li>Quality monitoring and hand-off</li></ul>
           <div class="fmt">Pilot, then per-conversation</div>
+          <a class="more arrow" href="#voice-agents">See details </a>
         </article>
-        <article id="ma-diligence">
+        <article>
           <span class="tag">Transactions</span>
           <h3>AI M&amp;A due diligence</h3>
           <p>Independent technical diligence on AI assets for acquirers and investors: what is real, what is fragile, what it costs to run.</p>
           <ul><li>Code, data and model review</li><li>Dependency and licence risk</li><li>Valuation inputs and 100-day plan</li></ul>
           <div class="fmt">Fixed fee, 2 to 3 weeks</div>
+          <a class="more arrow" href="#ma-diligence">See details </a>
         </article>
-        <article id="evals">
+        <article>
           <span class="tag">Standalone</span>
           <h3>Evals &amp; red-teaming</h3>
           <p>Independent evaluation and adversarial testing of your LLM features and agents before launch, with a fix list your engineers can act on.</p>
           <ul><li>Task-specific eval sets</li><li>Security and safety red-team</li><li>Release gate you can keep</li></ul>
           <div class="fmt">Fixed fee per system</div>
+          <a class="more arrow" href="#evals">See details </a>
         </article>
-        <article id="cost-optimisation">
+        <article>
           <span class="tag">Savings</span>
           <h3>AI cost optimisation</h3>
           <p>Cut token and GPU spend without hurting quality: routing, caching, right-sizing, and a FinOps view your finance team understands.</p>
           <ul><li>Spend audit and baseline</li><li>Model-tier and caching changes</li><li>Chargeback and forecasting</li></ul>
           <div class="fmt">Fixed fee, optional share of savings</div>
+          <a class="more arrow" href="#cost-optimisation">See details </a>
         </article>
-        <article class="product" id="msoftai">
+        <article>
+          <span class="tag">Accelerator</span>
+          <h3>Document intelligence accelerator</h3>
+          <p>Extract, classify and validate data from invoices, contracts, forms, claims and KYC documents, with human review only where confidence is low.</p>
+          <ul><li>Any format, scanned or digital</li><li>Validation against your rules</li><li>Review queue and audit trail</li></ul>
+          <div class="fmt">Fixed-fee pilot, 6 weeks</div>
+          <a class="more arrow" href="#document-intelligence">See details </a>
+        </article>
+        <article>
+          <span class="tag">Accelerator</span>
+          <h3>Enterprise knowledge assistant</h3>
+          <p>A permission-aware assistant over your policies, SOPs, tickets and documents, with cited answers, inside Teams, Slack or your intranet.</p>
+          <ul><li>Respects existing access rights</li><li>Citations to the source</li><li>Usage and content-gap analytics</li></ul>
+          <div class="fmt">Fixed fee, 8 weeks</div>
+          <a class="more arrow" href="#knowledge-assistant">See details </a>
+        </article>
+        <article class="product">
           <span class="tag">Product · built by MindYards</span>
           <h3>MsoftAI Manifold Designer</h3>
           <p>Browser-based CAD for hydraulic manifold blocks. Define the block, place cavities, connect the drillings and run design checks, with no desktop install.</p>
           <ul><li>Block, cavity and drilling design in 3D</li><li>Automated checks, reports and net colouring</li><li>Designs saved to your account, downloadable</li></ul>
           <div class="fmt">Live web application</div>
+          <a class="more arrow" href="#msoftai">See details </a>
           <a class="launch arrow" href="https://msoftai.mindyards.in/" target="_blank" rel="noopener">Open MsoftAI </a>
         </article>
-        <article class="product" id="advisor">
+        <article class="product">
           <span class="tag">Product · built by MindYards</span>
           <h3>Insurance Advisor CRM</h3>
           <p>A CRM for insurance and protection advisers: enquiries to completion, with a work queue driven by SLA rules, document chasing and AI-extracted client data.</p>
           <ul><li>Pipeline by stage with follow-up and document SLAs</li><li>AI extraction of payslips and documents for review</li><li>Microsoft 365 calendar sync and commission reconciliation</li></ul>
           <div class="fmt">Live web application · demo data</div>
+          <a class="more arrow" href="#advisor">See details </a>
           <a class="launch arrow" href="https://advisor.mindyards.in/#/home" target="_blank" rel="noopener">Open Insurance Advisor </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="compliance-service" class="line">
+    <div class="wrap">
+      <div class="intro">
+        <span class="kicker">Solution · Compliance as a service</span>
+        <h2>AI compliance that stays current, not a one-off binder</h2>
+        <p>Rules change, models change and auditors ask harder questions each year. Compliance as a service keeps your AI inventory, controls, evidence and reporting current on a retainer, so you are ready for the next audit, customer questionnaire or regulator query.</p>
+        <dl class="meta">
+          <div><dt>Who it's for</dt><dd>Banks, insurers, healthcare, public bodies and vendors selling AI into them</dd></div>
+          <div><dt>Format</dt><dd>Monthly retainer, quarterly reviews, cancel with notice</dd></div>
+          <div><dt>Frameworks</dt><dd>EU AI Act, NIST AI RMF, ISO/IEC 42001, RBI and IRDAI guidance, DPDP Act</dd></div>
+        </dl>
+        <a class="btn btn-fire btn-sm" href="#contact">Ask about compliance cover</a>
+      </div>
+      <div class="caps">
+        <article class="cap">
+          <h3>What's included</h3>
+          <p>Everything needed to show, at any time, that your AI is inventoried, controlled and evidenced.</p>
+          <ul><li>Living AI system inventory and risk classification</li><li>Policy and control library kept current</li><li>Quarterly gap reviews and remediation plans</li></ul>
+        </article>
+        <article class="cap">
+          <h3>How it works</h3>
+          <p>A named compliance lead runs a steady cadence, with extra reviews whenever a system or rule changes.</p>
+          <ul><li>Onboarding assessment in month one</li><li>Monthly cadence with your risk and tech owners</li><li>Reviews triggered by new systems or regulation</li></ul>
+        </article>
+        <article class="cap">
+          <h3>What you get</h3>
+          <p>Answers and evidence on demand rather than a scramble before each audit.</p>
+          <ul><li>Audit-ready evidence pack on request</li><li>Responses to customer due-diligence questionnaires</li><li>Board and committee reporting</li></ul>
+        </article>
+        <article class="cap">
+          <h3>How we measure it</h3>
+          <p>Compliance is measured by findings closed and time saved, not documents produced.</p>
+          <ul><li>Open findings closed per quarter</li><li>Time to answer an audit or questionnaire</li><li>No surprise findings at external audit</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="voice-agents" class="line alt">
+    <div class="wrap">
+      <div class="intro">
+        <span class="kicker">Solution · Voice &amp; sales agents</span>
+        <h2>Agents that call, qualify, support and collect, in your customer's language</h2>
+        <p>Voice and sales agents handle the high-volume conversations people cannot staff economically: lead qualification, appointment booking, support and collections. We integrate them with your CRM and telephony, monitor quality, and hand off to people when it matters.</p>
+        <dl class="meta">
+          <div><dt>Who it's for</dt><dd>Lenders, insurers, real estate, healthcare and consumer brands with high call volumes</dd></div>
+          <div><dt>Format</dt><dd>4 to 6 week pilot, then per-conversation or monthly pricing</dd></div>
+          <div><dt>Languages</dt><dd>English, Hindi, Tamil and other Indian languages, Arabic</dd></div>
+        </dl>
+        <a class="btn btn-fire btn-sm" href="#contact">Discuss a voice agent pilot</a>
+      </div>
+      <div class="caps">
+        <article class="cap">
+          <h3>What's included</h3>
+          <p>Conversation design, integration and the compliance rules that keep outbound calling legal.</p>
+          <ul><li>Scripts modelled on your best agents</li><li>CRM, dialler and telephony integration</li><li>Calling-hour, consent and do-not-call rules</li></ul>
+        </article>
+        <article class="cap">
+          <h3>How it works</h3>
+          <p>A controlled pilot proves the numbers before you scale.</p>
+          <ul><li>Pilot on one campaign with a control group</li><li>Weekly tuning from call transcripts</li><li>Scale once conversion and satisfaction targets are met</li></ul>
+        </article>
+        <article class="cap">
+          <h3>What you get</h3>
+          <p>Outcomes in your systems, not a separate dashboard to check.</p>
+          <ul><li>Qualified leads and booked appointments in your CRM</li><li>Full transcripts with outcome tagging</li><li>Live hand-off to agents with context</li></ul>
+        </article>
+        <article class="cap">
+          <h3>How we measure it</h3>
+          <p>Measured against the control group, every week.</p>
+          <ul><li>Contact and conversion rates versus control</li><li>Cost per qualified lead or resolved call</li><li>Customer satisfaction and complaint rate</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="ma-diligence" class="line">
+    <div class="wrap">
+      <div class="intro">
+        <span class="kicker">Solution · AI M&amp;A due diligence</span>
+        <h2>Know what you are buying before you buy it</h2>
+        <p>Acquirers and investors increasingly pay for AI capability they cannot verify. We open the code, data, models and contracts, test what works, estimate what it costs to run, and give your deal team and board a view they can rely on.</p>
+        <dl class="meta">
+          <div><dt>Who it's for</dt><dd>Private equity, corporate development teams, venture investors, boards</dd></div>
+          <div><dt>Format</dt><dd>Fixed fee, 2 to 3 weeks, under NDA</dd></div>
+          <div><dt>Output</dt><dd>Written diligence report, risk register, valuation inputs, 100-day plan</dd></div>
+        </dl>
+        <a class="btn btn-fire btn-sm" href="#contact">Request diligence support</a>
+      </div>
+      <div class="caps">
+        <article class="cap">
+          <h3>What we review</h3>
+          <p>The substance behind the AI claims in the deck.</p>
+          <ul><li>Code quality, architecture and dependencies</li><li>Data provenance, rights and quality</li><li>Model performance claims against our own tests</li></ul>
+        </article>
+        <article class="cap">
+          <h3>How it works</h3>
+          <p>Hands-on testing, not just document review.</p>
+          <ul><li>Management interviews and data-room review</li><li>Direct testing of the product and models</li><li>Findings reviewed with your deal team before the report</li></ul>
+        </article>
+        <article class="cap">
+          <h3>What you get</h3>
+          <p>Inputs your deal model and integration plan can use directly.</p>
+          <ul><li>Red, amber, green risk register</li><li>Run-cost and re-platforming estimates</li><li>Integration and key-person retention notes</li></ul>
+        </article>
+        <article class="cap">
+          <h3>Why it matters</h3>
+          <p>AI diligence changes prices and protects you after close.</p>
+          <ul><li>Separates genuine AI from thin wrappers</li><li>Surfaces licence and privacy liabilities</li><li>Grounds price and earn-out negotiation</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="evals" class="line alt">
+    <div class="wrap">
+      <div class="intro">
+        <span class="kicker">Solution · Evals &amp; red-teaming</span>
+        <h2>Independent proof that your AI behaves, before your customers find out</h2>
+        <p>Most LLM features ship with no evaluation beyond a demo. We build task-specific evaluation sets, run adversarial and safety tests, and leave you with a release gate your team keeps running on every change.</p>
+        <dl class="meta">
+          <div><dt>Who it's for</dt><dd>Product teams shipping LLM features or agents, security and risk teams, vendors facing customer security reviews</dd></div>
+          <div><dt>Format</dt><dd>Fixed fee per system, 2 to 4 weeks, with a retest option</dd></div>
+          <div><dt>Covers</dt><dd>Accuracy, prompt injection, jailbreaks, data leakage, bias, safety, cost and latency</dd></div>
+        </dl>
+        <a class="btn btn-fire btn-sm" href="#contact">Book an evaluation</a>
+      </div>
+      <div class="caps">
+        <article class="cap">
+          <h3>What's included</h3>
+          <p>Evaluation and attack coverage built around your real tasks and threat model.</p>
+          <ul><li>Evaluation set built from your real tasks</li><li>Red-team campaign across injection, jailbreak and leakage</li><li>Bias and fairness measurement where relevant</li></ul>
+        </article>
+        <article class="cap">
+          <h3>How it works</h3>
+          <p>Criteria first, then automated and manual testing, then triage with your engineers.</p>
+          <ul><li>Threat model and success criteria agreed first</li><li>Automated and manual testing</li><li>Findings triaged with your engineers</li></ul>
+        </article>
+        <article class="cap">
+          <h3>What you get</h3>
+          <p>A fix list and a harness, not just a report.</p>
+          <ul><li>Scored findings with reproduction steps</li><li>Fix recommendations ranked by risk</li><li>Evaluation harness integrated in your CI</li></ul>
+        </article>
+        <article class="cap">
+          <h3>How we measure it</h3>
+          <p>Before-and-after numbers your release process can enforce.</p>
+          <ul><li>Pass rate on the eval set before and after fixes</li><li>Severity and count of open findings</li><li>Regressions caught per release</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="cost-optimisation" class="line">
+    <div class="wrap">
+      <div class="intro">
+        <span class="kicker">Solution · AI cost optimisation</span>
+        <h2>Same quality, materially lower AI bill</h2>
+        <p>Token and GPU spend grows faster than value when nobody owns it. We audit your usage, route and cache intelligently, right-size models and infrastructure, and give finance a view of AI spend by product and team.</p>
+        <dl class="meta">
+          <div><dt>Who it's for</dt><dd>Companies spending meaningfully on LLM APIs or GPU infrastructure</dd></div>
+          <div><dt>Format</dt><dd>Fixed fee, with an optional share of verified savings</dd></div>
+          <div><dt>Typical levers</dt><dd>Model tiering, caching, prompt and context trimming, batching, reserved capacity</dd></div>
+        </dl>
+        <a class="btn btn-fire btn-sm" href="#contact">Request a spend audit</a>
+      </div>
+      <div class="caps">
+        <article class="cap">
+          <h3>What's included</h3>
+          <p>An audit and a redesign of how requests are routed, cached and sized.</p>
+          <ul><li>Spend and usage audit across providers</li><li>Quality-preserving routing and caching design</li><li>Infrastructure right-sizing and commitment plan</li></ul>
+        </article>
+        <article class="cap">
+          <h3>How it works</h3>
+          <p>Quality is protected by an evaluation set before any cost change goes live.</p>
+          <ul><li>Baseline and eval set agreed first</li><li>Changes rolled out behind metrics</li><li>Monthly FinOps reporting handed to your team</li></ul>
+        </article>
+        <article class="cap">
+          <h3>What you get</h3>
+          <p>Savings you can verify and a cost model finance understands.</p>
+          <ul><li>Verified savings against baseline</li><li>Chargeback by product and team</li><li>Forecast and budget guardrails</li></ul>
+        </article>
+        <article class="cap">
+          <h3>How we measure it</h3>
+          <p>Cost per outcome, with quality held within tolerance.</p>
+          <ul><li>Cost per request and per outcome</li><li>Quality within agreed tolerance</li><li>Forecast accuracy month on month</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="document-intelligence" class="line alt">
+    <div class="wrap">
+      <div class="intro">
+        <span class="kicker">Solution · Document intelligence accelerator</span>
+        <h2>From document piles to structured, validated data in six weeks</h2>
+        <p>Every industry runs on documents nobody wants to read twice. The accelerator combines OCR, layout understanding and LLM extraction with validation rules and a review queue, so your systems receive clean data and people only see the exceptions.</p>
+        <dl class="meta">
+          <div><dt>Who it's for</dt><dd>Finance, operations, claims, KYC, legal and procurement teams</dd></div>
+          <div><dt>Format</dt><dd>6-week fixed-fee pilot on one document type, then per-document or platform pricing</dd></div>
+          <div><dt>Integrates with</dt><dd>ERP, core systems, DMS, email and shared mailboxes</dd></div>
+        </dl>
+        <a class="btn btn-fire btn-sm" href="#contact">Start a document pilot</a>
+      </div>
+      <div class="caps">
+        <article class="cap">
+          <h3>What's included</h3>
+          <p>A working pipeline for one document family, with the controls around it.</p>
+          <ul><li>Extraction for one document family in the pilot</li><li>Validation rules and confidence thresholds</li><li>Reviewer interface and audit trail</li></ul>
+        </article>
+        <article class="cap">
+          <h3>How it works</h3>
+          <p>Accuracy is measured per field against ground truth from day one.</p>
+          <ul><li>Sample set and ground truth agreed first</li><li>Field-level accuracy tracked each week</li><li>Exceptions routed to reviewers, feedback improves the model</li></ul>
+        </article>
+        <article class="cap">
+          <h3>What you get</h3>
+          <p>Structured data in your systems and a repeatable path to the next document type.</p>
+          <ul><li>Structured data delivered to your systems</li><li>Accuracy and throughput reporting</li><li>Playbook to add the next document type</li></ul>
+        </article>
+        <article class="cap">
+          <h3>How we measure it</h3>
+          <p>Straight-through rate and minutes saved, not pages processed.</p>
+          <ul><li>Field-level accuracy against ground truth</li><li>Straight-through processing rate</li><li>Minutes saved per document</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="knowledge-assistant" class="line">
+    <div class="wrap">
+      <div class="intro">
+        <span class="kicker">Solution · Enterprise knowledge assistant</span>
+        <h2>Answers from your own knowledge, with the source attached</h2>
+        <p>Staff lose hours searching SharePoint, wikis and inboxes. The knowledge assistant grounds every answer in your approved content, respects the permissions you already have, and shows where each answer came from, so people trust it and use it.</p>
+        <dl class="meta">
+          <div><dt>Who it's for</dt><dd>HR, IT, operations, support and field teams in organisations with sprawling documentation</dd></div>
+          <div><dt>Format</dt><dd>8-week fixed-fee build, then managed operations if wanted</dd></div>
+          <div><dt>Deploys in</dt><dd>Microsoft Teams, Slack, intranet and support tools, on Azure or your cloud</dd></div>
+        </dl>
+        <a class="btn btn-fire btn-sm" href="#contact">Scope a knowledge assistant</a>
+      </div>
+      <div class="caps">
+        <article class="cap">
+          <h3>What's included</h3>
+          <p>Connectors, permission-aware retrieval and an evaluation set from real questions.</p>
+          <ul><li>Connectors to SharePoint, Confluence, drives and ticketing</li><li>Permission-aware retrieval with citations</li><li>Evaluation set from real staff questions</li></ul>
+        </article>
+        <article class="cap">
+          <h3>How it works</h3>
+          <p>Content audit first, then a measured pilot, then rollout with champions.</p>
+          <ul><li>Content audit and cleanup plan</li><li>Pilot with one team, measured weekly</li><li>Rollout with champions and usage analytics</li></ul>
+        </article>
+        <article class="cap">
+          <h3>What you get</h3>
+          <p>An assistant where people already work, plus insight into your content gaps.</p>
+          <ul><li>Assistant inside Teams, Slack or your intranet</li><li>Content gap and freshness reports</li><li>Admin controls and audit log</li></ul>
+        </article>
+        <article class="cap">
+          <h3>How we measure it</h3>
+          <p>Accuracy, adoption and the searching it replaces.</p>
+          <ul><li>Answer accuracy on the eval set</li><li>Adoption and repeat usage</li><li>Tickets and search time avoided</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="msoftai" class="line alt">
+    <div class="wrap">
+      <div class="intro">
+        <span class="kicker">Product · MsoftAI Manifold Designer</span>
+        <h2>Hydraulic manifold design in the browser, from block to checked drawing</h2>
+        <p>MsoftAI Manifold Designer is a MindYards product for hydraulic and fluid-power engineers. Define the block, place cavities, route drillings, connect ports and run design checks in a web browser, with designs saved to your account and ready for manufacturing.</p>
+        <dl class="meta">
+          <div><dt>Who it's for</dt><dd>Hydraulic manifold designers, fluid-power OEMs, machine builders and manufacturing engineers</dd></div>
+          <div><dt>Format</dt><dd>Live web application, with team licences and customisation on request</dd></div>
+          <div><dt>Runs on</dt><dd>Any modern browser, no installation, sign-in with your account</dd></div>
+        </dl>
+        <a class="btn btn-fire btn-sm" href="#contact">Ask about MsoftAI for your team</a>
+        <a class="btn btn-line btn-sm arrow" href="https://msoftai.mindyards.in/" target="_blank" rel="noopener">Open MsoftAI </a>
+      </div>
+      <div class="caps">
+        <article class="cap">
+          <h3>What it does</h3>
+          <p>The full manifold workflow in one tool.</p>
+          <ul><li>3D block definition with units and material</li><li>Cavity, drilling and port placement with offset holes</li><li>Checks for intersections, depth to tip and net connectivity</li></ul>
+        </article>
+        <article class="cap">
+          <h3>Who it's for</h3>
+          <p>Teams replacing spreadsheet and desktop-CAD workflows for manifold design.</p>
+          <ul><li>Hydraulic and fluid-power design teams</li><li>Manifold manufacturers quoting and producing blocks</li><li>Engineering firms standardising their manifold process</li></ul>
+        </article>
+        <article class="cap">
+          <h3>How it's delivered</h3>
+          <p>Zero-install software with your designs kept safe.</p>
+          <ul><li>Runs in the browser, nothing to deploy</li><li>Designs saved to your account and per browser</li><li>Reports and downloads for manufacturing</li></ul>
+        </article>
+        <article class="cap">
+          <h3>Customisation</h3>
+          <p>Make it yours with libraries, integrations and private hosting.</p>
+          <ul><li>Company cavity and component libraries</li><li>Integration with your ERP or quoting tools</li><li>Private deployment for larger teams</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="advisor" class="line">
+    <div class="wrap">
+      <div class="intro">
+        <span class="kicker">Product · Insurance Advisor CRM</span>
+        <h2>A CRM built around the adviser's day, not the database</h2>
+        <p>Insurance Advisor CRM is a MindYards product for insurance and protection advisers. It manages enquiries to completion with an SLA-driven work queue, document chasing, AI-extracted client data and commission reconciliation, synced with Microsoft 365.</p>
+        <dl class="meta">
+          <div><dt>Who it's for</dt><dd>Insurance and protection advisers, broker firms and adviser networks</dd></div>
+          <div><dt>Format</dt><dd>Live web application with demo data, tenant setup and customisation on request</dd></div>
+          <div><dt>Integrates with</dt><dd>Microsoft 365 calendar and mail, with provider and payroll feeds on request</dd></div>
+        </dl>
+        <a class="btn btn-fire btn-sm" href="#contact">Ask about Insurance Advisor</a>
+        <a class="btn btn-line btn-sm arrow" href="https://advisor.mindyards.in/#/home" target="_blank" rel="noopener">Open Insurance Advisor </a>
+      </div>
+      <div class="caps">
+        <article class="cap">
+          <h3>What it does</h3>
+          <p>One screen for the work that matters today.</p>
+          <ul><li>Pipeline by stage with follow-up and document SLAs</li><li>Parties, cases, tasks and appointments in one view</li><li>Earnings expected versus reconciled, with clawback visibility</li></ul>
+        </article>
+        <article class="cap">
+          <h3>AI inside</h3>
+          <p>AI that removes admin, with the adviser approving every result.</p>
+          <ul><li>Extraction of payslips and documents into case fields for review</li><li>Suggested next actions in the work queue</li><li>Natural-language search across parties and cases</li></ul>
+        </article>
+        <article class="cap">
+          <h3>Compliance</h3>
+          <p>Built for a regulated profession.</p>
+          <ul><li>Suitability and licence expiry tracking</li><li>Audit trail for every change</li><li>Role-based access</li></ul>
+        </article>
+        <article class="cap">
+          <h3>Customisation</h3>
+          <p>Your process, your providers, your cloud.</p>
+          <ul><li>Your stages, SLA rules and document lists</li><li>Provider integrations</li><li>Private tenant on your cloud</li></ul>
         </article>
       </div>
     </div>
@@ -923,37 +1619,212 @@
         <p>Pick the entry point that matches where you are. Most clients start with an assessment, move into a fixed-scope build, and keep us on for operations.</p>
       </div>
       <div class="eng">
-        <article id="assessment">
+        <article>
           <span class="kicker">Start here</span>
           <h3>Assessment</h3>
           <div class="dur">2 to 4 weeks · fixed fee</div>
           <p>Readiness, use-case prioritisation or a compliance gap review, ending in a written roadmap and estimates.</p>
           <ul><li>Stakeholder interviews and data review</li><li>Scored use-case portfolio</li><li>Roadmap, budget and risk view</li></ul>
-          <a class="btn btn-line btn-sm" href="#contact">Book an assessment</a>
+          <a class="btn btn-line btn-sm" href="#assessment">How an assessment works</a>
         </article>
-        <article id="build" class="hi">
+        <article class="hi">
           <span class="kicker">Most common</span>
           <h3>Fixed-scope build</h3>
           <div class="dur">6 to 16 weeks per phase · fixed fee</div>
           <p>A production-grade application, model or agent delivered in phases with written acceptance criteria.</p>
           <ul><li>Evaluation set agreed up front</li><li>Guardrails and monitoring included</li><li>Documented hand-over to your team</li></ul>
-          <a class="btn btn-fire btn-sm" href="#contact">Scope a build</a>
+          <a class="btn btn-fire btn-sm" href="#build">How a build works</a>
         </article>
-        <article id="managed-operations">
+        <article>
           <span class="kicker">Ongoing</span>
           <h3>Managed operations</h3>
           <div class="dur">Monthly retainer · SLAs</div>
           <p>We monitor, maintain, improve and report on your models, agents and LLM workloads after launch.</p>
           <ul><li>Named service levels</li><li>Monthly health and cost report</li><li>Continuous improvement backlog</li></ul>
-          <a class="btn btn-line btn-sm" href="#contact">Ask about a retainer</a>
+          <a class="btn btn-line btn-sm" href="#managed-operations">How operations work</a>
         </article>
-        <article id="fractional-caio">
+        <article>
           <span class="kicker">Leadership</span>
           <h3>Fractional Chief AI Officer</h3>
           <div class="dur">2 to 6 days a month</div>
           <p>Senior AI leadership that owns your roadmap, vendors and governance without a full-time hire.</p>
           <ul><li>Monthly leadership cadence</li><li>Board and investor reporting</li><li>Hiring and vendor decisions</li></ul>
-          <a class="btn btn-line btn-sm" href="#contact">Discuss a fractional role</a>
+          <a class="btn btn-line btn-sm" href="#fractional-caio">How the role works</a>
+        </article>
+      </div>
+      <div class="cmp-wrap">
+        <table class="cmp" aria-label="Engagement models compared">
+          <thead><tr><th></th><th>Assessment</th><th>Fixed-scope build</th><th>Managed operations</th><th>Fractional CAIO</th></tr></thead>
+          <tbody>
+            <tr><th>Duration</th><td>2 to 4 weeks</td><td>6 to 16 weeks per phase</td><td>Monthly, 3-month minimum</td><td>2 to 6 days a month</td></tr>
+            <tr><th>Pricing</th><td>Fixed fee</td><td>Fixed fee per phase</td><td>Tiered retainer with SLAs</td><td>Retainer by days</td></tr>
+            <tr><th>Best for</th><td>Deciding what to do first</td><td>Shipping a validated use case</td><td>Keeping live systems healthy</td><td>Leadership without a full-time hire</td></tr>
+            <tr><th>You get</th><td>Roadmap, budget, risk view</td><td>Working software, evals, docs</td><td>SLAs, monthly report, backlog</td><td>Owned roadmap, decisions, hiring plan</td></tr>
+            <tr><th>Team</th><td>Senior lead + specialist</td><td>Lead + 2 to 4 engineers</td><td>Service lead + on-call</td><td>One named leader</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="incl">
+        <h3>Included in every engagement</h3>
+        <ul>
+          <li>Written scope and acceptance criteria before we start</li>
+          <li>A named senior lead who stays for the whole engagement</li>
+          <li>Weekly demos or reviews, never a big reveal at the end</li>
+          <li>Your IP, your environment, your data, documented on hand-over</li>
+          <li>NDA, security questionnaire and vendor onboarding support</li>
+          <li>An honest stop recommendation if something is not worth continuing</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="assessment" class="line alt">
+    <div class="wrap">
+      <div class="intro">
+        <span class="kicker">Engagement · Assessment</span>
+        <h2>Two to four weeks to a roadmap you can fund</h2>
+        <p>An assessment is the lowest-risk way to start. We interview stakeholders, examine your data and systems, score candidate use cases and return a written roadmap with estimates, so your next decision is a budget decision, not a leap of faith.</p>
+        <dl class="meta">
+          <div><dt>Duration</dt><dd>2 to 4 weeks</dd></div>
+          <div><dt>Pricing</dt><dd>Fixed fee, agreed before we start</dd></div>
+          <div><dt>Team</dt><dd>One senior consultant lead plus a data or compliance specialist</dd></div>
+        </dl>
+        <a class="btn btn-fire btn-sm" href="#contact">Book an assessment</a>
+      </div>
+      <div class="caps">
+        <article class="cap">
+          <h3>Who it's for</h3>
+          <p>Leaders who need a ranked, costed view before committing budget.</p>
+          <ul><li>Leaders deciding where to invest first</li><li>Teams with a list of ideas and no ranking</li><li>Regulated firms needing a compliance gap view</li></ul>
+        </article>
+        <article class="cap">
+          <h3>What happens</h3>
+          <p>A tight sequence with leadership time protected.</p>
+          <ul><li>Week 1: interviews and system walkthroughs</li><li>Weeks 2 to 3: data review, scoring and estimates</li><li>Final week: roadmap readout with leadership</li></ul>
+        </article>
+        <article class="cap">
+          <h3>What you get</h3>
+          <p>Written deliverables you can circulate and fund.</p>
+          <ul><li>Scored use-case portfolio with owners</li><li>12 to 18 month roadmap and budget</li><li>Risk, data and governance findings</li></ul>
+        </article>
+        <article class="cap">
+          <h3>What it leads to</h3>
+          <p>A clear next step, including the option to wait.</p>
+          <ul><li>A fixed-scope build on the top use case</li><li>A fractional leadership arrangement</li><li>Or an honest recommendation to hold</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="build" class="line">
+    <div class="wrap">
+      <div class="intro">
+        <span class="kicker">Engagement · Fixed-scope build</span>
+        <h2>Production-grade delivery in phases, with acceptance criteria in writing</h2>
+        <p>Most of our work is fixed-scope build: an application, model or agent delivered in phases of six to sixteen weeks, each with written scope, an evaluation set agreed up front and a demo every week, so there are no surprises at the end.</p>
+        <dl class="meta">
+          <div><dt>Duration</dt><dd>6 to 16 weeks per phase</dd></div>
+          <div><dt>Pricing</dt><dd>Fixed fee per phase, milestone-based invoicing</dd></div>
+          <div><dt>Team</dt><dd>Senior lead, two to four engineers, design and QA as needed</dd></div>
+        </dl>
+        <a class="btn btn-fire btn-sm" href="#contact">Scope a build</a>
+      </div>
+      <div class="caps">
+        <article class="cap">
+          <h3>Who it's for</h3>
+          <p>Teams that know what they want shipped.</p>
+          <ul><li>Teams with a validated use case ready to ship</li><li>Companies replacing a demo with a production system</li><li>Vendors adding AI features to a product</li></ul>
+        </article>
+        <article class="cap">
+          <h3>What happens</h3>
+          <p>Scope locks early, demos run weekly, hardening is in the plan.</p>
+          <ul><li>Discovery and scope lock in week one</li><li>Weekly demos on your real data</li><li>Hardening, security review and acceptance testing</li></ul>
+        </article>
+        <article class="cap">
+          <h3>What you get</h3>
+          <p>Software in your environment, with the evidence that it works.</p>
+          <ul><li>Working software in your environment</li><li>Evaluation results, guardrails and monitoring</li><li>Documentation and a trained team</li></ul>
+        </article>
+        <article class="cap">
+          <h3>What it leads to</h3>
+          <p>Further phases, operations or independence, your choice.</p>
+          <ul><li>Further phases as value is proven</li><li>Managed operations for the live system</li><li>Your team running it independently</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="managed-operations" class="line alt">
+    <div class="wrap">
+      <div class="intro">
+        <span class="kicker">Engagement · Managed operations</span>
+        <h2>Keep it accurate, affordable and compliant after launch</h2>
+        <p>AI systems degrade without attention: drift, prompt regressions, rising bills and new compliance questions. Managed operations gives you a named team, service levels and a monthly report for a predictable fee.</p>
+        <dl class="meta">
+          <div><dt>Duration</dt><dd>Monthly retainer, three-month minimum</dd></div>
+          <div><dt>Pricing</dt><dd>Tiered by number of systems and service level</dd></div>
+          <div><dt>Team</dt><dd>Named service lead, on-call engineers, specialists on demand</dd></div>
+        </dl>
+        <a class="btn btn-fire btn-sm" href="#contact">Ask about a retainer</a>
+      </div>
+      <div class="caps">
+        <article class="cap">
+          <h3>Who it's for</h3>
+          <p>Anything in production that has to stay reliable.</p>
+          <ul><li>Systems without a full-time internal AI team</li><li>Agents that customers and staff rely on daily</li><li>Regulated firms needing continuous evidence</li></ul>
+        </article>
+        <article class="cap">
+          <h3>What happens</h3>
+          <p>Runbooks first, then steady monitoring and monthly review.</p>
+          <ul><li>Onboarding and runbooks in month one</li><li>Monitoring, alerts and on-call cover</li><li>Monthly review of health, cost and backlog</li></ul>
+        </article>
+        <article class="cap">
+          <h3>What you get</h3>
+          <p>Service levels and a report you can forward to leadership.</p>
+          <ul><li>Named SLAs for uptime, response and accuracy</li><li>Monthly health, cost and compliance report</li><li>Improvement backlog delivered within the retainer</li></ul>
+        </article>
+        <article class="cap">
+          <h3>What it leads to</h3>
+          <p>Stable systems and a team free to build the next thing.</p>
+          <ul><li>Lower run cost over time</li><li>Capacity for your team to build, not babysit</li><li>Hand-back to your team whenever you choose</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="fractional-caio" class="line">
+    <div class="wrap">
+      <div class="intro">
+        <span class="kicker">Engagement · Fractional Chief AI Officer</span>
+        <h2>Senior AI leadership, a few days a month</h2>
+        <p>Mid-market companies need AI leadership before they can justify a full-time hire. A fractional Chief AI Officer owns your roadmap, vendors, governance and delivery oversight, reports to your CEO or board, and scales down as your own team grows.</p>
+        <dl class="meta">
+          <div><dt>Duration</dt><dd>2 to 6 days a month, six-month minimum</dd></div>
+          <div><dt>Pricing</dt><dd>Monthly retainer by days committed</dd></div>
+          <div><dt>Team</dt><dd>One named senior leader with MindYards specialists on call</dd></div>
+        </dl>
+        <a class="btn btn-fire btn-sm" href="#contact">Discuss a fractional role</a>
+      </div>
+      <div class="caps">
+        <article class="cap">
+          <h3>Who it's for</h3>
+          <p>Companies between a first project and a real programme.</p>
+          <ul><li>CEOs with AI on the board agenda</li><li>Companies scaling from one project to a portfolio</li><li>Firms choosing vendors and platforms</li></ul>
+        </article>
+        <article class="cap">
+          <h3>What happens</h3>
+          <p>A monthly leadership cadence with real decision rights.</p>
+          <ul><li>Monthly steering and roadmap ownership</li><li>Vendor, hiring and budget decisions</li><li>Governance and board reporting</li></ul>
+        </article>
+        <article class="cap">
+          <h3>What you get</h3>
+          <p>An owned, funded roadmap and faster decisions.</p>
+          <ul><li>A roadmap with budget and owners</li><li>Better-informed, faster decisions</li><li>Hiring plan for your in-house team</li></ul>
+        </article>
+        <article class="cap">
+          <h3>What it leads to</h3>
+          <p>Your own AI leader, with a clear hand-over.</p>
+          <ul><li>Your own AI leader and team</li><li>MindYards as a build or operations partner</li><li>A planned exit when the role is no longer needed</li></ul>
         </article>
       </div>
     </div>
@@ -1132,6 +2003,8 @@
           <li><a href="#ma-diligence">AI M&amp;A due diligence</a></li>
           <li><a href="#evals">Evals &amp; red-teaming</a></li>
           <li><a href="#cost-optimisation">AI cost optimisation</a></li>
+          <li><a href="#document-intelligence">Document intelligence accelerator</a></li>
+          <li><a href="#knowledge-assistant">Enterprise knowledge assistant</a></li>
           <li><a href="#msoftai">MsoftAI Manifold Designer</a></li>
           <li><a href="#advisor">Insurance Advisor CRM</a></li>
         </ul>
