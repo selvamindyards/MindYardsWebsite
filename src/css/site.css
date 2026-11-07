@@ -318,8 +318,10 @@ h1.pg{font-size:clamp(28px,3.6vw,42px)}
 .nav .cta.on{color:#fff}
 .dd-menu a.on{background:var(--blush)}
 .subnav{background:#fff;border-bottom:1px solid var(--hair)}
-.subnav .wrap{display:flex;gap:8px;overflow-x:auto;padding:12px 24px;scrollbar-width:none}
-.subnav .wrap::-webkit-scrollbar{display:none}
+.subnav .wrap{display:flex;flex-wrap:wrap;gap:8px;padding:12px 24px}
+@media (max-width:700px){
+  .subnav .wrap{flex-wrap:nowrap;overflow-x:auto;padding-bottom:10px;scrollbar-width:thin}
+}
 .subnav a{flex:0 0 auto;font-size:13.5px;font-weight:600;padding:7px 13px;border-radius:999px;border:1px solid var(--hair);color:var(--ink-2);white-space:nowrap}
 .subnav a:hover{border-color:var(--peach);color:var(--ember);background:var(--blush)}
 .subnav a.hub{color:var(--ember);border-color:var(--peach);background:var(--blush)}
