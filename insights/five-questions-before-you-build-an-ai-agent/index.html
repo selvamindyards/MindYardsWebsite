@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Five questions to ask before you build an AI agent — MindYards Insights</title>
+<meta name="description" content="Most agent projects stall for reasons that were visible on day one. Here are the five questions we ask in the first meeting, and what a good answer sounds like.">
+<link rel="canonical" href="https://mindyards.in/insights/five-questions-before-you-build-an-ai-agent/">
+<meta property="og:title" content="Five questions to ask before you build an AI agent — MindYards Insights">
+<meta property="og:description" content="Most agent projects stall for reasons that were visible on day one. Here are the five questions we ask in the first meeting, and what a good answer sounds like.">
+<meta property="og:url" content="https://mindyards.in/insights/five-questions-before-you-build-an-ai-agent/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://mindyards.in/assets/og/agentic.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="MindYards">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F26A1B">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="/assets/site.css?v=baab4889">
+<script>document.documentElement.classList.add("js");window.MY_CONFIG={}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Five questions to ask before you build an AI agent", "description": "Most agent projects stall for reasons that were visible on day one. Here are the five questions we ask in the first meeting, and what a good answer sounds like.", "datePublished": "2026-10-14", "dateModified": "2026-10-14", "image": "https://mindyards.in/assets/og/agentic.jpg", "author": {"@type": "Organization", "name": "MindYards", "url": "https://mindyards.in"}, "publisher": {"@type": "Organization", "name": "MindYards", "logo": {"@type": "ImageObject", "url": "https://mindyards.in/assets/logo.png"}}, "mainEntityOfPage": "https://mindyards.in/insights/five-questions-before-you-build-an-ai-agent/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mindyards.in/"}, {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://mindyards.in/insights/"}, {"@type": "ListItem", "position": 3, "name": "Five questions to ask before you build an AI agent", "item": "https://mindyards.in/insights/five-questions-before-you-build-an-ai-agent/"}]}</script>
+</head>
+<body class="is-post">
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="MindYards home"><img src="/assets/logo.png" alt="MindYards" width="940" height="402"></a>
+    <button class="menu" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <div class="dd">
+        <a href="/services/" aria-haspopup="true">Services</a>
+        <div class="dd-menu">
+          <a href="/services/implementation/"><i>01</i><div>Implementation &amp; build<span>LLM apps, MLOps, integration, infra</span></div></a>
+          <a href="/services/agentic/"><i>02</i><div>Agentic AI<span>Multi-agent systems, orchestration, AgentOps</span></div></a>
+          <a href="/services/managed-ops/"><i>03</i><div>Managed AI operations<span>Monitoring, LLMOps, agents as a service</span></div></a>
+          <a href="/services/strategy/"><i>04</i><div>Strategy &amp; advisory<span>Roadmap, prioritisation, fractional CAIO</span></div></a>
+          <a href="/services/governance/"><i>05</i><div>Governance, risk &amp; compliance<span>EU AI Act, ISO 42001, audit, red-teaming</span></div></a>
+          <a href="/services/data/"><i>06</i><div>Data &amp; enablement<span>Data readiness, upskilling, change, analytics</span></div></a>
+        </div>
+      </div>
+      <div class="dd">
+        <a href="/industries/" aria-haspopup="true">Industries</a>
+        <div class="dd-menu">
+          <a href="/industries/bfsi/"><i>I1</i><div>Banking, financial services &amp; insurance<span>Fraud, credit, claims, model risk</span></div></a>
+          <a href="/industries/healthcare/"><i>I2</i><div>Healthcare &amp; life sciences<span>Radiology triage, clinical notes</span></div></a>
+          <a href="/industries/legal/"><i>I3</i><div>Legal<span>Contract review, matter intake</span></div></a>
+          <a href="/industries/manufacturing/"><i>I4</i><div>Manufacturing<span>Predictive maintenance, visual QC</span></div></a>
+          <a href="/industries/logistics/"><i>I5</i><div>Logistics &amp; supply chain<span>Dispatch, routing, exceptions</span></div></a>
+          <a href="/industries/public-sector/"><i>I6</i><div>Public sector<span>Document-heavy workflows, sovereignty</span></div></a>
+          <a href="/industries/retail-cx/"><i>I7</i><div>Retail &amp; customer experience<span>Support agents, personalisation</span></div></a>
+          <a href="/industries/aec/"><i>I8</i><div>AEC &amp; engineering<span>Drawings, BIM, site data</span></div></a>
+        </div>
+      </div>
+      <div class="dd">
+        <a href="/solutions/" aria-haspopup="true">Solutions</a>
+        <div class="dd-menu">
+          <a href="/solutions/compliance-service/"><i>S1</i><div>Compliance as a service<span>Ongoing AI compliance on retainer</span></div></a>
+          <a href="/solutions/voice-agents/"><i>S2</i><div>Voice &amp; sales agents<span>Outbound, inbound, collections</span></div></a>
+          <a href="/solutions/ma-diligence/"><i>S3</i><div>AI M&amp;A due diligence<span>Technical diligence on AI assets</span></div></a>
+          <a href="/solutions/evals/"><i>S4</i><div>Evals &amp; red-teaming<span>Independent testing before launch</span></div></a>
+          <a href="/solutions/cost-optimisation/"><i>S5</i><div>AI cost optimisation<span>Token and GPU spend</span></div></a>
+          <a href="/solutions/document-intelligence/"><i>S6</i><div>Document intelligence accelerator<span>Extraction with validation and review</span></div></a>
+          <a href="/solutions/knowledge-assistant/"><i>S7</i><div>Enterprise knowledge assistant<span>Cited answers from your own content</span></div></a>
+          <a href="/solutions/msoftai/"><i>P1</i><div>MsoftAI Manifold Designer<span>Product · hydraulic manifold CAD</span></div></a>
+          <a href="/solutions/advisor/"><i>P2</i><div>Insurance Advisor CRM<span>Product · CRM for insurance advisers</span></div></a>
+        </div>
+      </div>
+      <div class="dd">
+        <a href="/engagement/" aria-haspopup="true">Engagement</a>
+        <div class="dd-menu">
+          <a href="/engagement/assessment/"><i>E1</i><div>Assessment<span>2 to 4 weeks · fixed fee</span></div></a>
+          <a href="/engagement/build/"><i>E2</i><div>Fixed-scope build<span>6 to 16 weeks per phase · fixed fee</span></div></a>
+          <a href="/engagement/managed-operations/"><i>E3</i><div>Managed operations<span>Monthly retainer · SLAs</span></div></a>
+          <a href="/engagement/fractional-caio/"><i>E4</i><div>Fractional Chief AI Officer<span>2 to 6 days a month</span></div></a>
+          <a href="/estimate/"><i>E5</i><div>Value &amp; readiness estimator<span>Interactive · 3 minutes</span></div></a>
+        </div>
+      </div>
+      <a href="/insights/">Insights</a>
+      <a href="/about/">About</a>
+      <a class="cta book" href="/contact/">Book a call</a>
+    </nav>
+  </div>
+</header>
+
+
+<main id="top">
+<div class="banner"><img src="/assets/img/agentic.webp" alt="A glowing network of connected nodes" width="1600" height="720"></div>
+  <article class="post">
+    <div class="wrap">
+      <header class="hd">
+        <span class="kicker">Insights · Agentic AI · Delivery</span>
+        <h1 class="pg">Five questions to ask before you build an AI agent</h1>
+        <p class="lede">Most agent projects stall for reasons that were visible on day one. Here are the five questions we ask in the first meeting, and what a good answer sounds like.</p>
+        <div class="meta2"><span>14 October 2026</span><span>3 min read</span><span>By the MindYards team</span></div>
+      </header>
+      <div class="body">
+<p>"Agent" has become the word for any AI that does more than answer a question. That is fine as marketing, but it hides a real engineering distinction: an agent plans, calls tools, and takes actions inside your systems. Each of those three verbs adds a way to fail. Before we scope an agent build, we ask five questions. None of them is about models.</p>
+
+<h2>1. What does the agent do when it is unsure?</h2>
+<p>A chatbot that is unsure gives a vague answer. An agent that is unsure files the wrong claim, emails the wrong customer, or books the wrong slot. The honest answer to this question is almost always "it stops and asks a person", and that single decision shapes the whole design: you need a queue, a reviewer, a notification, and a way for the reviewer's decision to flow back as a correction.</p>
+<p>A good answer sounds like: "Anything above this confidence threshold is automatic, anything below it goes to the ops queue with the agent's draft attached, and we review the threshold monthly."</p>
+
+<h2>2. Which actions are reversible?</h2>
+<p>Reading a record is reversible. Drafting an email is reversible. Sending it is not. Posting a journal entry, issuing a refund, changing a delivery address: not reversible, or expensive to reverse. We draw a line through the process and the agent gets full autonomy on one side of it and a human approval step on the other.</p>
+<p>This sounds restrictive. In practice most of the time saved comes from the reversible side: gathering, summarising, drafting, cross-checking. Keeping a person on the irreversible actions costs a few seconds per case and buys you the right to sleep at night.</p>
+
+<h2>3. Do the tools exist?</h2>
+<p>An agent is only as useful as the systems it can touch. If the policy admin system has no API, the agent cannot update it, however clever the model. We list every system the agent needs to read from or write to, and for each one we ask whether there is an API, who owns it, and whether the agent will be allowed a service account.</p>
+<p>Missing tools are the most common reason agent projects take twice as long as planned. Finding them in week one, rather than week six, is most of what an assessment is for.</p>
+
+<blockquote>The model is rarely the bottleneck. Access, permissions and the one system without an API are.</blockquote>
+
+<h2>4. How will you know it is working?</h2>
+<p>"Looks good in the demo" is not a measure. Before we build, we agree an evaluation set: fifty to two hundred real cases with the correct outcome recorded by someone who knows the domain. The agent is run against that set before every release and the pass rate is reported. When the number goes down, the release does not go out.</p>
+<p>The set also settles arguments. When a stakeholder says the agent "keeps getting it wrong", you can look at the cases rather than the feeling, and usually one of two things is true: the set needs those cases added, or the stakeholder is right and you have a regression.</p>
+
+<h2>5. Who owns it after launch?</h2>
+<p>Agents drift. The upstream system changes a field name, a supplier changes its invoice layout, the model provider retires a version. Somebody has to watch the dashboards, triage the failures and ship the fixes. If the answer is "the vendor" or "we will see", the agent will quietly degrade until someone switches it off.</p>
+<p>The good answer names a person, a monthly cadence, and a budget line for model usage separate from the build. This is also why we offer <a href="/engagement/managed-operations/">managed operations</a> as a standard follow-on to a build rather than an afterthought.</p>
+
+<h2>What good looks like</h2>
+<p>If you can answer all five, you are ready for a <a href="/engagement/build/">fixed-scope build</a>: six to sixteen weeks, evaluation set agreed up front, guardrails and monitoring included. If two or more answers are "we have not thought about that", a short <a href="/engagement/assessment/">assessment</a> will save you money, because it answers them before the engineering starts.</p>
+<p>Either way, the questions are free. Ask them of any vendor who proposes an agent, including us.</p>
+      </div>
+      <div class="share"><a data-share="linkedin" href="#" target="_blank" rel="noopener">Share on LinkedIn</a><a data-share="whatsapp" href="#" target="_blank" rel="noopener">WhatsApp</a><a data-share="x" href="#" target="_blank" rel="noopener">X</a><button type="button" data-share="copy">Copy link</button></div>
+      <div class="box">
+        <div><h3>Want to talk this through for your organisation?</h3><p>A 30-minute call with a senior consultant. No deck, no obligation.</p><p class="meta2" style="margin-top:12px">Related: <a href="/services/agentic/">Agentic AI</a>, <a href="/engagement/build/">Fixed-scope build</a></p></div>
+        <a class="btn btn-fire book" href="/contact/">Book a discovery call</a>
+      </div>
+    </div>
+  </article>
+  <section class="related">
+    <div class="wrap">
+      <h2>More insights</h2>
+      <div class="posts"><article><a href="/insights/where-ai-spend-goes-and-how-to-cut-it/" tabindex="-1" aria-hidden="true"><img src="/assets/img/cost-optimisation-sm.webp" alt="" width="720" height="450" loading="lazy"></a><div class="bd"><div class="meta2">4 November 2026 · 3 min read</div><h3><a href="/insights/where-ai-spend-goes-and-how-to-cut-it/">Where AI spend goes, and how to cut it without hurting quality</a></h3><p>The first invoice after launch is usually a surprise. Here is where the money goes in a typical LLM workload and the five changes that recover most of it.</p><ul class="tags"><li>Cost</li><li>Operations</li></ul><a class="more arrow" href="/insights/where-ai-spend-goes-and-how-to-cut-it/">Read </a></div></article><article><a href="/insights/what-an-llm-evaluation-suite-actually-contains/" tabindex="-1" aria-hidden="true"><img src="/assets/img/evals-sm.webp" alt="" width="720" height="450" loading="lazy"></a><div class="bd"><div class="meta2">27 October 2026 · 3 min read</div><h3><a href="/insights/what-an-llm-evaluation-suite-actually-contains/">What a useful LLM evaluation suite actually contains</a></h3><p>&quot;We tested it&quot; can mean anything from a few prompts in a playground to a suite that blocks bad releases. Here is what the second kind looks like, piece by piece.</p><ul class="tags"><li>Evals</li><li>Governance</li></ul><a class="more arrow" href="/insights/what-an-llm-evaluation-suite-actually-contains/">Read </a></div></article></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <svg class="band" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
+    <defs><linearGradient id="bg" x1="0" x2="1"><stop offset="0" stop-color="#F7761F"/><stop offset=".6" stop-color="#F15A22"/><stop offset="1" stop-color="#E8431B"/></linearGradient></defs>
+    <polyline points="0,6 334,6 386,23 1440,23" fill="none" stroke="#5B5F66" stroke-width="4"/>
+    <polygon points="0,12 326,12 376,29 1440,29 1440,47 0,47" fill="url(#bg)"/>
+    <polyline points="356,52 404,58 1440,58" fill="none" stroke="#5B5F66" stroke-width="3"/>
+  </svg>
+  <div class="wrap">
+    <div class="fcols">
+      <div>
+        <a class="logo" href="/" aria-label="MindYards home"><img src="/assets/logo.png" alt="MindYards" width="940" height="402"></a>
+        <p>AI consulting across strategy, build, governance and operations, for mid-market and enterprise teams in India and the Middle East.</p>
+        <div class="news">
+          <h3>Monthly note</h3>
+          <form id="newsForm"><input type="email" required placeholder="Work email" aria-label="Work email" autocomplete="email"><button class="btn btn-fire btn-sm" type="submit">Subscribe</button></form>
+          <small>One email a month on practical AI. Unsubscribe any time.</small>
+        </div>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <ul>
+          <li><a href="/services/implementation/">Implementation &amp; build</a></li>
+          <li><a href="/services/agentic/">Agentic AI</a></li>
+          <li><a href="/services/managed-ops/">Managed AI operations</a></li>
+          <li><a href="/services/strategy/">Strategy &amp; advisory</a></li>
+          <li><a href="/services/governance/">Governance, risk &amp; compliance</a></li>
+          <li><a href="/services/data/">Data &amp; enablement</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Solutions</h3>
+        <ul>
+          <li><a href="/solutions/compliance-service/">Compliance as a service</a></li>
+          <li><a href="/solutions/voice-agents/">Voice &amp; sales agents</a></li>
+          <li><a href="/solutions/ma-diligence/">AI M&amp;A due diligence</a></li>
+          <li><a href="/solutions/evals/">Evals &amp; red-teaming</a></li>
+          <li><a href="/solutions/cost-optimisation/">AI cost optimisation</a></li>
+          <li><a href="/solutions/document-intelligence/">Document intelligence accelerator</a></li>
+          <li><a href="/solutions/knowledge-assistant/">Enterprise knowledge assistant</a></li>
+          <li><a href="/solutions/msoftai/">MsoftAI Manifold Designer</a></li>
+          <li><a href="/solutions/advisor/">Insurance Advisor CRM</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="/engagement/">Engagement models</a></li>
+          <li><a href="/about/#approach">How we work</a></li>
+          <li><a href="/insights/">Insights</a></li>
+          <li><a href="/estimate/">Value &amp; readiness estimator</a></li>
+          <li><a href="/resources/ai-readiness-checklist/">AI readiness checklist</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/about/#faq">FAQ</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="mailto:contact@mindyards.in">contact@mindyards.in</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <div>© <span id="year"></span> MindYards. All rights reserved.</div>
+      <div>Chennai, Tamil Nadu, India &nbsp;·&nbsp; mindyards.in</div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js?v=a9c23e0e"></script>
+</body>
+</html>

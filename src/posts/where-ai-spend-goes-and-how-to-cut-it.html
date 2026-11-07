@@ -1,0 +1,42 @@
+<!--meta
+title: Where AI spend goes, and how to cut it without hurting quality
+date: 2026-11-04
+summary: The first invoice after launch is usually a surprise. Here is where the money goes in a typical LLM workload and the five changes that recover most of it.
+image: cost-optimisation
+tags: Cost, Operations
+related: cost-optimisation, managed-ops
+-->
+<p>The first month of a language-model application in production is often the month the finance team joins the project. The pilot cost almost nothing. The production bill is a different number, and it grows with usage in a way that software licences never did. The good news is that the bill is usually dominated by a few causes, and each has a fix that does not cost quality.</p>
+
+<h2>Where the money goes</h2>
+<p>When we review an LLM cost line, the split is rarely what the team expects. Model calls that a user actually sees are often less than half of it. The rest is:</p>
+<ul>
+<li><strong>Context you send every time.</strong> A long system prompt, the full policy document, the entire conversation history. Input tokens are cheaper than output tokens, but you send them on every call, and they add up to most of the bill in retrieval-heavy systems.</li>
+<li><strong>Retries and loops.</strong> Agents that try again when a tool fails, validators that re-ask the model for better formatting, orchestration that calls a planner on every step. One user request can be ten model calls.</li>
+<li><strong>The biggest model for everything.</strong> Classification, routing and extraction do not need the model you use for drafting, but it is the one that was configured first.</li>
+<li><strong>Evaluation and development traffic.</strong> Necessary, but it belongs on a separate key with its own budget so it does not hide inside production numbers.</li>
+<li><strong>Idle GPU capacity</strong>, for teams self-hosting: reserved instances sized for peak, running at 15% utilisation overnight.</li>
+</ul>
+
+<h2>Five changes that recover most of it</h2>
+
+<h3>1. Cache what does not change</h3>
+<p>Most providers now offer prompt caching: the fixed part of your prompt is processed once and reused at a fraction of the price. If your system prompt and reference documents are the same on every call, this change alone typically cuts input cost by well over half, with zero effect on output.</p>
+
+<h3>2. Route by difficulty</h3>
+<p>Put a small, cheap model in front. Let it handle the requests it can and pass the rest on. For support and document workloads, a large share of traffic is routine and the small model's answers score the same on the evaluation set. You need that <a href="/solutions/evals/">evaluation set</a> to prove it, which is why cost work and quality work are the same project.</p>
+
+<h3>3. Shorten the context</h3>
+<p>Retrieve three relevant passages, not thirty. Summarise conversation history past a certain length instead of replaying it. Strip boilerplate from documents before they reach the model. Teams are often surprised that shorter context improves accuracy as well as cost, because the model has less irrelevant material to be distracted by.</p>
+
+<blockquote>Every token you remove from the prompt is one the model cannot be confused by. Shorter is usually both cheaper and better.</blockquote>
+
+<h3>4. Cap the loops</h3>
+<p>Give every agent a maximum number of steps and a budget per request. Log when the cap is hit. The cases that hit it are almost always a bug or a missing tool, and fixing them pays twice: lower cost and fewer failures.</p>
+
+<h3>5. Make spend visible per feature</h3>
+<p>Tag every call with the feature, tenant and environment it belongs to, and put the result on a dashboard the product owner sees weekly. Cost that is visible gets managed. Cost that arrives as one line on a cloud invoice does not.</p>
+
+<h2>What to expect</h2>
+<p>Done together, these changes commonly bring a workload's monthly bill down by a large fraction while the quality scores stay flat or improve. The work takes two to four weeks for an existing system and needs the evaluation set to be in place first, so that every change is measured rather than hoped for.</p>
+<p>We run this as a fixed-scope <a href="/solutions/cost-optimisation/">AI cost optimisation</a> engagement, and keep it going as part of <a href="/services/managed-ops/">managed AI operations</a>, where the monthly report shows cost per feature next to accuracy per feature. The two numbers belong on the same page.</p>

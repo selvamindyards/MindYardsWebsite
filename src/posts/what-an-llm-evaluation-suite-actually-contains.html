@@ -1,0 +1,36 @@
+<!--meta
+title: What a useful LLM evaluation suite actually contains
+date: 2026-10-27
+summary: "We tested it" can mean anything from a few prompts in a playground to a suite that blocks bad releases. Here is what the second kind looks like, piece by piece.
+image: evals
+tags: Evals, Governance
+related: evals, governance
+-->
+<p>Every team says they test their language-model application. When we ask to see the tests, we usually get a spreadsheet of twenty prompts and a column of thumbs-up. That is a start, but it will not tell you when a prompt change broke the refund flow, and it will not satisfy an auditor. A useful evaluation suite has six parts.</p>
+
+<h2>1. A golden set of real cases</h2>
+<p>Between fifty and a few hundred inputs taken from production or from the backlog the system is meant to handle, each with the expected output written by a domain expert. Not synthetic prompts, not examples the engineers invented. Real tickets, real contracts, real claims, with personal data masked.</p>
+<p>The set is versioned like code. When a new kind of case appears in production, it is added. When the business rules change, the expected outputs change with them, and the change is reviewed.</p>
+
+<h2>2. Scorers that match the task</h2>
+<p>Exact match works for extraction: did the model pull the right invoice total? It does not work for a summary or a drafted reply. For those you need either a rubric scored by a second model, with the rubric written by a person, or human grading on a sample. Most suites use both: automatic scoring on every run, human grading on a weekly sample to check that the automatic scorer still agrees with people.</p>
+<p>The trap is a single number. A good suite reports accuracy by category, so you can see that address extraction is at 99% while handwritten amendments are at 70%, and decide what to do about the 70%.</p>
+
+<h2>3. Adversarial and safety cases</h2>
+<p>Someone will paste "ignore your instructions" into your support bot. Someone will ask the HR assistant for a colleague's salary. The suite needs a set of these: prompt injection, requests for data the user should not see, attempts to get the model to commit the company to something, and plain abuse. The expected behaviour is a refusal or an escalation, and it is tested like any other case.</p>
+<p>For regulated uses this is the part auditors ask about first. It is also the part most teams have not written down.</p>
+
+<blockquote>If the pass rate cannot block a release, it is a report, not a test.</blockquote>
+
+<h2>4. A regression gate</h2>
+<p>The suite runs automatically on every change to a prompt, a retrieval setting, a tool definition or a model version. The result is compared with the last accepted run. If any category drops below its threshold, the change does not ship. This is the single practice that separates teams who improve steadily from teams who fix one thing and break another.</p>
+<p>It also makes model upgrades boring, which is what you want. When a provider releases a new version, you run the suite, read the diff, and decide. Without it, every upgrade is a leap of faith.</p>
+
+<h2>5. Cost and latency alongside quality</h2>
+<p>A change that lifts accuracy by one point and doubles the token bill is not obviously good. Each run records tokens, cost and response time per case, so the trade-off is visible when the decision is made rather than discovered on the invoice. This is where <a href="/solutions/cost-optimisation/">cost optimisation</a> usually starts: the suite shows which cases are expensive and whether a smaller model handles them just as well.</p>
+
+<h2>6. Production feedback flowing back</h2>
+<p>Users correct outputs, reviewers reject drafts, customers complain. Each of those is a labelled example. The suite has a path for them: a reviewer flags a case, it is anonymised, and it joins the golden set with the correct answer attached. Over a year this is what turns a decent system into a dependable one.</p>
+
+<h2>How long it takes</h2>
+<p>A first suite with all six parts is two to three weeks of work for a system that already exists, most of it spent with the domain experts building the golden set. We offer it as a standalone <a href="/solutions/evals/">evals and red-teaming</a> engagement, and it is included in every build we deliver, because we would not want to ship without one either.</p>

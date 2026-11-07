@@ -10,13 +10,19 @@
 <meta property="og:description" content="Tell us what you are trying to do. We reply within two working days with a call slot and then a written proposal with scope, timeline and fixed price.">
 <meta property="og:url" content="https://mindyards.in/contact/">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://mindyards.in/assets/logo.png">
+<meta property="og:image" content="https://mindyards.in/assets/og/engagement.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="MindYards">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F26A1B">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=d9de4452">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="/assets/site.css?v=baab4889">
+<script>document.documentElement.classList.add("js");window.MY_CONFIG={}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mindyards.in/"}, {"@type": "ListItem", "position": 2, "name": "Contact", "item": "https://mindyards.in/contact/"}]}</script>
 </head>
 <body class="">
@@ -71,10 +77,12 @@
           <a href="/engagement/build/"><i>E2</i><div>Fixed-scope build<span>6 to 16 weeks per phase · fixed fee</span></div></a>
           <a href="/engagement/managed-operations/"><i>E3</i><div>Managed operations<span>Monthly retainer · SLAs</span></div></a>
           <a href="/engagement/fractional-caio/"><i>E4</i><div>Fractional Chief AI Officer<span>2 to 6 days a month</span></div></a>
+          <a href="/estimate/"><i>E5</i><div>Value &amp; readiness estimator<span>Interactive · 3 minutes</span></div></a>
         </div>
       </div>
+      <a href="/insights/">Insights</a>
       <a href="/about/">About</a>
-      <a class="cta" href="/contact/">Book a call</a>
+      <a class="cta book" href="/contact/">Book a call</a>
     </nav>
   </div>
 </header>
@@ -105,6 +113,7 @@
         </div>
       </div>
       <form id="contactForm" action="mailto:contact@mindyards.in" method="post" enctype="text/plain">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="f2">
           <div class="f"><label for="name">Name</label><input id="name" name="Name" required autocomplete="name"></div>
           <div class="f"><label for="email">Work email</label><input id="email" name="Email" type="email" required autocomplete="email"></div>
@@ -147,9 +156,14 @@
       <div>
         <a class="logo" href="/" aria-label="MindYards home"><img src="/assets/logo.png" alt="MindYards" width="940" height="402"></a>
         <p>AI consulting across strategy, build, governance and operations, for mid-market and enterprise teams in India and the Middle East.</p>
+        <div class="news">
+          <h3>Monthly note</h3>
+          <form id="newsForm"><input type="email" required placeholder="Work email" aria-label="Work email" autocomplete="email"><button class="btn btn-fire btn-sm" type="submit">Subscribe</button></form>
+          <small>One email a month on practical AI. Unsubscribe any time.</small>
+        </div>
       </div>
       <div>
-        <h4>Services</h4>
+        <h3>Services</h3>
         <ul>
           <li><a href="/services/implementation/">Implementation &amp; build</a></li>
           <li><a href="/services/agentic/">Agentic AI</a></li>
@@ -160,7 +174,7 @@
         </ul>
       </div>
       <div>
-        <h4>Solutions</h4>
+        <h3>Solutions</h3>
         <ul>
           <li><a href="/solutions/compliance-service/">Compliance as a service</a></li>
           <li><a href="/solutions/voice-agents/">Voice &amp; sales agents</a></li>
@@ -174,10 +188,13 @@
         </ul>
       </div>
       <div>
-        <h4>Company</h4>
+        <h3>Company</h3>
         <ul>
           <li><a href="/engagement/">Engagement models</a></li>
           <li><a href="/about/#approach">How we work</a></li>
+          <li><a href="/insights/">Insights</a></li>
+          <li><a href="/estimate/">Value &amp; readiness estimator</a></li>
+          <li><a href="/resources/ai-readiness-checklist/">AI readiness checklist</a></li>
           <li><a href="/about/">About</a></li>
           <li><a href="/about/#faq">FAQ</a></li>
           <li><a href="/contact/">Contact</a></li>
@@ -193,6 +210,6 @@
 </footer>
 
 <script>window.MY_TOPICS={"implementation":["Implementation & build","Implementation & build"],"agentic":["Agentic AI","Agentic AI"],"managed-ops":["Managed AI operations","Managed AI operations"],"strategy":["Strategy & advisory","Strategy & advisory"],"governance":["Governance, risk & compliance","Governance, risk & compliance"],"data":["Data & enablement","Data & enablement"],"msoftai":["MsoftAI Manifold Designer","MsoftAI Manifold Designer"],"advisor":["Insurance Advisor CRM","Insurance Advisor CRM"],"fractional-caio":["Fractional Chief AI Officer","Fractional Chief AI Officer"],"assessment":["Strategy & advisory","Assessment"],"build":["Implementation & build","Fixed-scope build"],"managed-operations":["Managed AI operations","Managed operations"],"bfsi":["","Banking, financial services & insurance"],"healthcare":["","Healthcare & life sciences"],"legal":["","Legal"],"manufacturing":["","Manufacturing"],"logistics":["","Logistics & supply chain"],"public-sector":["","Public sector"],"retail-cx":["","Retail & customer experience"],"aec":["","AEC & engineering"],"compliance-service":["A packaged solution","Compliance as a service"],"voice-agents":["A packaged solution","Voice & sales agents"],"ma-diligence":["A packaged solution","AI M&A due diligence"],"evals":["A packaged solution","Evals & red-teaming"],"cost-optimisation":["A packaged solution","AI cost optimisation"],"document-intelligence":["A packaged solution","Document intelligence accelerator"],"knowledge-assistant":["A packaged solution","Enterprise knowledge assistant"]}</script>
-<script src="/assets/site.js?v=311fba8c"></script>
+<script src="/assets/site.js?v=a9c23e0e"></script>
 </body>
 </html>

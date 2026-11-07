@@ -18,6 +18,16 @@ SRC = ROOT / "src"
 SITE = "https://mindyards.in"
 BRAND = "MindYards"
 
+# Optional services. Fill in a value, rebuild, and the feature switches on; leave empty to keep the fallback.
+CONFIG = {
+    "calendly": "",    # e.g. "https://calendly.com/mindyards/discovery" -> "Book a call" opens a Calendly popup, contact page embeds it
+    "whatsapp": "",    # e.g. "919876543210" (country code + number, digits only) -> floating WhatsApp chat button
+    "formKey": "",     # Web3Forms access key (free, https://web3forms.com) -> contact and newsletter forms submit directly
+    "ga": "",          # GA4 measurement ID, e.g. "G-XXXXXXXXXX"
+    "plausible": "",   # Plausible site domain, e.g. "mindyards.in" (alternative to GA)
+    "assistant": "",   # URL of the deployed assistant worker (see worker/README.md) -> "Ask MindYards" chat widget
+}
+
 # ---------------------------------------------------------------- content map
 GROUPS = [
     dict(slug="services", label="Services",
@@ -114,20 +124,31 @@ IMAGES = {
 }
 
 
-def banner(sid):
-    if sid not in IMAGES:
+def banner(sid, img=None):
+    img = img or sid
+    if img not in IMAGES:
         return ""
-    return (f'<div class="banner"><img src="/assets/img/{sid}.webp" alt="{attr(IMAGES[sid])}" '
+    return (f'<div class="banner"><img src="/assets/img/{img}.webp" alt="{attr(IMAGES[img])}" '
             f'width="1600" height="720"></div>\n')
+
+
+def og(img):
+    """Absolute URL of the 1200x630 share image for a page (falls back to the hero)."""
+    if img and (ROOT / "assets/og" / f"{img}.jpg").exists():
+        return f"{SITE}/assets/og/{img}.jpg"
+    return f"{SITE}/assets/og/hero.jpg"
 
 
 # Old single-page anchors -> new URLs.
 URL = {"top": "/", "contact": "/contact/", "about": "/about/", "faq": "/about/#faq",
-       "approach": "/about/#approach", "platforms": "/#platforms"}
+       "approach": "/about/#approach", "platforms": "/#platforms", "insights": "/insights/",
+       "estimate": "/estimate/", "checklist": "/resources/ai-readiness-checklist/"}
+LABEL = {}
 for _g in GROUPS:
     URL[_g["slug"]] = f"/{_g['slug']}/"
-    for _id, _ in _g["items"]:
+    for _id, _label in _g["items"]:
         URL[_id] = f"/{_g['slug']}/{_id}/"
+        LABEL[_id] = _label
 
 
 # ---------------------------------------------------------------- helpers
@@ -210,6 +231,124 @@ def pager(group, idx):
     return '<div class="pager"><div class="wrap">' + "".join(parts) + "</div></div>\n"
 
 
+def nice_date(d):
+    return d.strftime("%d %B %Y").lstrip("0")
+
+
+def load_posts():
+    """Articles in src/posts/<slug>.html, each starting with a <!--meta ... --> block."""
+    posts = []
+    for f in sorted((SRC / "posts").glob("*.html")):
+        raw = f.read_text(encoding="utf-8")
+        m = re.match(r"<!--meta\n(.*?)\n-->\n?(.*)$", raw, re.S)
+        meta = {}
+        for line in m.group(1).splitlines():
+            k, _, v = line.partition(":")
+            meta[k.strip()] = v.strip()
+        body = m.group(2).strip()
+        words = len(text(body).split())
+        split = lambda k: [t.strip() for t in meta.get(k, "").split(",") if t.strip()]
+        posts.append(dict(slug=f.stem, body=body, read=max(1, round(words / 200)),
+                          date=datetime.date.fromisoformat(meta["date"]), title=meta["title"],
+                          summary=meta["summary"], image=meta.get("image"), tags=split("tags"),
+                          related=split("related")))
+    posts.sort(key=lambda p: p["date"], reverse=True)
+    return posts
+
+
+def post_card(p):
+    url = f"/insights/{p['slug']}/"
+    tags = "".join(f"<li>{attr(t)}</li>" for t in p["tags"])
+    return (f'<article><a href="{url}" tabindex="-1" aria-hidden="true"><img src="/assets/img/{p["image"]}-sm.webp" '
+            f'alt="" width="720" height="450" loading="lazy"></a><div class="bd">'
+            f'<div class="meta2">{nice_date(p["date"])} · {p["read"]} min read</div>'
+            f'<h3><a href="{url}">{attr(p["title"])}</a></h3><p>{attr(p["summary"])}</p>'
+            f'<ul class="tags">{tags}</ul><a class="more arrow" href="{url}">Read </a></div></article>')
+
+
+def posts_section(posts, heading, intro, sid="", extra="", cls="sec"):
+    cards = "".join(post_card(p) for p in posts)
+    sid_attr = f' id="{sid}"' if sid else ""
+    return (f'  <section{sid_attr} class="{cls}">\n    <div class="wrap">\n      <div class="sec-head">\n'
+            f'        <div class="tick"></div>\n        <h2>{heading}</h2>\n        <p>{intro}</p>\n      </div>\n'
+            f'      <div class="posts">{cards}</div>\n{extra}    </div>\n  </section>\n')
+
+
+def post_page(p, others):
+    url = f"/insights/{p['slug']}/"
+    related = ", ".join(f'<a href="{URL[r]}">{attr(LABEL[r])}</a>' for r in p["related"] if r in URL)
+    related_html = f'<p class="meta2" style="margin-top:12px">Related: {related}</p>' if related else ""
+    main = banner(p["slug"], p["image"]) + f"""  <article class="post">
+    <div class="wrap">
+      <header class="hd">
+        <span class="kicker">Insights · {attr(" · ".join(p["tags"]))}</span>
+        <h1 class="pg">{attr(p["title"])}</h1>
+        <p class="lede">{attr(p["summary"])}</p>
+        <div class="meta2"><span>{nice_date(p["date"])}</span><span>{p["read"]} min read</span><span>By the MindYards team</span></div>
+      </header>
+      <div class="body">
+{p["body"]}
+      </div>
+      <div class="share"><a data-share="linkedin" href="#" target="_blank" rel="noopener">Share on LinkedIn</a><a data-share="whatsapp" href="#" target="_blank" rel="noopener">WhatsApp</a><a data-share="x" href="#" target="_blank" rel="noopener">X</a><button type="button" data-share="copy">Copy link</button></div>
+      <div class="box">
+        <div><h3>Want to talk this through for your organisation?</h3><p>A 30-minute call with a senior consultant. No deck, no obligation.</p>{related_html}</div>
+        <a class="btn btn-fire book" href="/contact/">Book a discovery call</a>
+      </div>
+    </div>
+  </article>
+"""
+    if others:
+        main += ('  <section class="related">\n    <div class="wrap">\n      <h2>More insights</h2>\n      <div class="posts">'
+                 + "".join(post_card(o) for o in others[:3]) + "</div>\n    </div>\n  </section>\n")
+    data = {"@context": "https://schema.org", "@type": "BlogPosting", "headline": p["title"],
+            "description": p["summary"], "datePublished": p["date"].isoformat(),
+            "dateModified": p["date"].isoformat(), "image": og(p["image"]),
+            "author": {"@type": "Organization", "name": BRAND, "url": SITE},
+            "publisher": {"@type": "Organization", "name": BRAND, "logo": {"@type": "ImageObject", "url": f"{SITE}/assets/logo.png"}},
+            "mainEntityOfPage": SITE + url}
+    jsonld = ('<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False) + "</script>\n"
+              + breadcrumb([("Home", "/"), ("Insights", "/insights/"), (p["title"], url)]))
+    return main, jsonld
+
+
+def knowledge(posts):
+    """Plain-text digest of the site for the assistant worker's system prompt (worker/knowledge.md)."""
+    def plain(markup):
+        markup = re.sub(r"<!--.*?-->", "", markup, flags=re.S)
+        markup = re.sub(r"<(script|style|svg)\b.*?</\1>", "", markup, flags=re.S)
+        markup = re.sub(r"</(h1|h2|h3|h4|p|li|dt|dd|tr|summary|blockquote|figcaption)>", "\n", markup)
+        markup = re.sub(r"<(h2|h3)[^>]*>", "\n## ", markup)
+        t = htmlmod.unescape(re.sub(r"<[^>]+>", "", markup))
+        t = re.sub(r"[ \t]+", " ", t)
+        return re.sub(r"\n\s*\n+", "\n", t).strip()
+    out = [f"# {BRAND} site digest (generated by build.py, do not edit)\n",
+           f"Home: {SITE}/\n" + plain(read("partials/hero.html") + read("partials/strip.html") + section("platforms"))]
+    for g in GROUPS:
+        out.append(f"\n# {g['label']} overview: {SITE}/{g['slug']}/\n" + plain(section(g["slug"])))
+        for sid, label in g["items"]:
+            out.append(f"\n# {label}: {SITE}{URL[sid]}\n" + plain(section(sid)))
+    out.append(f"\n# About: {SITE}/about/\n" + plain(section("about") + section("approach") + section("faq")))
+    out.append(f"\n# Contact: {SITE}/contact/\n" + plain(section("contact")))
+    out.append(f"\n# Estimator: {SITE}/estimate/ (interactive savings estimate and readiness check)")
+    out.append(f"\n# Checklist: {SITE}/resources/ai-readiness-checklist/ (25-point AI readiness checklist)")
+    for p in posts:
+        out.append(f"\n# Insight: {p['title']} ({SITE}/insights/{p['slug']}/, {nice_date(p['date'])})\n{p['summary']}")
+    (ROOT / "worker").mkdir(exist_ok=True)
+    (ROOT / "worker/knowledge.md").write_text("\n".join(out) + "\n", encoding="utf-8")
+
+
+def analytics():
+    out = ""
+    if CONFIG["ga"]:
+        gid = attr(CONFIG["ga"])
+        out += (f'<script async src="https://www.googletagmanager.com/gtag/js?id={gid}"></script>\n'
+                f'<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}'
+                f'gtag("js",new Date());gtag("config","{gid}",{{anonymize_ip:true}});</script>\n')
+    if CONFIG["plausible"]:
+        out += f'<script defer data-domain="{attr(CONFIG["plausible"])}" src="https://plausible.io/js/script.js"></script>\n'
+    return out
+
+
 # ---------------------------------------------------------------- assembly
 LAYOUT = read("layout.html")
 HEADER = relink(read("partials/header.html"))
@@ -223,13 +362,20 @@ JSV = hashlib.sha1(JS.encode()).hexdigest()[:8]
 PAGES = []  # (path, priority) for the sitemap
 
 
+CONFIG_JS = ('<script>document.documentElement.classList.add("js");window.MY_CONFIG='
+             + json.dumps({k: v for k, v in CONFIG.items() if v}, separators=(",", ":")) + "</script>\n")
+ANALYTICS = analytics()
+
+
 def write_page(path, *, title, description, main, subnav_html="", jsonld="", body_class="",
-               inline_js="", priority=0.7):
+               inline_js="", priority=0.7, image=None):
     out = (LAYOUT.replace("{{title}}", attr(title))
            .replace("{{description}}", attr(description))
            .replace("{{canonical}}", SITE + path)
            .replace("{{cssv}}", CSSV).replace("{{jsv}}", JSV)
            .replace("{{jsonld}}", jsonld)
+           .replace("{{og}}", og(image))
+           .replace("{{config}}", CONFIG_JS).replace("{{analytics}}", ANALYTICS)
            .replace("{{body_class}}", body_class)
            .replace("{{header}}", HEADER)
            .replace("{{subnav}}", subnav_html)
@@ -258,26 +404,33 @@ def build():
     topics_js = ("<script>window.MY_TOPICS="
                  + json.dumps(TOPICS, ensure_ascii=False, separators=(",", ":")) + "</script>\n")
 
+    posts = load_posts()
+
     # Home
-    home = "".join([read("partials/hero.html"), read("partials/strip.html"),
-                    section("services"), section("platforms"), section("approach"), CTABAND])
+    latest = posts_section(posts[:3], "Latest insights",
+                           "Short, practical notes from our engagements. One or two a month.", cls="sec blush",
+                           extra='      <p style="margin-top:28px"><a class="btn btn-line arrow" href="/insights/">All insights </a></p>\n')
+    home = "".join([read("partials/hero.html"), read("partials/strip.html"), read("partials/ticker.html"),
+                    section("services"), read("partials/estcta.html"), section("platforms"), latest,
+                    section("approach"), CTABAND])
     write_page("/", title=f"{BRAND} — AI Consulting: Strategy, Build, Govern, Run",
                description=("MindYards is an AI consulting firm in Chennai serving India and the Middle East. "
                             "Six service lines: implementation and build, agentic AI, managed AI operations, "
                             "strategy and advisory, governance and compliance, data and enablement."),
-               main=relink(home), jsonld=read("partials/jsonld-home.html"), inline_js=legacy_js, priority=1.0)
+               main=relink(home), jsonld=read("partials/jsonld-home.html"), inline_js=legacy_js, priority=1.0,
+               image="hero")
 
     # Group hubs and detail pages
     for g in GROUPS:
         hub = section(g["slug"])
         write_page(f"/{g['slug']}/", title=f"{g['title']} — {BRAND}", description=describe(hub),
                    main=banner(g["slug"]) + relink(promote_h1(hub)) + CTABAND, subnav_html=subnav(g, None),
-                   jsonld=breadcrumb([("Home", "/"), (g["label"], f"/{g['slug']}/")]), priority=0.8)
+                   jsonld=breadcrumb([("Home", "/"), (g["label"], f"/{g['slug']}/")]), priority=0.8, image=g["slug"])
         for i, (sid, label) in enumerate(g["items"]):
             sec = section(sid)
             main = banner(sid) + relink(promote_h1(sec), contact_topic=sid) + pager(g, i) + CTABAND
             write_page(URL[sid], title=f"{label} — {g['label']} — {BRAND}", description=describe(sec),
-                       main=main, subnav_html=subnav(g, sid),
+                       main=main, subnav_html=subnav(g, sid), image=sid,
                        jsonld=breadcrumb([("Home", "/"), (g["label"], f"/{g['slug']}/"), (label, URL[sid])]))
 
     # About (with approach and FAQ) and contact
@@ -285,12 +438,42 @@ def build():
     write_page("/about/", title=f"About {BRAND} — built by practitioners",
                description=("MindYards was founded by Selvakumar Dhanasekaran and is based in Chennai, working "
                             "with clients across India and the Middle East on short, well-defined AI engagements."),
-               main=relink(about), jsonld=breadcrumb([("Home", "/"), ("About", "/about/")]), priority=0.6)
+               main=relink(about), jsonld=breadcrumb([("Home", "/"), ("About", "/about/")]), priority=0.6,
+               image="about")
     write_page("/contact/", title=f"Contact {BRAND} — book a discovery call",
                description=("Tell us what you are trying to do. We reply within two working days with a call "
                             "slot and then a written proposal with scope, timeline and fixed price."),
                main=relink(promote_h1(section("contact"))), inline_js=topics_js,
-               jsonld=breadcrumb([("Home", "/"), ("Contact", "/contact/")]), priority=0.6)
+               jsonld=breadcrumb([("Home", "/"), ("Contact", "/contact/")]), priority=0.6, image="engagement")
+
+    # Insights
+    hub = posts_section(posts, "Insights", "Short, practical notes from our engagements: what works, what does not, "
+                        "and what we would do first. One or two a month.", sid="insights")
+    write_page("/insights/", title=f"Insights — practical notes on AI delivery — {BRAND}",
+               description=("Short, practical articles from MindYards on building, evaluating, governing and running "
+                            "AI systems: agents, evaluation suites, cost, compliance and operations."),
+               main=relink(promote_h1(hub)) + CTABAND, jsonld=breadcrumb([("Home", "/"), ("Insights", "/insights/")]),
+               priority=0.8, image=posts[0]["image"] if posts else None)
+    for p in posts:
+        main, jsonld = post_page(p, [o for o in posts if o is not p])
+        write_page(f"/insights/{p['slug']}/", title=f"{p['title']} — {BRAND} Insights", description=p["summary"],
+                   main=relink(main), jsonld=jsonld, body_class="is-post", image=p["image"])
+
+    # Estimator and checklist
+    write_page("/estimate/", title=f"AI value and readiness estimator — {BRAND}",
+               description=("Estimate the hours and money AI could free in one of your processes, then check your "
+                            "readiness in eight questions. Rough, interactive, and free. Not a quote."),
+               main=banner("estimate", "cost-optimisation") + relink(promote_h1(section("estimate"))) + CTABAND,
+               jsonld=breadcrumb([("Home", "/"), ("Engagement", "/engagement/"), ("Estimator", "/estimate/")]),
+               priority=0.8, image="cost-optimisation")
+    write_page("/resources/ai-readiness-checklist/", title=f"AI readiness checklist: 25 things to check — {BRAND}",
+               description=("The 25-point AI readiness checklist MindYards uses in the first week of an assessment: "
+                            "strategy, data, people, technology and governance. Tick, print and share."),
+               main=banner("checklist", "assessment") + relink(promote_h1(section("checklist"))) + CTABAND,
+               jsonld=breadcrumb([("Home", "/"), ("Resources", "/resources/ai-readiness-checklist/"),
+                                  ("AI readiness checklist", "/resources/ai-readiness-checklist/")]),
+               priority=0.7, image="assessment")
+    knowledge(posts)
 
     # 404
     nf = """  <section class="sec nf">
@@ -321,7 +504,7 @@ def build():
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + "</urlset>\n",
         encoding="utf-8")
-    print(f"built {len(PAGES)} pages + 404.html, sitemap.xml, assets/site.css, assets/site.js")
+    print(f"built {len(PAGES)} pages + 404.html, sitemap.xml, assets/site.css, assets/site.js, worker/knowledge.md")
 
 
 if __name__ == "__main__":

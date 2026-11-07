@@ -1,0 +1,35 @@
+<!--meta
+title: Five questions to ask before you build an AI agent
+date: 2026-10-14
+summary: Most agent projects stall for reasons that were visible on day one. Here are the five questions we ask in the first meeting, and what a good answer sounds like.
+image: agentic
+tags: Agentic AI, Delivery
+related: agentic, build
+-->
+<p>"Agent" has become the word for any AI that does more than answer a question. That is fine as marketing, but it hides a real engineering distinction: an agent plans, calls tools, and takes actions inside your systems. Each of those three verbs adds a way to fail. Before we scope an agent build, we ask five questions. None of them is about models.</p>
+
+<h2>1. What does the agent do when it is unsure?</h2>
+<p>A chatbot that is unsure gives a vague answer. An agent that is unsure files the wrong claim, emails the wrong customer, or books the wrong slot. The honest answer to this question is almost always "it stops and asks a person", and that single decision shapes the whole design: you need a queue, a reviewer, a notification, and a way for the reviewer's decision to flow back as a correction.</p>
+<p>A good answer sounds like: "Anything above this confidence threshold is automatic, anything below it goes to the ops queue with the agent's draft attached, and we review the threshold monthly."</p>
+
+<h2>2. Which actions are reversible?</h2>
+<p>Reading a record is reversible. Drafting an email is reversible. Sending it is not. Posting a journal entry, issuing a refund, changing a delivery address: not reversible, or expensive to reverse. We draw a line through the process and the agent gets full autonomy on one side of it and a human approval step on the other.</p>
+<p>This sounds restrictive. In practice most of the time saved comes from the reversible side: gathering, summarising, drafting, cross-checking. Keeping a person on the irreversible actions costs a few seconds per case and buys you the right to sleep at night.</p>
+
+<h2>3. Do the tools exist?</h2>
+<p>An agent is only as useful as the systems it can touch. If the policy admin system has no API, the agent cannot update it, however clever the model. We list every system the agent needs to read from or write to, and for each one we ask whether there is an API, who owns it, and whether the agent will be allowed a service account.</p>
+<p>Missing tools are the most common reason agent projects take twice as long as planned. Finding them in week one, rather than week six, is most of what an assessment is for.</p>
+
+<blockquote>The model is rarely the bottleneck. Access, permissions and the one system without an API are.</blockquote>
+
+<h2>4. How will you know it is working?</h2>
+<p>"Looks good in the demo" is not a measure. Before we build, we agree an evaluation set: fifty to two hundred real cases with the correct outcome recorded by someone who knows the domain. The agent is run against that set before every release and the pass rate is reported. When the number goes down, the release does not go out.</p>
+<p>The set also settles arguments. When a stakeholder says the agent "keeps getting it wrong", you can look at the cases rather than the feeling, and usually one of two things is true: the set needs those cases added, or the stakeholder is right and you have a regression.</p>
+
+<h2>5. Who owns it after launch?</h2>
+<p>Agents drift. The upstream system changes a field name, a supplier changes its invoice layout, the model provider retires a version. Somebody has to watch the dashboards, triage the failures and ship the fixes. If the answer is "the vendor" or "we will see", the agent will quietly degrade until someone switches it off.</p>
+<p>The good answer names a person, a monthly cadence, and a budget line for model usage separate from the build. This is also why we offer <a href="/engagement/managed-operations/">managed operations</a> as a standard follow-on to a build rather than an afterthought.</p>
+
+<h2>What good looks like</h2>
+<p>If you can answer all five, you are ready for a <a href="/engagement/build/">fixed-scope build</a>: six to sixteen weeks, evaluation set agreed up front, guardrails and monitoring included. If two or more answers are "we have not thought about that", a short <a href="/engagement/assessment/">assessment</a> will save you money, because it answers them before the engineering starts.</p>
+<p>Either way, the questions are free. Ask them of any vendor who proposes an agent, including us.</p>

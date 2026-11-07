@@ -1,0 +1,61 @@
+  <section id="checklist" class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="tick"></div>
+        <h2>AI readiness checklist</h2>
+        <p>Twenty-five things we check in the first week of every assessment. Tick what is true today; your answers stay in this browser. Print it, share it with your leadership team, or send us the result.</p>
+      </div>
+      <div class="prog">
+        <b id="chkCount">0 / 25</b>
+        <div class="bar"><i id="chkBar"></i></div>
+        <div class="acts"><button class="btn btn-line btn-sm" type="button" id="chkPrint">Print or save as PDF</button><button class="btn btn-line btn-sm" type="button" id="chkReset">Reset</button></div>
+      </div>
+      <div class="chk" id="chk">
+        <fieldset>
+          <legend>Strategy &amp; ownership <span>0 of 5</span></legend>
+          <label><input type="checkbox" value="s1"><span>A senior leader owns AI decisions, budget and risk.</span></label>
+          <label><input type="checkbox" value="s2"><span>We have a written list of candidate use cases ranked by value and feasibility.</span></label>
+          <label><input type="checkbox" value="s3"><span>Each shortlisted use case has a named business owner.</span></label>
+          <label><input type="checkbox" value="s4"><span>We can say in numbers what success looks like for the first use case.</span></label>
+          <label><input type="checkbox" value="s5"><span>Leadership has agreed how much to invest in the next twelve months.</span></label>
+        </fieldset>
+        <fieldset>
+          <legend>Data <span>0 of 5</span></legend>
+          <label><input type="checkbox" value="d1"><span>We know where the data for our top use case lives and who controls it.</span></label>
+          <label><input type="checkbox" value="d2"><span>An engineer could get access to that data within days, not months.</span></label>
+          <label><input type="checkbox" value="d3"><span>We have a sample of real cases that could become a test set.</span></label>
+          <label><input type="checkbox" value="d4"><span>Personal data is classified and we know the rules for using it.</span></label>
+          <label><input type="checkbox" value="d5"><span>Known data-quality problems are written down, even if not yet fixed.</span></label>
+        </fieldset>
+        <fieldset>
+          <legend>People &amp; skills <span>0 of 5</span></legend>
+          <label><input type="checkbox" value="p1"><span>At least one engineer can integrate an API and deploy a service.</span></label>
+          <label><input type="checkbox" value="p2"><span>Business users of the first use case can give feedback every week.</span></label>
+          <label><input type="checkbox" value="p3"><span>Someone in the team can judge whether an AI output is correct in that domain.</span></label>
+          <label><input type="checkbox" value="p4"><span>Staff have had basic training on what generative AI can and cannot do.</span></label>
+          <label><input type="checkbox" value="p5"><span>We know what we will build in-house and what we will buy or outsource.</span></label>
+        </fieldset>
+        <fieldset>
+          <legend>Technology &amp; security <span>0 of 5</span></legend>
+          <label><input type="checkbox" value="t1"><span>Our IT policy says which model providers we may use.</span></label>
+          <label><input type="checkbox" value="t2"><span>We know our data-residency constraints: in-country, on-premises or VPC.</span></label>
+          <label><input type="checkbox" value="t3"><span>Single sign-on and role-based access exist for internal tools.</span></label>
+          <label><input type="checkbox" value="t4"><span>There is a path to production: environments, CI and monitoring.</span></label>
+          <label><input type="checkbox" value="t5"><span>There is a budget line for model and infrastructure usage, not only for the build.</span></label>
+        </fieldset>
+        <fieldset>
+          <legend>Governance &amp; risk <span>0 of 5</span></legend>
+          <label><input type="checkbox" value="g1"><span>We know which regulations apply: DPDP Act, EU AI Act, sector rules.</span></label>
+          <label><input type="checkbox" value="g2"><span>There is an AI use policy that employees have actually read.</span></label>
+          <label><input type="checkbox" value="g3"><span>High-risk uses (credit, hiring, health) are identified and reviewed separately.</span></label>
+          <label><input type="checkbox" value="g4"><span>Outputs can be tested before release, even if the process is manual today.</span></label>
+          <label><input type="checkbox" value="g5"><span>Someone reviews incidents and complaints that involve AI outputs.</span></label>
+        </fieldset>
+      </div>
+      <div class="verdict">
+        <h3 id="chkStage">Early days</h3>
+        <p id="chkText"></p>
+        <a class="btn btn-fire btn-sm" id="chkCta" href="/contact/?topic=assessment">Discuss your result with us</a>
+      </div>
+    </div>
+  </section>

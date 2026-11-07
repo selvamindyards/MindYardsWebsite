@@ -10,13 +10,19 @@
 <meta property="og:description" content="Logistics runs on thin margins and constant exceptions. We build optimisation and agents that improve dispatch, routing and exception handling, and document.">
 <meta property="og:url" content="https://mindyards.in/industries/logistics/">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://mindyards.in/assets/logo.png">
+<meta property="og:image" content="https://mindyards.in/assets/og/logistics.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="MindYards">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F26A1B">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=d9de4452">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="/assets/site.css?v=baab4889">
+<script>document.documentElement.classList.add("js");window.MY_CONFIG={}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mindyards.in/"}, {"@type": "ListItem", "position": 2, "name": "Industries", "item": "https://mindyards.in/industries/"}, {"@type": "ListItem", "position": 3, "name": "Logistics & supply chain", "item": "https://mindyards.in/industries/logistics/"}]}</script>
 </head>
 <body class="">
@@ -71,10 +77,12 @@
           <a href="/engagement/build/"><i>E2</i><div>Fixed-scope build<span>6 to 16 weeks per phase · fixed fee</span></div></a>
           <a href="/engagement/managed-operations/"><i>E3</i><div>Managed operations<span>Monthly retainer · SLAs</span></div></a>
           <a href="/engagement/fractional-caio/"><i>E4</i><div>Fractional Chief AI Officer<span>2 to 6 days a month</span></div></a>
+          <a href="/estimate/"><i>E5</i><div>Value &amp; readiness estimator<span>Interactive · 3 minutes</span></div></a>
         </div>
       </div>
+      <a href="/insights/">Insights</a>
       <a href="/about/">About</a>
-      <a class="cta" href="/contact/">Book a call</a>
+      <a class="cta book" href="/contact/">Book a call</a>
     </nav>
   </div>
 </header>
@@ -127,7 +135,7 @@
         <h2>Tell us the problem. We'll tell you if AI is the answer.</h2>
         <p>A 30-minute call, no deck, no obligation.</p>
       </div>
-      <a class="btn btn-line" href="/contact/">Book a discovery call</a>
+      <a class="btn btn-line book" href="/contact/">Book a discovery call</a>
     </div>
   </div>
 </main>
@@ -144,9 +152,14 @@
       <div>
         <a class="logo" href="/" aria-label="MindYards home"><img src="/assets/logo.png" alt="MindYards" width="940" height="402"></a>
         <p>AI consulting across strategy, build, governance and operations, for mid-market and enterprise teams in India and the Middle East.</p>
+        <div class="news">
+          <h3>Monthly note</h3>
+          <form id="newsForm"><input type="email" required placeholder="Work email" aria-label="Work email" autocomplete="email"><button class="btn btn-fire btn-sm" type="submit">Subscribe</button></form>
+          <small>One email a month on practical AI. Unsubscribe any time.</small>
+        </div>
       </div>
       <div>
-        <h4>Services</h4>
+        <h3>Services</h3>
         <ul>
           <li><a href="/services/implementation/">Implementation &amp; build</a></li>
           <li><a href="/services/agentic/">Agentic AI</a></li>
@@ -157,7 +170,7 @@
         </ul>
       </div>
       <div>
-        <h4>Solutions</h4>
+        <h3>Solutions</h3>
         <ul>
           <li><a href="/solutions/compliance-service/">Compliance as a service</a></li>
           <li><a href="/solutions/voice-agents/">Voice &amp; sales agents</a></li>
@@ -171,10 +184,13 @@
         </ul>
       </div>
       <div>
-        <h4>Company</h4>
+        <h3>Company</h3>
         <ul>
           <li><a href="/engagement/">Engagement models</a></li>
           <li><a href="/about/#approach">How we work</a></li>
+          <li><a href="/insights/">Insights</a></li>
+          <li><a href="/estimate/">Value &amp; readiness estimator</a></li>
+          <li><a href="/resources/ai-readiness-checklist/">AI readiness checklist</a></li>
           <li><a href="/about/">About</a></li>
           <li><a href="/about/#faq">FAQ</a></li>
           <li><a href="/contact/">Contact</a></li>
@@ -189,6 +205,6 @@
   </div>
 </footer>
 
-<script src="/assets/site.js?v=311fba8c"></script>
+<script src="/assets/site.js?v=a9c23e0e"></script>
 </body>
 </html>

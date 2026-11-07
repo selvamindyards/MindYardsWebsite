@@ -10,13 +10,19 @@
 <meta property="og:description" content="MindYards is an AI consulting firm in Chennai serving India and the Middle East. Six service lines: implementation and build, agentic AI, managed AI operations, strategy and advisory, governance and compliance, data and enablement.">
 <meta property="og:url" content="https://mindyards.in/">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://mindyards.in/assets/logo.png">
+<meta property="og:image" content="https://mindyards.in/assets/og/hero.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="MindYards">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F26A1B">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=d9de4452">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="/assets/site.css?v=baab4889">
+<script>document.documentElement.classList.add("js");window.MY_CONFIG={}</script>
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -95,10 +101,12 @@
           <a href="/engagement/build/"><i>E2</i><div>Fixed-scope build<span>6 to 16 weeks per phase · fixed fee</span></div></a>
           <a href="/engagement/managed-operations/"><i>E3</i><div>Managed operations<span>Monthly retainer · SLAs</span></div></a>
           <a href="/engagement/fractional-caio/"><i>E4</i><div>Fractional Chief AI Officer<span>2 to 6 days a month</span></div></a>
+          <a href="/estimate/"><i>E5</i><div>Value &amp; readiness estimator<span>Interactive · 3 minutes</span></div></a>
         </div>
       </div>
+      <a href="/insights/">Insights</a>
       <a href="/about/">About</a>
-      <a class="cta" href="/contact/">Book a call</a>
+      <a class="cta book" href="/contact/">Book a call</a>
     </nav>
   </div>
 </header>
@@ -125,7 +133,7 @@
         <h1>AI consulting for the <em>whole lifecycle</em>. Strategy, build, govern, run.</h1>
         <p class="lede">MindYards helps mid-market and enterprise teams turn AI into dependable products, agents and day-to-day operations. Six service lines, one accountable team, fixed scopes with written outcomes.</p>
         <div class="actions">
-          <a class="btn btn-fire" href="/contact/">Book a discovery call</a>
+          <a class="btn btn-fire book" href="/contact/">Book a discovery call</a>
           <a class="btn btn-line" href="/services/">Explore our services</a>
         </div>
         <ul class="hero-proof" aria-label="Why MindYards">
@@ -147,11 +155,17 @@
   </section>
   <div class="strip" aria-label="At a glance">
     <div class="wrap">
-      <div><b>6</b><span>service lines covering strategy to operations</span></div>
-      <div><b>27</b><span>named capabilities, each with written deliverables</span></div>
-      <div><b>8</b><span>industries with use-case playbooks and regulatory context</span></div>
+      <div><b data-count="6">6</b><span>service lines covering strategy to operations</span></div>
+      <div><b data-count="27">27</b><span>named capabilities, each with written deliverables</span></div>
+      <div><b data-count="8">8</b><span>industries with use-case playbooks and regulatory context</span></div>
       <div><b>2–4 wks</b><span>from first call to a prioritised roadmap</span></div>
     </div>
+  </div>
+  <div class="ticker" aria-label="Platforms, models and standards we work with">
+    <ul>
+      <li>Azure AI Foundry</li><li>Microsoft Copilot</li><li>Microsoft Fabric</li><li>Purview</li><li>Salesforce Agentforce</li><li>Anthropic Claude</li><li>OpenAI</li><li>Google Gemini</li><li>AWS Bedrock</li><li>Open-weight models</li><li>LangGraph</li><li>Databricks</li><li>ISO/IEC 42001</li><li>EU AI Act</li><li>DPDP Act 2023</li><li>NIST AI RMF</li>
+      <li aria-hidden="true">Azure AI Foundry</li><li aria-hidden="true">Microsoft Copilot</li><li aria-hidden="true">Microsoft Fabric</li><li aria-hidden="true">Purview</li><li aria-hidden="true">Salesforce Agentforce</li><li aria-hidden="true">Anthropic Claude</li><li aria-hidden="true">OpenAI</li><li aria-hidden="true">Google Gemini</li><li aria-hidden="true">AWS Bedrock</li><li aria-hidden="true">Open-weight models</li><li aria-hidden="true">LangGraph</li><li aria-hidden="true">Databricks</li><li aria-hidden="true">ISO/IEC 42001</li><li aria-hidden="true">EU AI Act</li><li aria-hidden="true">DPDP Act 2023</li><li aria-hidden="true">NIST AI RMF</li>
+    </ul>
   </div>
   <section id="services" class="sec blush">
     <div class="wrap">
@@ -212,6 +226,21 @@
       </div>
     </div>
   </section>
+  <section class="estcta">
+    <div class="wrap">
+      <div>
+        <span class="kicker">Interactive · 3 minutes</span>
+        <h2>How much could AI save your team?</h2>
+        <p>Pick one repeatable process, move four sliders, and see the hours freed, the value per year and the engagement model that fits. Then run the eight-question readiness check.</p>
+        <a class="btn btn-fire arrow" href="/estimate/">Try the estimator </a>
+      </div>
+      <div class="demo" aria-hidden="true">
+        <b>4,300 hrs</b><span>freed per year for a 20-person claims team</span>
+        <div class="bar"><i></i></div>
+        <small>Document processing · 10 h a week each · AI share 55%</small>
+      </div>
+    </div>
+  </section>
   <section id="platforms" class="sec blush">
     <div class="wrap">
       <div class="sec-head">
@@ -240,6 +269,17 @@
       </div>
     </div>
   </section>
+  <section class="sec blush">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="tick"></div>
+        <h2>Latest insights</h2>
+        <p>Short, practical notes from our engagements. One or two a month.</p>
+      </div>
+      <div class="posts"><article><a href="/insights/where-ai-spend-goes-and-how-to-cut-it/" tabindex="-1" aria-hidden="true"><img src="/assets/img/cost-optimisation-sm.webp" alt="" width="720" height="450" loading="lazy"></a><div class="bd"><div class="meta2">4 November 2026 · 3 min read</div><h3><a href="/insights/where-ai-spend-goes-and-how-to-cut-it/">Where AI spend goes, and how to cut it without hurting quality</a></h3><p>The first invoice after launch is usually a surprise. Here is where the money goes in a typical LLM workload and the five changes that recover most of it.</p><ul class="tags"><li>Cost</li><li>Operations</li></ul><a class="more arrow" href="/insights/where-ai-spend-goes-and-how-to-cut-it/">Read </a></div></article><article><a href="/insights/what-an-llm-evaluation-suite-actually-contains/" tabindex="-1" aria-hidden="true"><img src="/assets/img/evals-sm.webp" alt="" width="720" height="450" loading="lazy"></a><div class="bd"><div class="meta2">27 October 2026 · 3 min read</div><h3><a href="/insights/what-an-llm-evaluation-suite-actually-contains/">What a useful LLM evaluation suite actually contains</a></h3><p>&quot;We tested it&quot; can mean anything from a few prompts in a playground to a suite that blocks bad releases. Here is what the second kind looks like, piece by piece.</p><ul class="tags"><li>Evals</li><li>Governance</li></ul><a class="more arrow" href="/insights/what-an-llm-evaluation-suite-actually-contains/">Read </a></div></article><article><a href="/insights/five-questions-before-you-build-an-ai-agent/" tabindex="-1" aria-hidden="true"><img src="/assets/img/agentic-sm.webp" alt="" width="720" height="450" loading="lazy"></a><div class="bd"><div class="meta2">14 October 2026 · 3 min read</div><h3><a href="/insights/five-questions-before-you-build-an-ai-agent/">Five questions to ask before you build an AI agent</a></h3><p>Most agent projects stall for reasons that were visible on day one. Here are the five questions we ask in the first meeting, and what a good answer sounds like.</p><ul class="tags"><li>Agentic AI</li><li>Delivery</li></ul><a class="more arrow" href="/insights/five-questions-before-you-build-an-ai-agent/">Read </a></div></article></div>
+      <p style="margin-top:28px"><a class="btn btn-line arrow" href="/insights/">All insights </a></p>
+    </div>
+  </section>
   <section id="approach" class="sec blush">
     <div class="wrap">
       <div class="sec-head">
@@ -261,7 +301,7 @@
         <h2>Tell us the problem. We'll tell you if AI is the answer.</h2>
         <p>A 30-minute call, no deck, no obligation.</p>
       </div>
-      <a class="btn btn-line" href="/contact/">Book a discovery call</a>
+      <a class="btn btn-line book" href="/contact/">Book a discovery call</a>
     </div>
   </div>
 </main>
@@ -278,9 +318,14 @@
       <div>
         <a class="logo" href="/" aria-label="MindYards home"><img src="/assets/logo.png" alt="MindYards" width="940" height="402"></a>
         <p>AI consulting across strategy, build, governance and operations, for mid-market and enterprise teams in India and the Middle East.</p>
+        <div class="news">
+          <h3>Monthly note</h3>
+          <form id="newsForm"><input type="email" required placeholder="Work email" aria-label="Work email" autocomplete="email"><button class="btn btn-fire btn-sm" type="submit">Subscribe</button></form>
+          <small>One email a month on practical AI. Unsubscribe any time.</small>
+        </div>
       </div>
       <div>
-        <h4>Services</h4>
+        <h3>Services</h3>
         <ul>
           <li><a href="/services/implementation/">Implementation &amp; build</a></li>
           <li><a href="/services/agentic/">Agentic AI</a></li>
@@ -291,7 +336,7 @@
         </ul>
       </div>
       <div>
-        <h4>Solutions</h4>
+        <h3>Solutions</h3>
         <ul>
           <li><a href="/solutions/compliance-service/">Compliance as a service</a></li>
           <li><a href="/solutions/voice-agents/">Voice &amp; sales agents</a></li>
@@ -305,10 +350,13 @@
         </ul>
       </div>
       <div>
-        <h4>Company</h4>
+        <h3>Company</h3>
         <ul>
           <li><a href="/engagement/">Engagement models</a></li>
           <li><a href="/about/#approach">How we work</a></li>
+          <li><a href="/insights/">Insights</a></li>
+          <li><a href="/estimate/">Value &amp; readiness estimator</a></li>
+          <li><a href="/resources/ai-readiness-checklist/">AI readiness checklist</a></li>
           <li><a href="/about/">About</a></li>
           <li><a href="/about/#faq">FAQ</a></li>
           <li><a href="/contact/">Contact</a></li>
@@ -323,7 +371,7 @@
   </div>
 </footer>
 
-<script>window.MY_LEGACY={"top":"/","contact":"/contact/","about":"/about/","faq":"/about/#faq","approach":"/about/#approach","platforms":"/#platforms","services":"/services/","implementation":"/services/implementation/","agentic":"/services/agentic/","managed-ops":"/services/managed-ops/","strategy":"/services/strategy/","governance":"/services/governance/","data":"/services/data/","industries":"/industries/","bfsi":"/industries/bfsi/","healthcare":"/industries/healthcare/","legal":"/industries/legal/","manufacturing":"/industries/manufacturing/","logistics":"/industries/logistics/","public-sector":"/industries/public-sector/","retail-cx":"/industries/retail-cx/","aec":"/industries/aec/","solutions":"/solutions/","compliance-service":"/solutions/compliance-service/","voice-agents":"/solutions/voice-agents/","ma-diligence":"/solutions/ma-diligence/","evals":"/solutions/evals/","cost-optimisation":"/solutions/cost-optimisation/","document-intelligence":"/solutions/document-intelligence/","knowledge-assistant":"/solutions/knowledge-assistant/","msoftai":"/solutions/msoftai/","advisor":"/solutions/advisor/","engagement":"/engagement/","assessment":"/engagement/assessment/","build":"/engagement/build/","managed-operations":"/engagement/managed-operations/","fractional-caio":"/engagement/fractional-caio/"}</script>
-<script src="/assets/site.js?v=311fba8c"></script>
+<script>window.MY_LEGACY={"top":"/","contact":"/contact/","about":"/about/","faq":"/about/#faq","approach":"/about/#approach","platforms":"/#platforms","insights":"/insights/","estimate":"/estimate/","checklist":"/resources/ai-readiness-checklist/","services":"/services/","implementation":"/services/implementation/","agentic":"/services/agentic/","managed-ops":"/services/managed-ops/","strategy":"/services/strategy/","governance":"/services/governance/","data":"/services/data/","industries":"/industries/","bfsi":"/industries/bfsi/","healthcare":"/industries/healthcare/","legal":"/industries/legal/","manufacturing":"/industries/manufacturing/","logistics":"/industries/logistics/","public-sector":"/industries/public-sector/","retail-cx":"/industries/retail-cx/","aec":"/industries/aec/","solutions":"/solutions/","compliance-service":"/solutions/compliance-service/","voice-agents":"/solutions/voice-agents/","ma-diligence":"/solutions/ma-diligence/","evals":"/solutions/evals/","cost-optimisation":"/solutions/cost-optimisation/","document-intelligence":"/solutions/document-intelligence/","knowledge-assistant":"/solutions/knowledge-assistant/","msoftai":"/solutions/msoftai/","advisor":"/solutions/advisor/","engagement":"/engagement/","assessment":"/engagement/assessment/","build":"/engagement/build/","managed-operations":"/engagement/managed-operations/","fractional-caio":"/engagement/fractional-caio/"}</script>
+<script src="/assets/site.js?v=a9c23e0e"></script>
 </body>
 </html>

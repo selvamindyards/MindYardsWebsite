@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI value and readiness estimator — MindYards</title>
+<meta name="description" content="Estimate the hours and money AI could free in one of your processes, then check your readiness in eight questions. Rough, interactive, and free. Not a quote.">
+<link rel="canonical" href="https://mindyards.in/estimate/">
+<meta property="og:title" content="AI value and readiness estimator — MindYards">
+<meta property="og:description" content="Estimate the hours and money AI could free in one of your processes, then check your readiness in eight questions. Rough, interactive, and free. Not a quote.">
+<meta property="og:url" content="https://mindyards.in/estimate/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://mindyards.in/assets/og/cost-optimisation.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="MindYards">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F26A1B">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="/assets/site.css?v=baab4889">
+<script>document.documentElement.classList.add("js");window.MY_CONFIG={}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mindyards.in/"}, {"@type": "ListItem", "position": 2, "name": "Engagement", "item": "https://mindyards.in/engagement/"}, {"@type": "ListItem", "position": 3, "name": "Estimator", "item": "https://mindyards.in/estimate/"}]}</script>
+</head>
+<body class="">
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="MindYards home"><img src="/assets/logo.png" alt="MindYards" width="940" height="402"></a>
+    <button class="menu" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <div class="dd">
+        <a href="/services/" aria-haspopup="true">Services</a>
+        <div class="dd-menu">
+          <a href="/services/implementation/"><i>01</i><div>Implementation &amp; build<span>LLM apps, MLOps, integration, infra</span></div></a>
+          <a href="/services/agentic/"><i>02</i><div>Agentic AI<span>Multi-agent systems, orchestration, AgentOps</span></div></a>
+          <a href="/services/managed-ops/"><i>03</i><div>Managed AI operations<span>Monitoring, LLMOps, agents as a service</span></div></a>
+          <a href="/services/strategy/"><i>04</i><div>Strategy &amp; advisory<span>Roadmap, prioritisation, fractional CAIO</span></div></a>
+          <a href="/services/governance/"><i>05</i><div>Governance, risk &amp; compliance<span>EU AI Act, ISO 42001, audit, red-teaming</span></div></a>
+          <a href="/services/data/"><i>06</i><div>Data &amp; enablement<span>Data readiness, upskilling, change, analytics</span></div></a>
+        </div>
+      </div>
+      <div class="dd">
+        <a href="/industries/" aria-haspopup="true">Industries</a>
+        <div class="dd-menu">
+          <a href="/industries/bfsi/"><i>I1</i><div>Banking, financial services &amp; insurance<span>Fraud, credit, claims, model risk</span></div></a>
+          <a href="/industries/healthcare/"><i>I2</i><div>Healthcare &amp; life sciences<span>Radiology triage, clinical notes</span></div></a>
+          <a href="/industries/legal/"><i>I3</i><div>Legal<span>Contract review, matter intake</span></div></a>
+          <a href="/industries/manufacturing/"><i>I4</i><div>Manufacturing<span>Predictive maintenance, visual QC</span></div></a>
+          <a href="/industries/logistics/"><i>I5</i><div>Logistics &amp; supply chain<span>Dispatch, routing, exceptions</span></div></a>
+          <a href="/industries/public-sector/"><i>I6</i><div>Public sector<span>Document-heavy workflows, sovereignty</span></div></a>
+          <a href="/industries/retail-cx/"><i>I7</i><div>Retail &amp; customer experience<span>Support agents, personalisation</span></div></a>
+          <a href="/industries/aec/"><i>I8</i><div>AEC &amp; engineering<span>Drawings, BIM, site data</span></div></a>
+        </div>
+      </div>
+      <div class="dd">
+        <a href="/solutions/" aria-haspopup="true">Solutions</a>
+        <div class="dd-menu">
+          <a href="/solutions/compliance-service/"><i>S1</i><div>Compliance as a service<span>Ongoing AI compliance on retainer</span></div></a>
+          <a href="/solutions/voice-agents/"><i>S2</i><div>Voice &amp; sales agents<span>Outbound, inbound, collections</span></div></a>
+          <a href="/solutions/ma-diligence/"><i>S3</i><div>AI M&amp;A due diligence<span>Technical diligence on AI assets</span></div></a>
+          <a href="/solutions/evals/"><i>S4</i><div>Evals &amp; red-teaming<span>Independent testing before launch</span></div></a>
+          <a href="/solutions/cost-optimisation/"><i>S5</i><div>AI cost optimisation<span>Token and GPU spend</span></div></a>
+          <a href="/solutions/document-intelligence/"><i>S6</i><div>Document intelligence accelerator<span>Extraction with validation and review</span></div></a>
+          <a href="/solutions/knowledge-assistant/"><i>S7</i><div>Enterprise knowledge assistant<span>Cited answers from your own content</span></div></a>
+          <a href="/solutions/msoftai/"><i>P1</i><div>MsoftAI Manifold Designer<span>Product · hydraulic manifold CAD</span></div></a>
+          <a href="/solutions/advisor/"><i>P2</i><div>Insurance Advisor CRM<span>Product · CRM for insurance advisers</span></div></a>
+        </div>
+      </div>
+      <div class="dd">
+        <a href="/engagement/" aria-haspopup="true">Engagement</a>
+        <div class="dd-menu">
+          <a href="/engagement/assessment/"><i>E1</i><div>Assessment<span>2 to 4 weeks · fixed fee</span></div></a>
+          <a href="/engagement/build/"><i>E2</i><div>Fixed-scope build<span>6 to 16 weeks per phase · fixed fee</span></div></a>
+          <a href="/engagement/managed-operations/"><i>E3</i><div>Managed operations<span>Monthly retainer · SLAs</span></div></a>
+          <a href="/engagement/fractional-caio/"><i>E4</i><div>Fractional Chief AI Officer<span>2 to 6 days a month</span></div></a>
+          <a href="/estimate/"><i>E5</i><div>Value &amp; readiness estimator<span>Interactive · 3 minutes</span></div></a>
+        </div>
+      </div>
+      <a href="/insights/">Insights</a>
+      <a href="/about/">About</a>
+      <a class="cta book" href="/contact/">Book a call</a>
+    </nav>
+  </div>
+</header>
+
+
+<main id="top">
+<div class="banner"><img src="/assets/img/cost-optimisation.webp" alt="A calculator, pencil and printed charts on a desk" width="1600" height="720"></div>
+  <section id="estimate" class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="tick"></div>
+        <h1 class="pg">How much could AI save your team?</h1>
+        <p>Pick one repeatable piece of work and move the sliders to match it. The estimate updates as you go, and the readiness check below tells you what to do first. It is a rough model, not a quote.</p>
+      </div>
+      <div class="est" id="est">
+        <div class="panel">
+          <h2>The process</h2>
+          <p>One process at a time works best: claims intake, support tickets, contract review, outreach, month-end reporting.</p>
+          <div class="f"><label for="eUse">Type of work</label>
+            <select id="eUse">
+              <option value="doc" data-share="55">Document processing &amp; extraction</option>
+              <option value="support" data-share="45">Customer support &amp; service</option>
+              <option value="know" data-share="35">Knowledge search, research &amp; drafting</option>
+              <option value="sales" data-share="40">Sales outreach, follow-up &amp; qualification</option>
+              <option value="report" data-share="40">Reporting, reconciliation &amp; analysis</option>
+              <option value="ops" data-share="30">Engineering, IT or operations workflow</option>
+            </select>
+          </div>
+          <div class="f"><label for="ePeople"><span>People doing this work</span><output id="oPeople">10</output></label><input type="range" id="ePeople" min="1" max="200" value="10"><div class="hint"><span>1</span><span>200</span></div></div>
+          <div class="f"><label for="eHours"><span>Hours per person per week on it</span><output id="oHours">10</output></label><input type="range" id="eHours" min="1" max="40" value="10"><div class="hint"><span>1 h</span><span>40 h</span></div></div>
+          <div class="f cur">
+            <div><label for="eCur">Currency</label>
+              <select id="eCur">
+                <option value="INR" data-rate="800" data-sym="₹">INR ₹</option>
+                <option value="USD" data-rate="45" data-sym="$">USD $</option>
+                <option value="AED" data-rate="160" data-sym="AED ">AED</option>
+                <option value="SAR" data-rate="160" data-sym="SAR ">SAR</option>
+                <option value="GBP" data-rate="38" data-sym="£">GBP £</option>
+              </select>
+            </div>
+            <div><label for="eCost">Fully loaded cost per hour</label><input type="number" id="eCost" value="800" min="1" step="1"></div>
+          </div>
+          <div class="f"><label for="eShare"><span>Share of the work AI can take on</span><output id="oShare">55%</output></label><input type="range" id="eShare" min="10" max="80" value="55"><div class="hint"><span>Conservative</span><span>Typical</span><span>Aggressive</span></div></div>
+          <div class="f"><label class="ck" for="eLive"><input type="checkbox" id="eLive"> We already have an AI system in production</label></div>
+          <div class="f"><label class="ck" for="eOwner"><input type="checkbox" id="eOwner"> Nobody senior owns AI in our organisation yet</label></div>
+        </div>
+        <div class="res" aria-live="polite">
+          <h2>Your estimate</h2>
+          <div class="big">
+            <div><b id="rHours">0</b><span>hours freed per year</span></div>
+            <div><b id="rValue">0</b><span>value per year at your hourly cost</span></div>
+            <div><b id="rFte">0</b><span>full-time equivalents</span></div>
+            <div><b id="rWeekly">0</b><span>hours back every week</span></div>
+          </div>
+          <div class="rec">
+            <span class="kicker">Recommended next step</span>
+            <h3 id="rTitle">Assessment</h3>
+            <p id="rWhy"></p>
+            <a class="btn btn-fire btn-sm" id="rCta" href="/contact/?topic=assessment">Discuss this estimate</a>
+          </div>
+          <p class="fine">Model: people × hours × 46 working weeks × AI share, less 15% for human review. Results depend on your data, process and risk appetite. Nothing here is a quote.</p>
+        </div>
+      </div>
+
+      <div class="quiz" id="quiz">
+        <div class="sec-head">
+          <div class="tick"></div>
+          <h2>Readiness check</h2>
+          <p>Eight questions, one minute. Answer honestly; "partly" is the most common answer we hear.</p>
+        </div>
+        <div class="q"><span>We have a written list of AI use cases ranked by value and feasibility.</span><div class="opts" data-q="1"><button type="button" data-v="0">No</button><button type="button" data-v="1">Partly</button><button type="button" data-v="2">Yes</button></div></div>
+        <div class="q"><span>A senior leader owns AI decisions, budget and risk.</span><div class="opts" data-q="2"><button type="button" data-v="0">No</button><button type="button" data-v="1">Partly</button><button type="button" data-v="2">Yes</button></div></div>
+        <div class="q"><span>The data for our top use case is accessible and we know who controls it.</span><div class="opts" data-q="3"><button type="button" data-v="0">No</button><button type="button" data-v="1">Partly</button><button type="button" data-v="2">Yes</button></div></div>
+        <div class="q"><span>At least one engineer can integrate an API into our systems and deploy it.</span><div class="opts" data-q="4"><button type="button" data-v="0">No</button><button type="button" data-v="1">Partly</button><button type="button" data-v="2">Yes</button></div></div>
+        <div class="q"><span>We know which regulations apply to our AI use (DPDP Act, EU AI Act, sector rules).</span><div class="opts" data-q="5"><button type="button" data-v="0">No</button><button type="button" data-v="1">Partly</button><button type="button" data-v="2">Yes</button></div></div>
+        <div class="q"><span>We have a way to test AI outputs before a release, even if it is manual today.</span><div class="opts" data-q="6"><button type="button" data-v="0">No</button><button type="button" data-v="1">Partly</button><button type="button" data-v="2">Yes</button></div></div>
+        <div class="q"><span>Our IT policy says which model providers we may use and where data may live.</span><div class="opts" data-q="7"><button type="button" data-v="0">No</button><button type="button" data-v="1">Partly</button><button type="button" data-v="2">Yes</button></div></div>
+        <div class="q"><span>Business users have time to give weekly feedback during a pilot.</span><div class="opts" data-q="8"><button type="button" data-v="0">No</button><button type="button" data-v="1">Partly</button><button type="button" data-v="2">Yes</button></div></div>
+        <div class="meter"><div class="bar"><i id="qBar"></i></div><b id="qScore">0%</b></div>
+        <div class="stage">
+          <h3 id="qStage">Answer the eight questions</h3>
+          <p id="qText">Your readiness stage and the step we would suggest first appear here.</p>
+          <a class="btn btn-line btn-sm" id="qCta" href="/contact/?topic=assessment" style="display:none;margin-top:14px">Talk through the result</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="ctaband">
+    <div class="wrap">
+      <div>
+        <h2>Tell us the problem. We'll tell you if AI is the answer.</h2>
+        <p>A 30-minute call, no deck, no obligation.</p>
+      </div>
+      <a class="btn btn-line book" href="/contact/">Book a discovery call</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <svg class="band" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
+    <defs><linearGradient id="bg" x1="0" x2="1"><stop offset="0" stop-color="#F7761F"/><stop offset=".6" stop-color="#F15A22"/><stop offset="1" stop-color="#E8431B"/></linearGradient></defs>
+    <polyline points="0,6 334,6 386,23 1440,23" fill="none" stroke="#5B5F66" stroke-width="4"/>
+    <polygon points="0,12 326,12 376,29 1440,29 1440,47 0,47" fill="url(#bg)"/>
+    <polyline points="356,52 404,58 1440,58" fill="none" stroke="#5B5F66" stroke-width="3"/>
+  </svg>
+  <div class="wrap">
+    <div class="fcols">
+      <div>
+        <a class="logo" href="/" aria-label="MindYards home"><img src="/assets/logo.png" alt="MindYards" width="940" height="402"></a>
+        <p>AI consulting across strategy, build, governance and operations, for mid-market and enterprise teams in India and the Middle East.</p>
+        <div class="news">
+          <h3>Monthly note</h3>
+          <form id="newsForm"><input type="email" required placeholder="Work email" aria-label="Work email" autocomplete="email"><button class="btn btn-fire btn-sm" type="submit">Subscribe</button></form>
+          <small>One email a month on practical AI. Unsubscribe any time.</small>
+        </div>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <ul>
+          <li><a href="/services/implementation/">Implementation &amp; build</a></li>
+          <li><a href="/services/agentic/">Agentic AI</a></li>
+          <li><a href="/services/managed-ops/">Managed AI operations</a></li>
+          <li><a href="/services/strategy/">Strategy &amp; advisory</a></li>
+          <li><a href="/services/governance/">Governance, risk &amp; compliance</a></li>
+          <li><a href="/services/data/">Data &amp; enablement</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Solutions</h3>
+        <ul>
+          <li><a href="/solutions/compliance-service/">Compliance as a service</a></li>
+          <li><a href="/solutions/voice-agents/">Voice &amp; sales agents</a></li>
+          <li><a href="/solutions/ma-diligence/">AI M&amp;A due diligence</a></li>
+          <li><a href="/solutions/evals/">Evals &amp; red-teaming</a></li>
+          <li><a href="/solutions/cost-optimisation/">AI cost optimisation</a></li>
+          <li><a href="/solutions/document-intelligence/">Document intelligence accelerator</a></li>
+          <li><a href="/solutions/knowledge-assistant/">Enterprise knowledge assistant</a></li>
+          <li><a href="/solutions/msoftai/">MsoftAI Manifold Designer</a></li>
+          <li><a href="/solutions/advisor/">Insurance Advisor CRM</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="/engagement/">Engagement models</a></li>
+          <li><a href="/about/#approach">How we work</a></li>
+          <li><a href="/insights/">Insights</a></li>
+          <li><a href="/estimate/">Value &amp; readiness estimator</a></li>
+          <li><a href="/resources/ai-readiness-checklist/">AI readiness checklist</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/about/#faq">FAQ</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="mailto:contact@mindyards.in">contact@mindyards.in</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <div>© <span id="year"></span> MindYards. All rights reserved.</div>
+      <div>Chennai, Tamil Nadu, India &nbsp;·&nbsp; mindyards.in</div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js?v=a9c23e0e"></script>
+</body>
+</html>

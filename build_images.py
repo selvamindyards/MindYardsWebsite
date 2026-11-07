@@ -7,6 +7,7 @@ Drop a replacement photo (jpg, png or webp, at least 1600px wide) into src/img/
 with the same base name and rerun. Outputs:
   assets/img/<name>.webp      banner, 1600x720 centre crop (hero: 1600x1000)
   assets/img/<name>-sm.webp   card thumbnail, 720x450 centre crop
+  assets/og/<name>.jpg        social share image, 1200x630 (JPEG for LinkedIn/WhatsApp)
 """
 import pathlib
 from PIL import Image
@@ -14,7 +15,8 @@ from PIL import Image
 ROOT = pathlib.Path(__file__).resolve().parent
 SRC = ROOT / "src/img"
 OUT = ROOT / "assets/img"
-SIZES = {"banner": (1600, 720), "hero": (1600, 1000), "sm": (720, 450)}
+OG = ROOT / "assets/og"
+SIZES = {"banner": (1600, 720), "hero": (1600, 1000), "sm": (720, 450), "og": (1200, 630)}
 
 
 def cover(im, size):
@@ -29,6 +31,7 @@ def cover(im, size):
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
+    OG.mkdir(parents=True, exist_ok=True)
     for src in sorted(SRC.iterdir()):
         if src.suffix.lower() not in (".jpg", ".jpeg", ".png", ".webp"):
             continue
@@ -37,7 +40,8 @@ def main():
         main_size = SIZES["hero"] if name == "hero" else SIZES["banner"]
         cover(im, main_size).save(OUT / f"{name}.webp", "WEBP", quality=72, method=6)
         cover(im, SIZES["sm"]).save(OUT / f"{name}-sm.webp", "WEBP", quality=70, method=6)
-        print(f"{name}: {main_size[0]}x{main_size[1]} + 720x450")
+        cover(im, SIZES["og"]).save(OG / f"{name}.jpg", "JPEG", quality=78, optimize=True, progressive=True)
+        print(f"{name}: {main_size[0]}x{main_size[1]} + 720x450 + og 1200x630")
 
 
 if __name__ == "__main__":

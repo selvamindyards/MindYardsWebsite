@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Where AI spend goes, and how to cut it without hurting quality — MindYards Insights</title>
+<meta name="description" content="The first invoice after launch is usually a surprise. Here is where the money goes in a typical LLM workload and the five changes that recover most of it.">
+<link rel="canonical" href="https://mindyards.in/insights/where-ai-spend-goes-and-how-to-cut-it/">
+<meta property="og:title" content="Where AI spend goes, and how to cut it without hurting quality — MindYards Insights">
+<meta property="og:description" content="The first invoice after launch is usually a surprise. Here is where the money goes in a typical LLM workload and the five changes that recover most of it.">
+<meta property="og:url" content="https://mindyards.in/insights/where-ai-spend-goes-and-how-to-cut-it/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://mindyards.in/assets/og/cost-optimisation.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="MindYards">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F26A1B">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="/assets/site.css?v=baab4889">
+<script>document.documentElement.classList.add("js");window.MY_CONFIG={}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Where AI spend goes, and how to cut it without hurting quality", "description": "The first invoice after launch is usually a surprise. Here is where the money goes in a typical LLM workload and the five changes that recover most of it.", "datePublished": "2026-11-04", "dateModified": "2026-11-04", "image": "https://mindyards.in/assets/og/cost-optimisation.jpg", "author": {"@type": "Organization", "name": "MindYards", "url": "https://mindyards.in"}, "publisher": {"@type": "Organization", "name": "MindYards", "logo": {"@type": "ImageObject", "url": "https://mindyards.in/assets/logo.png"}}, "mainEntityOfPage": "https://mindyards.in/insights/where-ai-spend-goes-and-how-to-cut-it/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mindyards.in/"}, {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://mindyards.in/insights/"}, {"@type": "ListItem", "position": 3, "name": "Where AI spend goes, and how to cut it without hurting quality", "item": "https://mindyards.in/insights/where-ai-spend-goes-and-how-to-cut-it/"}]}</script>
+</head>
+<body class="is-post">
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="MindYards home"><img src="/assets/logo.png" alt="MindYards" width="940" height="402"></a>
+    <button class="menu" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <div class="dd">
+        <a href="/services/" aria-haspopup="true">Services</a>
+        <div class="dd-menu">
+          <a href="/services/implementation/"><i>01</i><div>Implementation &amp; build<span>LLM apps, MLOps, integration, infra</span></div></a>
+          <a href="/services/agentic/"><i>02</i><div>Agentic AI<span>Multi-agent systems, orchestration, AgentOps</span></div></a>
+          <a href="/services/managed-ops/"><i>03</i><div>Managed AI operations<span>Monitoring, LLMOps, agents as a service</span></div></a>
+          <a href="/services/strategy/"><i>04</i><div>Strategy &amp; advisory<span>Roadmap, prioritisation, fractional CAIO</span></div></a>
+          <a href="/services/governance/"><i>05</i><div>Governance, risk &amp; compliance<span>EU AI Act, ISO 42001, audit, red-teaming</span></div></a>
+          <a href="/services/data/"><i>06</i><div>Data &amp; enablement<span>Data readiness, upskilling, change, analytics</span></div></a>
+        </div>
+      </div>
+      <div class="dd">
+        <a href="/industries/" aria-haspopup="true">Industries</a>
+        <div class="dd-menu">
+          <a href="/industries/bfsi/"><i>I1</i><div>Banking, financial services &amp; insurance<span>Fraud, credit, claims, model risk</span></div></a>
+          <a href="/industries/healthcare/"><i>I2</i><div>Healthcare &amp; life sciences<span>Radiology triage, clinical notes</span></div></a>
+          <a href="/industries/legal/"><i>I3</i><div>Legal<span>Contract review, matter intake</span></div></a>
+          <a href="/industries/manufacturing/"><i>I4</i><div>Manufacturing<span>Predictive maintenance, visual QC</span></div></a>
+          <a href="/industries/logistics/"><i>I5</i><div>Logistics &amp; supply chain<span>Dispatch, routing, exceptions</span></div></a>
+          <a href="/industries/public-sector/"><i>I6</i><div>Public sector<span>Document-heavy workflows, sovereignty</span></div></a>
+          <a href="/industries/retail-cx/"><i>I7</i><div>Retail &amp; customer experience<span>Support agents, personalisation</span></div></a>
+          <a href="/industries/aec/"><i>I8</i><div>AEC &amp; engineering<span>Drawings, BIM, site data</span></div></a>
+        </div>
+      </div>
+      <div class="dd">
+        <a href="/solutions/" aria-haspopup="true">Solutions</a>
+        <div class="dd-menu">
+          <a href="/solutions/compliance-service/"><i>S1</i><div>Compliance as a service<span>Ongoing AI compliance on retainer</span></div></a>
+          <a href="/solutions/voice-agents/"><i>S2</i><div>Voice &amp; sales agents<span>Outbound, inbound, collections</span></div></a>
+          <a href="/solutions/ma-diligence/"><i>S3</i><div>AI M&amp;A due diligence<span>Technical diligence on AI assets</span></div></a>
+          <a href="/solutions/evals/"><i>S4</i><div>Evals &amp; red-teaming<span>Independent testing before launch</span></div></a>
+          <a href="/solutions/cost-optimisation/"><i>S5</i><div>AI cost optimisation<span>Token and GPU spend</span></div></a>
+          <a href="/solutions/document-intelligence/"><i>S6</i><div>Document intelligence accelerator<span>Extraction with validation and review</span></div></a>
+          <a href="/solutions/knowledge-assistant/"><i>S7</i><div>Enterprise knowledge assistant<span>Cited answers from your own content</span></div></a>
+          <a href="/solutions/msoftai/"><i>P1</i><div>MsoftAI Manifold Designer<span>Product · hydraulic manifold CAD</span></div></a>
+          <a href="/solutions/advisor/"><i>P2</i><div>Insurance Advisor CRM<span>Product · CRM for insurance advisers</span></div></a>
+        </div>
+      </div>
+      <div class="dd">
+        <a href="/engagement/" aria-haspopup="true">Engagement</a>
+        <div class="dd-menu">
+          <a href="/engagement/assessment/"><i>E1</i><div>Assessment<span>2 to 4 weeks · fixed fee</span></div></a>
+          <a href="/engagement/build/"><i>E2</i><div>Fixed-scope build<span>6 to 16 weeks per phase · fixed fee</span></div></a>
+          <a href="/engagement/managed-operations/"><i>E3</i><div>Managed operations<span>Monthly retainer · SLAs</span></div></a>
+          <a href="/engagement/fractional-caio/"><i>E4</i><div>Fractional Chief AI Officer<span>2 to 6 days a month</span></div></a>
+          <a href="/estimate/"><i>E5</i><div>Value &amp; readiness estimator<span>Interactive · 3 minutes</span></div></a>
+        </div>
+      </div>
+      <a href="/insights/">Insights</a>
+      <a href="/about/">About</a>
+      <a class="cta book" href="/contact/">Book a call</a>
+    </nav>
+  </div>
+</header>
+
+
+<main id="top">
+<div class="banner"><img src="/assets/img/cost-optimisation.webp" alt="A calculator, pencil and printed charts on a desk" width="1600" height="720"></div>
+  <article class="post">
+    <div class="wrap">
+      <header class="hd">
+        <span class="kicker">Insights · Cost · Operations</span>
+        <h1 class="pg">Where AI spend goes, and how to cut it without hurting quality</h1>
+        <p class="lede">The first invoice after launch is usually a surprise. Here is where the money goes in a typical LLM workload and the five changes that recover most of it.</p>
+        <div class="meta2"><span>4 November 2026</span><span>3 min read</span><span>By the MindYards team</span></div>
+      </header>
+      <div class="body">
+<p>The first month of a language-model application in production is often the month the finance team joins the project. The pilot cost almost nothing. The production bill is a different number, and it grows with usage in a way that software licences never did. The good news is that the bill is usually dominated by a few causes, and each has a fix that does not cost quality.</p>
+
+<h2>Where the money goes</h2>
+<p>When we review an LLM cost line, the split is rarely what the team expects. Model calls that a user actually sees are often less than half of it. The rest is:</p>
+<ul>
+<li><strong>Context you send every time.</strong> A long system prompt, the full policy document, the entire conversation history. Input tokens are cheaper than output tokens, but you send them on every call, and they add up to most of the bill in retrieval-heavy systems.</li>
+<li><strong>Retries and loops.</strong> Agents that try again when a tool fails, validators that re-ask the model for better formatting, orchestration that calls a planner on every step. One user request can be ten model calls.</li>
+<li><strong>The biggest model for everything.</strong> Classification, routing and extraction do not need the model you use for drafting, but it is the one that was configured first.</li>
+<li><strong>Evaluation and development traffic.</strong> Necessary, but it belongs on a separate key with its own budget so it does not hide inside production numbers.</li>
+<li><strong>Idle GPU capacity</strong>, for teams self-hosting: reserved instances sized for peak, running at 15% utilisation overnight.</li>
+</ul>
+
+<h2>Five changes that recover most of it</h2>
+
+<h3>1. Cache what does not change</h3>
+<p>Most providers now offer prompt caching: the fixed part of your prompt is processed once and reused at a fraction of the price. If your system prompt and reference documents are the same on every call, this change alone typically cuts input cost by well over half, with zero effect on output.</p>
+
+<h3>2. Route by difficulty</h3>
+<p>Put a small, cheap model in front. Let it handle the requests it can and pass the rest on. For support and document workloads, a large share of traffic is routine and the small model's answers score the same on the evaluation set. You need that <a href="/solutions/evals/">evaluation set</a> to prove it, which is why cost work and quality work are the same project.</p>
+
+<h3>3. Shorten the context</h3>
+<p>Retrieve three relevant passages, not thirty. Summarise conversation history past a certain length instead of replaying it. Strip boilerplate from documents before they reach the model. Teams are often surprised that shorter context improves accuracy as well as cost, because the model has less irrelevant material to be distracted by.</p>
+
+<blockquote>Every token you remove from the prompt is one the model cannot be confused by. Shorter is usually both cheaper and better.</blockquote>
+
+<h3>4. Cap the loops</h3>
+<p>Give every agent a maximum number of steps and a budget per request. Log when the cap is hit. The cases that hit it are almost always a bug or a missing tool, and fixing them pays twice: lower cost and fewer failures.</p>
+
+<h3>5. Make spend visible per feature</h3>
+<p>Tag every call with the feature, tenant and environment it belongs to, and put the result on a dashboard the product owner sees weekly. Cost that is visible gets managed. Cost that arrives as one line on a cloud invoice does not.</p>
+
+<h2>What to expect</h2>
+<p>Done together, these changes commonly bring a workload's monthly bill down by a large fraction while the quality scores stay flat or improve. The work takes two to four weeks for an existing system and needs the evaluation set to be in place first, so that every change is measured rather than hoped for.</p>
+<p>We run this as a fixed-scope <a href="/solutions/cost-optimisation/">AI cost optimisation</a> engagement, and keep it going as part of <a href="/services/managed-ops/">managed AI operations</a>, where the monthly report shows cost per feature next to accuracy per feature. The two numbers belong on the same page.</p>
+      </div>
+      <div class="share"><a data-share="linkedin" href="#" target="_blank" rel="noopener">Share on LinkedIn</a><a data-share="whatsapp" href="#" target="_blank" rel="noopener">WhatsApp</a><a data-share="x" href="#" target="_blank" rel="noopener">X</a><button type="button" data-share="copy">Copy link</button></div>
+      <div class="box">
+        <div><h3>Want to talk this through for your organisation?</h3><p>A 30-minute call with a senior consultant. No deck, no obligation.</p><p class="meta2" style="margin-top:12px">Related: <a href="/solutions/cost-optimisation/">AI cost optimisation</a>, <a href="/services/managed-ops/">Managed AI operations</a></p></div>
+        <a class="btn btn-fire book" href="/contact/">Book a discovery call</a>
+      </div>
+    </div>
+  </article>
+  <section class="related">
+    <div class="wrap">
+      <h2>More insights</h2>
+      <div class="posts"><article><a href="/insights/what-an-llm-evaluation-suite-actually-contains/" tabindex="-1" aria-hidden="true"><img src="/assets/img/evals-sm.webp" alt="" width="720" height="450" loading="lazy"></a><div class="bd"><div class="meta2">27 October 2026 · 3 min read</div><h3><a href="/insights/what-an-llm-evaluation-suite-actually-contains/">What a useful LLM evaluation suite actually contains</a></h3><p>&quot;We tested it&quot; can mean anything from a few prompts in a playground to a suite that blocks bad releases. Here is what the second kind looks like, piece by piece.</p><ul class="tags"><li>Evals</li><li>Governance</li></ul><a class="more arrow" href="/insights/what-an-llm-evaluation-suite-actually-contains/">Read </a></div></article><article><a href="/insights/five-questions-before-you-build-an-ai-agent/" tabindex="-1" aria-hidden="true"><img src="/assets/img/agentic-sm.webp" alt="" width="720" height="450" loading="lazy"></a><div class="bd"><div class="meta2">14 October 2026 · 3 min read</div><h3><a href="/insights/five-questions-before-you-build-an-ai-agent/">Five questions to ask before you build an AI agent</a></h3><p>Most agent projects stall for reasons that were visible on day one. Here are the five questions we ask in the first meeting, and what a good answer sounds like.</p><ul class="tags"><li>Agentic AI</li><li>Delivery</li></ul><a class="more arrow" href="/insights/five-questions-before-you-build-an-ai-agent/">Read </a></div></article></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <svg class="band" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
+    <defs><linearGradient id="bg" x1="0" x2="1"><stop offset="0" stop-color="#F7761F"/><stop offset=".6" stop-color="#F15A22"/><stop offset="1" stop-color="#E8431B"/></linearGradient></defs>
+    <polyline points="0,6 334,6 386,23 1440,23" fill="none" stroke="#5B5F66" stroke-width="4"/>
+    <polygon points="0,12 326,12 376,29 1440,29 1440,47 0,47" fill="url(#bg)"/>
+    <polyline points="356,52 404,58 1440,58" fill="none" stroke="#5B5F66" stroke-width="3"/>
+  </svg>
+  <div class="wrap">
+    <div class="fcols">
+      <div>
+        <a class="logo" href="/" aria-label="MindYards home"><img src="/assets/logo.png" alt="MindYards" width="940" height="402"></a>
+        <p>AI consulting across strategy, build, governance and operations, for mid-market and enterprise teams in India and the Middle East.</p>
+        <div class="news">
+          <h3>Monthly note</h3>
+          <form id="newsForm"><input type="email" required placeholder="Work email" aria-label="Work email" autocomplete="email"><button class="btn btn-fire btn-sm" type="submit">Subscribe</button></form>
+          <small>One email a month on practical AI. Unsubscribe any time.</small>
+        </div>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <ul>
+          <li><a href="/services/implementation/">Implementation &amp; build</a></li>
+          <li><a href="/services/agentic/">Agentic AI</a></li>
+          <li><a href="/services/managed-ops/">Managed AI operations</a></li>
+          <li><a href="/services/strategy/">Strategy &amp; advisory</a></li>
+          <li><a href="/services/governance/">Governance, risk &amp; compliance</a></li>
+          <li><a href="/services/data/">Data &amp; enablement</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Solutions</h3>
+        <ul>
+          <li><a href="/solutions/compliance-service/">Compliance as a service</a></li>
+          <li><a href="/solutions/voice-agents/">Voice &amp; sales agents</a></li>
+          <li><a href="/solutions/ma-diligence/">AI M&amp;A due diligence</a></li>
+          <li><a href="/solutions/evals/">Evals &amp; red-teaming</a></li>
+          <li><a href="/solutions/cost-optimisation/">AI cost optimisation</a></li>
+          <li><a href="/solutions/document-intelligence/">Document intelligence accelerator</a></li>
+          <li><a href="/solutions/knowledge-assistant/">Enterprise knowledge assistant</a></li>
+          <li><a href="/solutions/msoftai/">MsoftAI Manifold Designer</a></li>
+          <li><a href="/solutions/advisor/">Insurance Advisor CRM</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="/engagement/">Engagement models</a></li>
+          <li><a href="/about/#approach">How we work</a></li>
+          <li><a href="/insights/">Insights</a></li>
+          <li><a href="/estimate/">Value &amp; readiness estimator</a></li>
+          <li><a href="/resources/ai-readiness-checklist/">AI readiness checklist</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/about/#faq">FAQ</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="mailto:contact@mindyards.in">contact@mindyards.in</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <div>© <span id="year"></span> MindYards. All rights reserved.</div>
+      <div>Chennai, Tamil Nadu, India &nbsp;·&nbsp; mindyards.in</div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js?v=a9c23e0e"></script>
+</body>
+</html>
