@@ -184,9 +184,17 @@
   .ind li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:2px;background:var(--orange)}
 
   /* solutions */
-  .sol{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+  .sol{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   .sol article{background:var(--ink);color:#fff;border-radius:var(--r-lg);padding:24px 22px;display:flex;flex-direction:column;gap:10px;min-height:280px}
   .sol article .tag{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#FBD3BC;align-self:flex-start}
+  .sol article.product{background:var(--band);border:none}
+  .sol article.product .tag{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.35);color:#fff}
+  .sol article.product p{color:#FFE7D8}
+  .sol article.product ul{color:#fff}
+  .sol article.product li::before{background:#fff}
+  .sol article.product .fmt{color:#fff}
+  .sol .launch{display:inline-flex;align-items:center;gap:6px;margin-top:10px;background:#fff;color:var(--ember);font-weight:700;font-size:14px;padding:9px 14px;border-radius:var(--r);align-self:flex-start}
+  .sol .launch:hover{color:var(--flame)}
   .sol h3{font-size:18.5px;color:#fff}
   .sol p{font-size:14.5px;color:#C9CCD2;flex:1}
   .sol ul{display:grid;gap:4px;font-size:13.5px;color:#E6E8EC}
@@ -824,6 +832,14 @@
           <ul><li>Spend audit and baseline</li><li>Model-tier and caching changes</li><li>Chargeback and forecasting</li></ul>
           <div class="fmt">Fixed fee, optional share of savings</div>
         </article>
+        <article class="product" id="msoftai">
+          <span class="tag">Product · built by MindYards</span>
+          <h3>MsoftAI Manifold Designer</h3>
+          <p>Browser-based CAD for hydraulic manifold blocks. Define the block, place cavities, connect the drillings and run design checks, with no desktop install.</p>
+          <ul><li>Block, cavity and drilling design in 3D</li><li>Automated checks, reports and net colouring</li><li>Designs saved to your account, downloadable</li></ul>
+          <div class="fmt">Live web application</div>
+          <a class="launch arrow" href="https://msoftai.mindyards.in/" target="_blank" rel="noopener">Open MsoftAI </a>
+        </article>
       </div>
     </div>
   </section>
@@ -1030,6 +1046,7 @@
               <option>Governance, risk &amp; compliance</option>
               <option>Data &amp; enablement</option>
               <option>A packaged solution</option>
+              <option>MsoftAI Manifold Designer</option>
               <option>Fractional Chief AI Officer</option>
             </select>
           </div>
@@ -1074,7 +1091,7 @@
           <li><a href="#solutions">AI M&amp;A due diligence</a></li>
           <li><a href="#solutions">Evals &amp; red-teaming</a></li>
           <li><a href="#solutions">AI cost optimisation</a></li>
-          <li><a href="#industries">Industries</a></li>
+          <li><a href="#msoftai">MsoftAI Manifold Designer</a></li>
         </ul>
       </div>
       <div>
